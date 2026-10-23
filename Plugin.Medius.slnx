@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Plugin.Medius/Plugin.Medius.csproj" />
+  <Project Path="Plugin.Medius.Tests/Plugin.Medius.Tests.csproj" />
+</Solution>
