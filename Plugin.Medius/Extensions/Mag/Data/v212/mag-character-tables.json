@@ -1,0 +1,8230 @@
+{
+ "source": "MAG (BCUS98110 2.12): scripts/character_skills.zpr, experience.zpr, item_list.zpr",
+ "experienceRequiredScale": 1.0,
+ "maxLevel": 70,
+ "levels": [
+  {
+   "level": 0,
+   "experience": 0,
+   "skillPointsGained": 0,
+   "loadoutBudget": 0,
+   "rank": 0
+  },
+  {
+   "level": 1,
+   "experience": 0,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 0
+  },
+  {
+   "level": 2,
+   "experience": 50,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 0
+  },
+  {
+   "level": 3,
+   "experience": 130,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 1
+  },
+  {
+   "level": 4,
+   "experience": 280,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 1
+  },
+  {
+   "level": 5,
+   "experience": 518,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 2
+  },
+  {
+   "level": 6,
+   "experience": 846,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 2
+  },
+  {
+   "level": 7,
+   "experience": 1172,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 2
+  },
+  {
+   "level": 8,
+   "experience": 1497,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 2
+  },
+  {
+   "level": 9,
+   "experience": 1822,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 2
+  },
+  {
+   "level": 10,
+   "experience": 2148,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 3
+  },
+  {
+   "level": 11,
+   "experience": 2473,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 3
+  },
+  {
+   "level": 12,
+   "experience": 2799,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 3
+  },
+  {
+   "level": 13,
+   "experience": 3124,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 3
+  },
+  {
+   "level": 14,
+   "experience": 3449,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 3
+  },
+  {
+   "level": 15,
+   "experience": 3775,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 4
+  },
+  {
+   "level": 16,
+   "experience": 4534,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 4
+  },
+  {
+   "level": 17,
+   "experience": 5294,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 4
+  },
+  {
+   "level": 18,
+   "experience": 6053,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 4
+  },
+  {
+   "level": 19,
+   "experience": 6812,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 4
+  },
+  {
+   "level": 20,
+   "experience": 7572,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 21,
+   "experience": 8331,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 22,
+   "experience": 9090,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 23,
+   "experience": 9849,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 24,
+   "experience": 10609,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 25,
+   "experience": 11368,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 26,
+   "experience": 12127,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 27,
+   "experience": 12887,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 28,
+   "experience": 13646,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 5
+  },
+  {
+   "level": 29,
+   "experience": 14405,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 30,
+   "experience": 15490,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 31,
+   "experience": 16575,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 32,
+   "experience": 17660,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 33,
+   "experience": 18744,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 34,
+   "experience": 19829,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 35,
+   "experience": 20914,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 36,
+   "experience": 21999,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 37,
+   "experience": 23083,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 6
+  },
+  {
+   "level": 38,
+   "experience": 24168,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 39,
+   "experience": 25253,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 40,
+   "experience": 26338,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 41,
+   "experience": 27422,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 42,
+   "experience": 28507,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 43,
+   "experience": 29592,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 44,
+   "experience": 30677,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 45,
+   "experience": 31870,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 46,
+   "experience": 33172,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 47,
+   "experience": 34582,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 7
+  },
+  {
+   "level": 48,
+   "experience": 36100,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 49,
+   "experience": 37727,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 50,
+   "experience": 39463,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 51,
+   "experience": 41307,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 52,
+   "experience": 43260,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 53,
+   "experience": 45321,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 54,
+   "experience": 47490,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 55,
+   "experience": 49877,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 56,
+   "experience": 52480,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 57,
+   "experience": 55300,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 58,
+   "experience": 58338,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 59,
+   "experience": 61438,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 8
+  },
+  {
+   "level": 60,
+   "experience": 64738,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 61,
+   "experience": 68239,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 62,
+   "experience": 71939,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 63,
+   "experience": 75864,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 64,
+   "experience": 80039,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 65,
+   "experience": 84489,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 66,
+   "experience": 89239,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 67,
+   "experience": 94314,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 68,
+   "experience": 99739,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 69,
+   "experience": 105539,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 9
+  },
+  {
+   "level": 70,
+   "experience": 111739,
+   "skillPointsGained": 1,
+   "loadoutBudget": 34,
+   "rank": 10
+  }
+ ],
+ "reSpecPoints": [
+  1000,
+  3000,
+  5000
+ ],
+ "tiers": [],
+ "skills": [
+  {
+   "id": 0,
+   "tier": null,
+   "group": null,
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_BasicDefault",
+   "levelPrerequisite": 0,
+   "skillLevel": 0,
+   "specialty": 1,
+   "specialtyWeight": 0,
+   "cost": 0,
+   "icon": "",
+   "factions": [
+    {
+     "available": true,
+     "name": "Recruit (Green)",
+     "items": [
+      {
+       "name": "light_armor_green",
+       "bit": 111
+      },
+      {
+       "name": "medium_armor_green",
+       "bit": 112
+      },
+      {
+       "name": "heavy_armor_green",
+       "bit": 113
+      },
+      {
+       "name": "knife_green",
+       "bit": 53
+      },
+      {
+       "name": "M9",
+       "bit": 50
+      },
+      {
+       "name": "m4a1",
+       "bit": 55
+      },
+      {
+       "name": "scope_ironsights",
+       "bit": 14
+      },
+      {
+       "name": "scope_ironsights_rear",
+       "bit": 15
+      },
+      {
+       "name": "mk14_mod0",
+       "bit": 58
+      },
+      {
+       "name": "scope_lowfixed_green_default",
+       "bit": 94
+      },
+      {
+       "name": "mk46_mod0",
+       "bit": 61
+      },
+      {
+       "name": "grenade_frag_green",
+       "bit": 71
+      },
+      {
+       "name": "grenade_smoke_green",
+       "bit": 72
+      },
+      {
+       "name": "smaw_dumb",
+       "bit": 64
+      },
+      {
+       "name": "rocket_sight_dumb",
+       "bit": 66
+      },
+      {
+       "name": "first_aid_pack",
+       "bit": 0
+      },
+      {
+       "name": "repairkit",
+       "bit": 2
+      },
+      {
+       "name": "pda_green",
+       "bit": 79
+      },
+      {
+       "name": "parachute",
+       "bit": 3
+      },
+      {
+       "name": "c4",
+       "bit": 13
+      }
+     ],
+     "modifiers": {}
+    },
+    {
+     "available": true,
+     "name": "Recruit (Black)",
+     "items": [
+      {
+       "name": "light_armor_black",
+       "bit": 114
+      },
+      {
+       "name": "medium_armor_black",
+       "bit": 115
+      },
+      {
+       "name": "heavy_armor_black",
+       "bit": 116
+      },
+      {
+       "name": "knife_black",
+       "bit": 50
+      },
+      {
+       "name": "fn57",
+       "bit": 51
+      },
+      {
+       "name": "steyr_aug_a3",
+       "bit": 55
+      },
+      {
+       "name": "scope_ironsights",
+       "bit": 14
+      },
+      {
+       "name": "scope_ironsights_rear",
+       "bit": 15
+      },
+      {
+       "name": "msg_90",
+       "bit": 58
+      },
+      {
+       "name": "scope_lowfixed_black_default",
+       "bit": 96
+      },
+      {
+       "name": "ultimax_100",
+       "bit": 61
+      },
+      {
+       "name": "grenade_frag_black",
+       "bit": 70
+      },
+      {
+       "name": "grenade_smoke_black",
+       "bit": 71
+      },
+      {
+       "name": "panzerfaust_3_dumb",
+       "bit": 64
+      },
+      {
+       "name": "rocket_sight_panzer_dumb",
+       "bit": 66
+      },
+      {
+       "name": "first_aid_pack",
+       "bit": 0
+      },
+      {
+       "name": "repairkit",
+       "bit": 2
+      },
+      {
+       "name": "pda_black",
+       "bit": 83
+      },
+      {
+       "name": "parachute",
+       "bit": 3
+      },
+      {
+       "name": "c4",
+       "bit": 13
+      },
+      {
+       "name": "scope_ironsights_p90",
+       "bit": 85
+      }
+     ],
+     "modifiers": {}
+    },
+    {
+     "available": true,
+     "name": "Recruit (Red)",
+     "items": [
+      {
+       "name": "light_armor_red",
+       "bit": 115
+      },
+      {
+       "name": "medium_armor_red",
+       "bit": 116
+      },
+      {
+       "name": "heavy_armor_red",
+       "bit": 117
+      },
+      {
+       "name": "knife_red",
+       "bit": 50
+      },
+      {
+       "name": "yarygin_pya",
+       "bit": 51
+      },
+      {
+       "name": "ak_74u",
+       "bit": 56
+      },
+      {
+       "name": "scope_ironsights",
+       "bit": 14
+      },
+      {
+       "name": "scope_ironsights_rear",
+       "bit": 15
+      },
+      {
+       "name": "dragunov",
+       "bit": 59
+      },
+      {
+       "name": "scope_lowfixed_red_default",
+       "bit": 97
+      },
+      {
+       "name": "rpk_74",
+       "bit": 62
+      },
+      {
+       "name": "grenade_frag_red",
+       "bit": 72
+      },
+      {
+       "name": "grenade_smoke_red",
+       "bit": 73
+      },
+      {
+       "name": "rpg7_dumb",
+       "bit": 66
+      },
+      {
+       "name": "rocket_sight_rpg_dumb",
+       "bit": 68
+      },
+      {
+       "name": "first_aid_pack",
+       "bit": 0
+      },
+      {
+       "name": "repairkit",
+       "bit": 2
+      },
+      {
+       "name": "pda_red",
+       "bit": 79
+      },
+      {
+       "name": "parachute",
+       "bit": 3
+      },
+      {
+       "name": "c4",
+       "bit": 13
+      },
+      {
+       "name": "scope_ironsights_ak74u",
+       "bit": 88
+      }
+     ],
+     "modifiers": {}
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 1,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Reload_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.05,
+      "kCharModMachineGunReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.05,
+      "kCharModMachineGunReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.05,
+      "kCharModMachineGunReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 2,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Reload_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.06,
+      "kCharModMachineGunReloadTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.06,
+      "kCharModMachineGunReloadTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.06,
+      "kCharModMachineGunReloadTime": -0.06
+     }
+    }
+   ],
+   "parent": 4,
+   "prerequisite": null
+  },
+  {
+   "id": 3,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Reload_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.09,
+      "kCharModMachineGunReloadTime": -0.09
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.09,
+      "kCharModMachineGunReloadTime": -0.09
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleReloadTime": -0.09,
+      "kCharModMachineGunReloadTime": -0.09
+     }
+    }
+   ],
+   "parent": 5,
+   "prerequisite": null
+  },
+  {
+   "id": 4,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Swap_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.02,
+      "kCharModMachineGunSwapTime": -0.02,
+      "kCharModRocketLauncherSwapTime": -0.02,
+      "kCharModGrenadeLauncherSwapTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.02,
+      "kCharModMachineGunSwapTime": -0.02,
+      "kCharModRocketLauncherSwapTime": -0.02,
+      "kCharModGrenadeLauncherSwapTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.02,
+      "kCharModMachineGunSwapTime": -0.02,
+      "kCharModRocketLauncherSwapTime": -0.02,
+      "kCharModGrenadeLauncherSwapTime": -0.02
+     }
+    }
+   ],
+   "parent": 1,
+   "prerequisite": null
+  },
+  {
+   "id": 5,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Swap_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.03,
+      "kCharModMachineGunSwapTime": -0.03,
+      "kCharModRocketLauncherSwapTime": -0.03,
+      "kCharModGrenadeLauncherSwapTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.03,
+      "kCharModMachineGunSwapTime": -0.03,
+      "kCharModRocketLauncherSwapTime": -0.03,
+      "kCharModGrenadeLauncherSwapTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.03,
+      "kCharModMachineGunSwapTime": -0.03,
+      "kCharModRocketLauncherSwapTime": -0.03,
+      "kCharModGrenadeLauncherSwapTime": -0.03
+     }
+    }
+   ],
+   "parent": 2,
+   "prerequisite": null
+  },
+  {
+   "id": 6,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Swap_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.05,
+      "kCharModMachineGunSwapTime": -0.05,
+      "kCharModRocketLauncherSwapTime": -0.05,
+      "kCharModGrenadeLauncherSwapTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.05,
+      "kCharModMachineGunSwapTime": -0.05,
+      "kCharModRocketLauncherSwapTime": -0.05,
+      "kCharModGrenadeLauncherSwapTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleSwapTime": -0.05,
+      "kCharModMachineGunSwapTime": -0.05,
+      "kCharModRocketLauncherSwapTime": -0.05,
+      "kCharModGrenadeLauncherSwapTime": -0.05
+     }
+    }
+   ],
+   "parent": 3,
+   "prerequisite": null
+  },
+  {
+   "id": 7,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Recoil_Stability_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.02,
+      "kCharModMachineGunKnock": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.02,
+      "kCharModMachineGunKnock": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.02,
+      "kCharModMachineGunKnock": -0.02
+     }
+    }
+   ],
+   "parent": 5,
+   "prerequisite": null
+  },
+  {
+   "id": 8,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Recoil_Stability_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.03,
+      "kCharModMachineGunKnock": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.03,
+      "kCharModMachineGunKnock": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.03,
+      "kCharModMachineGunKnock": -0.03
+     }
+    }
+   ],
+   "parent": 7,
+   "prerequisite": null
+  },
+  {
+   "id": 9,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Recoil_Stability_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.05,
+      "kCharModMachineGunKnock": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.05,
+      "kCharModMachineGunKnock": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Assault_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleKnock": -0.05,
+      "kCharModMachineGunKnock": -0.05
+     }
+    }
+   ],
+   "parent": 8,
+   "prerequisite": null
+  },
+  {
+   "id": 10,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Steady_Aim_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_aim",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.1
+     }
+    }
+   ],
+   "parent": 4,
+   "prerequisite": null
+  },
+  {
+   "id": 11,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Steady_Aim_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_aim",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.2
+     }
+    }
+   ],
+   "parent": 10,
+   "prerequisite": null
+  },
+  {
+   "id": 12,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Assault_Steady_Aim_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "assaultrifle_aim",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Assault_Rifle_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModAssaultRifleBarrelWander": -0.3
+     }
+    }
+   ],
+   "parent": 11,
+   "prerequisite": null
+  },
+  {
+   "id": 13,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Rocket_Reload_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "rocket_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": 2,
+   "prerequisite": null
+  },
+  {
+   "id": 14,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Rocket_Reload_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "rocket_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": 13,
+   "prerequisite": null
+  },
+  {
+   "id": 15,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Rocket_Reload_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "rocket_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Rocket_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherReloadTime": -0.1
+     }
+    }
+   ],
+   "parent": 14,
+   "prerequisite": null
+  },
+  {
+   "id": 16,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Grenade_Reload_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "glauncher_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": 3,
+   "prerequisite": null
+  },
+  {
+   "id": 17,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Grenade_Reload_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "glauncher_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": 16,
+   "prerequisite": null
+  },
+  {
+   "id": 18,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAssault",
+   "skillId": "SKILL_ID_Grenade_Reload_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "glauncher_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_SHORT_Grenade_Launcher_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModGrenadeLauncherReloadTime": -0.1
+     }
+    }
+   ],
+   "parent": 17,
+   "prerequisite": null
+  },
+  {
+   "id": 19,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Reload_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 20,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Reload_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": 22,
+   "prerequisite": null
+  },
+  {
+   "id": 21,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Reload_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleReloadTime": -0.1
+     }
+    }
+   ],
+   "parent": 23,
+   "prerequisite": null
+  },
+  {
+   "id": 22,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Swap_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.02
+     }
+    }
+   ],
+   "parent": 19,
+   "prerequisite": null
+  },
+  {
+   "id": 23,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Swap_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.03
+     }
+    }
+   ],
+   "parent": 20,
+   "prerequisite": null
+  },
+  {
+   "id": 24,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Swap_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleSwapTime": -0.05
+     }
+    }
+   ],
+   "parent": 21,
+   "prerequisite": null
+  },
+  {
+   "id": 25,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Fire_Rate_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_rate",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.02
+     }
+    }
+   ],
+   "parent": 21,
+   "prerequisite": null
+  },
+  {
+   "id": 26,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Fire_Rate_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_rate",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.03
+     }
+    }
+   ],
+   "parent": 25,
+   "prerequisite": null
+  },
+  {
+   "id": 27,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Fire_Rate_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_rate",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleRefireTime": -0.05
+     }
+    }
+   ],
+   "parent": 26,
+   "prerequisite": null
+  },
+  {
+   "id": 28,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Recoil_Stability_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.03
+     }
+    }
+   ],
+   "parent": 22,
+   "prerequisite": null
+  },
+  {
+   "id": 29,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Recoil_Stability_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.06
+     }
+    }
+   ],
+   "parent": 28,
+   "prerequisite": null
+  },
+  {
+   "id": 30,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Recoil_Stability_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.11
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.11
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleKnock": -0.11
+     }
+    }
+   ],
+   "parent": 29,
+   "prerequisite": null
+  },
+  {
+   "id": 31,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Increased_Scope_Magnification_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "closequarters_scope",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.02,
+      "kCharModScopeMagnification": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.02,
+      "kCharModScopeMagnification": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.02,
+      "kCharModScopeMagnification": -0.05
+     }
+    }
+   ],
+   "parent": 23,
+   "prerequisite": null
+  },
+  {
+   "id": 32,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Increased_Scope_Magnification_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "closequarters_scope",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.03,
+      "kCharModScopeMagnification": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.03,
+      "kCharModScopeMagnification": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.03,
+      "kCharModScopeMagnification": -0.05
+     }
+    }
+   ],
+   "parent": 31,
+   "prerequisite": null
+  },
+  {
+   "id": 33,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Increased_Scope_Magnification_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "closequarters_scope",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.05,
+      "kCharModScopeMagnification": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.05,
+      "kCharModScopeMagnification": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Increased_Scope_Magnification",
+     "items": [],
+     "modifiers": {
+      "kCharModZoomMagnification": -0.05,
+      "kCharModScopeMagnification": -0.1
+     }
+    }
+   ],
+   "parent": 32,
+   "prerequisite": null
+  },
+  {
+   "id": 34,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Reload_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.05,
+      "kCharModSubMachineGunReloadTime": -0.05,
+      "kCharModSideArmReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.05,
+      "kCharModSubMachineGunReloadTime": -0.05,
+      "kCharModSideArmReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.05,
+      "kCharModSubMachineGunReloadTime": -0.05,
+      "kCharModSideArmReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 35,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Reload_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.1,
+      "kCharModSubMachineGunReloadTime": -0.05,
+      "kCharModSideArmReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.1,
+      "kCharModSubMachineGunReloadTime": -0.05,
+      "kCharModSideArmReloadTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.1,
+      "kCharModSubMachineGunReloadTime": -0.05,
+      "kCharModSideArmReloadTime": -0.05
+     }
+    }
+   ],
+   "parent": 37,
+   "prerequisite": null
+  },
+  {
+   "id": 36,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Reload_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_reload",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.15,
+      "kCharModSubMachineGunReloadTime": -0.1,
+      "kCharModSideArmReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.15,
+      "kCharModSubMachineGunReloadTime": -0.1,
+      "kCharModSideArmReloadTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Reload_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunReloadTime": -0.15,
+      "kCharModSubMachineGunReloadTime": -0.1,
+      "kCharModSideArmReloadTime": -0.1
+     }
+    }
+   ],
+   "parent": 38,
+   "prerequisite": null
+  },
+  {
+   "id": 37,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Swap_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.02,
+      "kCharModSubMachineGunSwapTime": -0.02,
+      "kCharModSideArmSwapTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.02,
+      "kCharModSubMachineGunSwapTime": -0.02,
+      "kCharModSideArmSwapTime": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.02,
+      "kCharModSubMachineGunSwapTime": -0.02,
+      "kCharModSideArmSwapTime": -0.02
+     }
+    }
+   ],
+   "parent": 34,
+   "prerequisite": null
+  },
+  {
+   "id": 38,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Swap_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.03,
+      "kCharModSubMachineGunSwapTime": -0.03,
+      "kCharModSideArmSwapTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.03,
+      "kCharModSubMachineGunSwapTime": -0.03,
+      "kCharModSideArmSwapTime": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.03,
+      "kCharModSubMachineGunSwapTime": -0.03,
+      "kCharModSideArmSwapTime": -0.03
+     }
+    }
+   ],
+   "parent": 35,
+   "prerequisite": null
+  },
+  {
+   "id": 39,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Swap_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_swap",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.05,
+      "kCharModSubMachineGunSwapTime": -0.05,
+      "kCharModSideArmSwapTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.05,
+      "kCharModSubMachineGunSwapTime": -0.05,
+      "kCharModSideArmSwapTime": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Swap_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunSwapTime": -0.05,
+      "kCharModSubMachineGunSwapTime": -0.05,
+      "kCharModSideArmSwapTime": -0.05
+     }
+    }
+   ],
+   "parent": 36,
+   "prerequisite": null
+  },
+  {
+   "id": 40,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Fire_Rate_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_refire",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    }
+   ],
+   "parent": 36,
+   "prerequisite": null
+  },
+  {
+   "id": 41,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Fire_Rate_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_refire",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    }
+   ],
+   "parent": 40,
+   "prerequisite": null
+  },
+  {
+   "id": 42,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Fire_Rate_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_refire",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Fire_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModShotgunRefireTime": -0.1,
+      "kCharModSideArmRefireTime": -0.1
+     }
+    }
+   ],
+   "parent": 41,
+   "prerequisite": null
+  },
+  {
+   "id": 43,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Recoil_Stability_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.05,
+      "kCharModSideArmKnock": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.05,
+      "kCharModSideArmKnock": -0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.05,
+      "kCharModSideArmKnock": -0.02
+     }
+    }
+   ],
+   "parent": 35,
+   "prerequisite": null
+  },
+  {
+   "id": 44,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Recoil_Stability_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.1,
+      "kCharModSideArmKnock": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.1,
+      "kCharModSideArmKnock": -0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.1,
+      "kCharModSideArmKnock": -0.03
+     }
+    }
+   ],
+   "parent": 43,
+   "prerequisite": null
+  },
+  {
+   "id": 45,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_CQ_Recoil_Stability_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotgun_stability",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.15,
+      "kCharModSideArmKnock": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.15,
+      "kCharModSideArmKnock": -0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_CQ_Recoil_Stability",
+     "items": [],
+     "modifiers": {
+      "kCharModCloseQuartersKnock": -0.15,
+      "kCharModSideArmKnock": -0.05
+     }
+    }
+   ],
+   "parent": 44,
+   "prerequisite": null
+  },
+  {
+   "id": 46,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_Knife_Swipe_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "knife_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.15
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.15
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.15
+     }
+    }
+   ],
+   "parent": 37,
+   "prerequisite": null
+  },
+  {
+   "id": 47,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_Knife_Swipe_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "knife_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.15
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.15
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.15
+     }
+    }
+   ],
+   "parent": 46,
+   "prerequisite": null
+  },
+  {
+   "id": 48,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_Knife_Swipe_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "knife_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Knife_Swipe_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeSpeed": -0.2
+     }
+    }
+   ],
+   "parent": 47,
+   "prerequisite": null
+  },
+  {
+   "id": 49,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Extended_Tracking_Duration_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotdetection",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.1,
+      "kCharModFiringTrackingDuration": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.1,
+      "kCharModFiringTrackingDuration": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.1,
+      "kCharModFiringTrackingDuration": 0.1
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 50,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Extended_Tracking_Duration_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotdetection",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.15,
+      "kCharModFiringTrackingDuration": 0.15
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.15,
+      "kCharModFiringTrackingDuration": 0.15
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.15,
+      "kCharModFiringTrackingDuration": 0.15
+     }
+    }
+   ],
+   "parent": 49,
+   "prerequisite": null
+  },
+  {
+   "id": 51,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Extended_Tracking_Duration_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "shotdetection",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.25,
+      "kCharModFiringTrackingDuration": 0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.25,
+      "kCharModFiringTrackingDuration": 0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Tracking_Duration",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackingDuration": 0.25,
+      "kCharModFiringTrackingDuration": 0.25
+     }
+    }
+   ],
+   "parent": 50,
+   "prerequisite": null
+  },
+  {
+   "id": 52,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Suppressors_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_firepoint_suppressor",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.1
+     }
+    }
+   ],
+   "parent": 51,
+   "prerequisite": null
+  },
+  {
+   "id": 53,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Suppressors_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_firepoint_suppressor",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.2
+     }
+    }
+   ],
+   "parent": 52,
+   "prerequisite": null
+  },
+  {
+   "id": 54,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Suppressors_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "pistol_firepoint_suppressor",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Suppressors",
+     "items": [],
+     "modifiers": {
+      "kCharModSuppressorSoundSignature": -0.3
+     }
+    }
+   ],
+   "parent": 53,
+   "prerequisite": null
+  },
+  {
+   "id": 55,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Acoustic_Locator_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "acoustic_locator",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.3
+     }
+    }
+   ],
+   "parent": 51,
+   "prerequisite": null
+  },
+  {
+   "id": 56,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Acoustic_Locator_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "acoustic_locator",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.3
+     }
+    }
+   ],
+   "parent": 55,
+   "prerequisite": null
+  },
+  {
+   "id": 57,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Acoustic_Locator_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "acoustic_locator",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.4
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.4
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Acoustic_Locator",
+     "items": [],
+     "modifiers": {
+      "kCharModAcousticLocatorBoost": 0.4
+     }
+    }
+   ],
+   "parent": 56,
+   "prerequisite": null
+  },
+  {
+   "id": 58,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Explosive_Detector_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "explosives_detector",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDetectorDetectionRange": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDetectorDetectionRange": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDetectorDetectionRange": 1.0
+     }
+    }
+   ],
+   "parent": 55,
+   "prerequisite": null
+  },
+  {
+   "id": 59,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Explosive_Detector_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "explosives_detector",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModBypassMinesWhileProne": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModBypassMinesWhileProne": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModBypassMinesWhileProne": 0.3
+     }
+    }
+   ],
+   "parent": 58,
+   "prerequisite": null
+  },
+  {
+   "id": 60,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Explosive_Detector_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "explosives_detector",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDetectorSquadmateRange": 10.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDetectorSquadmateRange": 10.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Explosive_Detector",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDetectorSquadmateRange": 10.0
+     }
+    }
+   ],
+   "parent": 59,
+   "prerequisite": null
+  },
+  {
+   "id": 61,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Sensor_Jammer_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "satellitejammer",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.3,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.3,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.3,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    }
+   ],
+   "parent": 56,
+   "prerequisite": null
+  },
+  {
+   "id": 62,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Sensor_Jammer_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "satellitejammer",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.3,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.3,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.3,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    }
+   ],
+   "parent": 61,
+   "prerequisite": null
+  },
+  {
+   "id": 63,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Sensor_Jammer_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "satellitejammer",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.4,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.4,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Sensor_Jammer",
+     "items": [],
+     "modifiers": {
+      "kCharModSensorJammerSquadmateRange": 0.4,
+      "kCharModSensorJammerDetectionSpeed": 0.0,
+      "kCharModSensorJammerDetectionLevel": 1.0
+     }
+    }
+   ],
+   "parent": 62,
+   "prerequisite": null
+  },
+  {
+   "id": 64,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Motion_Tracker_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "motionsensor",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerDetectionRange": 0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerDetectionRange": 0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerDetectionRange": 0.2
+     }
+    }
+   ],
+   "parent": 57,
+   "prerequisite": null
+  },
+  {
+   "id": 65,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Motion_Tracker_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "motionsensor",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerDetectionRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerDetectionRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerDetectionRange": 0.3
+     }
+    }
+   ],
+   "parent": 64,
+   "prerequisite": null
+  },
+  {
+   "id": 66,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategorySpecOps",
+   "skillId": "SKILL_ID_Improved_Motion_Tracker_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "motionsensor",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerSquadmateRange": 0.5
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerSquadmateRange": 0.5
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Motion_Tracker",
+     "items": [],
+     "modifiers": {
+      "kCharModMotionTrackerSquadmateRange": 0.5
+     }
+    }
+   ],
+   "parent": 65,
+   "prerequisite": null
+  },
+  {
+   "id": 67,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Improved_Healing_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "healing_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 68,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Improved_Healing_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "healing_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    }
+   ],
+   "parent": 73,
+   "prerequisite": null
+  },
+  {
+   "id": 69,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Improved_Healing_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "healing_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Healing",
+     "items": [],
+     "modifiers": {
+      "kCharModHealAmount": 0.1
+     }
+    }
+   ],
+   "parent": 74,
+   "prerequisite": null
+  },
+  {
+   "id": 70,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Resuscitation_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resuscitation",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.5
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.5
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.5
+     }
+    }
+   ],
+   "parent": 73,
+   "prerequisite": null
+  },
+  {
+   "id": 71,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Resuscitation_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resuscitation",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.25
+     }
+    }
+   ],
+   "parent": 70,
+   "prerequisite": null
+  },
+  {
+   "id": 72,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Resuscitation_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resuscitation",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Resuscitation",
+     "items": [],
+     "modifiers": {
+      "kCharModResuscitatePercent": 0.25
+     }
+    }
+   ],
+   "parent": 71,
+   "prerequisite": null
+  },
+  {
+   "id": 73,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Self_Application_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_application_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    }
+   ],
+   "parent": 67,
+   "prerequisite": null
+  },
+  {
+   "id": 74,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Self_Application_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_application_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    }
+   ],
+   "parent": 68,
+   "prerequisite": null
+  },
+  {
+   "id": 75,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Self_Application_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_application_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Self_Application_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModHealSelfAnimRate": -0.1
+     }
+    }
+   ],
+   "parent": 69,
+   "prerequisite": null
+  },
+  {
+   "id": 76,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Range_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_range",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.2
+     }
+    }
+   ],
+   "parent": 74,
+   "prerequisite": null
+  },
+  {
+   "id": 77,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Range_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_range",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.3
+     }
+    }
+   ],
+   "parent": 76,
+   "prerequisite": null
+  },
+  {
+   "id": 78,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Range_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_range",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.5
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.5
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Range",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRange": 0.5
+     }
+    }
+   ],
+   "parent": 77,
+   "prerequisite": null
+  },
+  {
+   "id": 79,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Recharge_Rate_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_recharge",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    }
+   ],
+   "parent": 69,
+   "prerequisite": null
+  },
+  {
+   "id": 80,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Recharge_Rate_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_recharge",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    }
+   ],
+   "parent": 79,
+   "prerequisite": null
+  },
+  {
+   "id": 81,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Heal_Recharge_Rate_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_recharge",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Heal_Recharge_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModHealRechargeRate": -0.1
+     }
+    }
+   ],
+   "parent": 80,
+   "prerequisite": null
+  },
+  {
+   "id": 82,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Improved_Resupply_Rate_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resupply_rate_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.125
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.125
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.125
+     }
+    }
+   ],
+   "parent": 68,
+   "prerequisite": null
+  },
+  {
+   "id": 83,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Improved_Resupply_Rate_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resupply_rate_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.125
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.125
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.125
+     }
+    }
+   ],
+   "parent": 82,
+   "prerequisite": null
+  },
+  {
+   "id": 84,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMedical",
+   "skillId": "SKILL_ID_Improved_Resupply_Rate_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resupply_rate_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.25
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Resupply_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModResupplyRate": -0.25
+     }
+    }
+   ],
+   "parent": 83,
+   "prerequisite": null
+  },
+  {
+   "id": 85,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Electronics_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "electronics_advanced",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.06
+     }
+    }
+   ],
+   "parent": 98,
+   "prerequisite": null
+  },
+  {
+   "id": 86,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Electronics_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "electronics_advanced",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.06
+     }
+    }
+   ],
+   "parent": 85,
+   "prerequisite": null
+  },
+  {
+   "id": 87,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Electronics_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "electronics_advanced",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.08
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.08
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Electronics",
+     "items": [],
+     "modifiers": {
+      "kCharModSecureAndHoldTime": -0.08
+     }
+    }
+   ],
+   "parent": 86,
+   "prerequisite": null
+  },
+  {
+   "id": 88,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Explosives_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "explosives_advanced",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.06
+     }
+    }
+   ],
+   "parent": 99,
+   "prerequisite": null
+  },
+  {
+   "id": 89,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Explosives_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "explosives_advanced",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.06
+     }
+    }
+   ],
+   "parent": 88,
+   "prerequisite": null
+  },
+  {
+   "id": 90,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Explosives_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "explosives_advanced",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.08
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.08
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Advanced_Explosives",
+     "items": [],
+     "modifiers": {
+      "kCharModDemolitionTime": -0.08
+     }
+    }
+   ],
+   "parent": 89,
+   "prerequisite": null
+  },
+  {
+   "id": 91,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Mine_Deploy_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "claymore",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    }
+   ],
+   "parent": 97,
+   "prerequisite": null
+  },
+  {
+   "id": 92,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Mine_Deploy_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "claymore",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    }
+   ],
+   "parent": 91,
+   "prerequisite": null
+  },
+  {
+   "id": 93,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Mine_Deploy_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "claymore",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Mine_Deploy_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMineDeploySpeed": -0.1
+     }
+    }
+   ],
+   "parent": 92,
+   "prerequisite": null
+  },
+  {
+   "id": 94,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Repair_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "repairing_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 95,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Repair_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "repairing_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    }
+   ],
+   "parent": 97,
+   "prerequisite": null
+  },
+  {
+   "id": 96,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Repair_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "repairing_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Repairing",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairAmount": 0.1,
+      "kCharModRepairCooldown": 0.0
+     }
+    }
+   ],
+   "parent": 98,
+   "prerequisite": null
+  },
+  {
+   "id": 97,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Repair_Kit_Damage_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "repairkit_damage_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    }
+   ],
+   "parent": 94,
+   "prerequisite": null
+  },
+  {
+   "id": 98,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Repair_Kit_Damage_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "repairkit_damage_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    }
+   ],
+   "parent": 95,
+   "prerequisite": null
+  },
+  {
+   "id": 99,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryEngineering",
+   "skillId": "SKILL_ID_Improved_Repair_Kit_Damage_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "repairkit_damage_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Repair_Kit_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModRepairKitCharacterDmgAmount": 0.1,
+      "kCharModRepairKitVehicleDmgAmount": 0.1,
+      "kCharModRepairKitObjectiveDmgAmount": 0.1
+     }
+    }
+   ],
+   "parent": 96,
+   "prerequisite": null
+  },
+  {
+   "id": 100,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Duration_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "endurance_increased",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.13
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.13
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.13
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 101,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Duration_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "endurance_increased",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.13
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.13
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.13
+     }
+    }
+   ],
+   "parent": 103,
+   "prerequisite": null
+  },
+  {
+   "id": 102,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Duration_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "endurance_increased",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.14
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.14
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Endurance",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintTime": 0.14
+     }
+    }
+   ],
+   "parent": 104,
+   "prerequisite": null
+  },
+  {
+   "id": 103,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Recovery_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sprint_recovery_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.16
+     }
+    }
+   ],
+   "parent": 100,
+   "prerequisite": null
+  },
+  {
+   "id": 104,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Recovery_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sprint_recovery_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.16
+     }
+    }
+   ],
+   "parent": 101,
+   "prerequisite": null
+  },
+  {
+   "id": 105,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Recovery_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sprint_recovery_improved",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.18
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.18
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Improved_Sprint_Recovery",
+     "items": [],
+     "modifiers": {
+      "kCharModStaminaRecovery": 0.18
+     }
+    }
+   ],
+   "parent": 102,
+   "prerequisite": null
+  },
+  {
+   "id": 106,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Advanced_Paratrooper_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "paratrooper",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.16
+     }
+    }
+   ],
+   "parent": 103,
+   "prerequisite": null
+  },
+  {
+   "id": 107,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Advanced_Paratrooper_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "paratrooper",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.16
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.16
+     }
+    }
+   ],
+   "parent": 106,
+   "prerequisite": null
+  },
+  {
+   "id": 108,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Advanced_Paratrooper_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 4,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "paratrooper",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.18
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.18
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Advanced_Paratrooper",
+     "items": [],
+     "modifiers": {
+      "kCharModParachuteControl": 0.18
+     }
+    }
+   ],
+   "parent": 107,
+   "prerequisite": null
+  },
+  {
+   "id": 109,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Rocket_Launcher_Move_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "move_speed_rocketlauncher",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.05,
+      "kCharModRocketLauncherMoveSpeedLR": 0.05,
+      "kCharModRocketLauncherRotationRate": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.05,
+      "kCharModRocketLauncherMoveSpeedLR": 0.05,
+      "kCharModRocketLauncherRotationRate": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.05,
+      "kCharModRocketLauncherMoveSpeedLR": 0.05,
+      "kCharModRocketLauncherRotationRate": 0.05
+     }
+    }
+   ],
+   "parent": 101,
+   "prerequisite": null
+  },
+  {
+   "id": 110,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Rocket_Launcher_Move_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "move_speed_rocketlauncher",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.05,
+      "kCharModRocketLauncherMoveSpeedLR": 0.05,
+      "kCharModRocketLauncherRotationRate": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.05,
+      "kCharModRocketLauncherMoveSpeedLR": 0.05,
+      "kCharModRocketLauncherRotationRate": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.05,
+      "kCharModRocketLauncherMoveSpeedLR": 0.05,
+      "kCharModRocketLauncherRotationRate": 0.05
+     }
+    }
+   ],
+   "parent": 109,
+   "prerequisite": null
+  },
+  {
+   "id": 111,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Rocket_Launcher_Move_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "move_speed_rocketlauncher",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.1,
+      "kCharModRocketLauncherMoveSpeedLR": 0.1,
+      "kCharModRocketLauncherRotationRate": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.1,
+      "kCharModRocketLauncherMoveSpeedLR": 0.1,
+      "kCharModRocketLauncherRotationRate": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Rocket_Launcher_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModRocketLauncherMoveSpeedFB": 0.1,
+      "kCharModRocketLauncherMoveSpeedLR": 0.1,
+      "kCharModRocketLauncherRotationRate": 0.1
+     }
+    }
+   ],
+   "parent": 110,
+   "prerequisite": null
+  },
+  {
+   "id": 112,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sprint_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.01
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.01
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.01
+     }
+    }
+   ],
+   "parent": 104,
+   "prerequisite": null
+  },
+  {
+   "id": 113,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sprint_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.01
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.01
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.01
+     }
+    }
+   ],
+   "parent": 112,
+   "prerequisite": null
+  },
+  {
+   "id": 114,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Sprint_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sprint_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Sprint_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModSprintSpeed": 0.03
+     }
+    }
+   ],
+   "parent": 113,
+   "prerequisite": null
+  },
+  {
+   "id": 115,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Move_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "fastmover",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.02
+     }
+    }
+   ],
+   "parent": 102,
+   "prerequisite": null
+  },
+  {
+   "id": 116,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Move_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "fastmover",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.03
+     }
+    }
+   ],
+   "parent": 115,
+   "prerequisite": null
+  },
+  {
+   "id": 117,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryAthleticism",
+   "skillId": "SKILL_ID_Move_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "fastmover",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Move_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModMovementSpeed": 0.05
+     }
+    }
+   ],
+   "parent": 116,
+   "prerequisite": null
+  },
+  {
+   "id": 118,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Speed_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.02
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.02
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 119,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Speed_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.03
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.03
+     }
+    }
+   ],
+   "parent": 127,
+   "prerequisite": null
+  },
+  {
+   "id": 120,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Speed_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_speed",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Speed",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSpeed": 0.05
+     }
+    }
+   ],
+   "parent": 128,
+   "prerequisite": null
+  },
+  {
+   "id": 121,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Cow_Catcher_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_cowcatcher",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.03,
+      "kCharModVehicleMinDamageCausingVel": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.03,
+      "kCharModVehicleMinDamageCausingVel": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.03,
+      "kCharModVehicleMinDamageCausingVel": -0.2
+     }
+    }
+   ],
+   "parent": 119,
+   "prerequisite": null
+  },
+  {
+   "id": 122,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Cow_Catcher_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_cowcatcher",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.08,
+      "kCharModVehicleMinDamageCausingVel": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.08,
+      "kCharModVehicleMinDamageCausingVel": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.08,
+      "kCharModVehicleMinDamageCausingVel": -0.2
+     }
+    }
+   ],
+   "parent": 121,
+   "prerequisite": null
+  },
+  {
+   "id": 123,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Cow_Catcher_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_cowcatcher",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.19,
+      "kCharModVehicleMinDamageCausingVel": -0.6
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.19,
+      "kCharModVehicleMinDamageCausingVel": -0.6
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Cow_Catcher",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleImpactDamage": 0.19,
+      "kCharModVehicleMinDamageCausingVel": -0.6
+     }
+    }
+   ],
+   "parent": 122,
+   "prerequisite": null
+  },
+  {
+   "id": 124,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Smoke_Screen_Rate_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_smokescreen",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.1
+     }
+    }
+   ],
+   "parent": 127,
+   "prerequisite": null
+  },
+  {
+   "id": 125,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Smoke_Screen_Rate_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_smokescreen",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.1
+     }
+    }
+   ],
+   "parent": 124,
+   "prerequisite": null
+  },
+  {
+   "id": 126,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Smoke_Screen_Rate_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_smokescreen",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Smoke_Screen_Rate",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleSmokeScreenRate": -0.2
+     }
+    }
+   ],
+   "parent": 125,
+   "prerequisite": null
+  },
+  {
+   "id": 127,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Mine_Resistance_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "antivehiclemine",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    }
+   ],
+   "parent": 118,
+   "prerequisite": null
+  },
+  {
+   "id": 128,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Mine_Resistance_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "antivehiclemine",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    }
+   ],
+   "parent": 119,
+   "prerequisite": null
+  },
+  {
+   "id": 129,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Mine_Resistance_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "antivehiclemine",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Mine_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMineResistance": -0.1
+     }
+    }
+   ],
+   "parent": 120,
+   "prerequisite": null
+  },
+  {
+   "id": 130,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Improved_Turret_Cooldown_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "turret_cooldown",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    }
+   ],
+   "parent": 128,
+   "prerequisite": null
+  },
+  {
+   "id": 131,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Improved_Turret_Cooldown_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "turret_cooldown",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    }
+   ],
+   "parent": 130,
+   "prerequisite": null
+  },
+  {
+   "id": 132,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Improved_Turret_Cooldown_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "turret_cooldown",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Turret_Cooldown",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretCooldown": -0.1,
+      "kCharModTurretOverheat": -0.1,
+      "kCharModTurretShotsToOverheat": 0.1
+     }
+    }
+   ],
+   "parent": 131,
+   "prerequisite": null
+  },
+  {
+   "id": 133,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Awareness_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_awareness",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretMinimap": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretMinimap": 1.0
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModTurretMinimap": 1.0
+     }
+    }
+   ],
+   "parent": 120,
+   "prerequisite": null
+  },
+  {
+   "id": 134,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Awareness_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_awareness",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleAcousticDetectionRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleAcousticDetectionRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleAcousticDetectionRange": 0.3
+     }
+    }
+   ],
+   "parent": 133,
+   "prerequisite": null
+  },
+  {
+   "id": 135,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryVehicles",
+   "skillId": "SKILL_ID_Vehicle_Awareness_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 0,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "vehicle_awareness",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMotionDetectionRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMotionDetectionRange": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Vehicle_Awareness",
+     "items": [],
+     "modifiers": {
+      "kCharModVehicleMotionDetectionRange": 0.3
+     }
+    }
+   ],
+   "parent": 134,
+   "prerequisite": null
+  },
+  {
+   "id": 136,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Extended_Bleedout_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "bleedout_longer",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.3
+     }
+    }
+   ],
+   "parent": null,
+   "prerequisite": null
+  },
+  {
+   "id": 137,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Extended_Bleedout_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "bleedout_longer",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.3
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.3
+     }
+    }
+   ],
+   "parent": 139,
+   "prerequisite": null
+  },
+  {
+   "id": 138,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Extended_Bleedout_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "bleedout_longer",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.4
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.4
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Extended_Bleedout",
+     "items": [],
+     "modifiers": {
+      "kCharModIncapacitatedTime": 0.4
+     }
+    }
+   ],
+   "parent": 140,
+   "prerequisite": null
+  },
+  {
+   "id": 139,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Impact_Damage_Resistance_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_impact",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    }
+   ],
+   "parent": 136,
+   "prerequisite": null
+  },
+  {
+   "id": 140,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Impact_Damage_Resistance_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_impact",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    }
+   ],
+   "parent": 137,
+   "prerequisite": null
+  },
+  {
+   "id": 141,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Impact_Damage_Resistance_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_impact",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Impact_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModImpactDamageTaken": -0.1
+     }
+    }
+   ],
+   "parent": 138,
+   "prerequisite": null
+  },
+  {
+   "id": 142,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Flashbang_Resistance_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_flashbang",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    }
+   ],
+   "parent": 139,
+   "prerequisite": null
+  },
+  {
+   "id": 143,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Flashbang_Resistance_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_flashbang",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    }
+   ],
+   "parent": 142,
+   "prerequisite": null
+  },
+  {
+   "id": 144,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Flashbang_Resistance_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_flashbang",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Flashbang_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModBlindedTime": -0.1
+     }
+    }
+   ],
+   "parent": 143,
+   "prerequisite": null
+  },
+  {
+   "id": 145,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Chemical_Damage_Resistance_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_chemical",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    }
+   ],
+   "parent": 137,
+   "prerequisite": null
+  },
+  {
+   "id": 146,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Chemical_Damage_Resistance_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_chemical",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    }
+   ],
+   "parent": 145,
+   "prerequisite": null
+  },
+  {
+   "id": 147,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Chemical_Damage_Resistance_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_chemical",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Chemical_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModChemicalDamageTaken": -0.2
+     }
+    }
+   ],
+   "parent": 146,
+   "prerequisite": null
+  },
+  {
+   "id": 148,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Explosive_Damage_Resistance_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_explosive",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    }
+   ],
+   "parent": 140,
+   "prerequisite": null
+  },
+  {
+   "id": 149,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Explosive_Damage_Resistance_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_explosive",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    }
+   ],
+   "parent": 148,
+   "prerequisite": null
+  },
+  {
+   "id": 150,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Explosive_Damage_Resistance_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "resistance_explosive",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Explosive_Damage_Resistance",
+     "items": [],
+     "modifiers": {
+      "kCharModExplosiveDamageTaken": -0.1
+     }
+    }
+   ],
+   "parent": 149,
+   "prerequisite": null
+  },
+  {
+   "id": 151,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Improved_Health_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_increased",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.06
+     }
+    }
+   ],
+   "parent": 138,
+   "prerequisite": null
+  },
+  {
+   "id": 152,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Improved_Health_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_increased",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.06
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.06
+     }
+    }
+   ],
+   "parent": 151,
+   "prerequisite": null
+  },
+  {
+   "id": 153,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryResistances",
+   "skillId": "SKILL_ID_Improved_Health_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 3,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "health_increased",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.08
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.08
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_Increased_Health",
+     "items": [],
+     "modifiers": {
+      "kCharModHealth": 0.08
+     }
+    }
+   ],
+   "parent": 152,
+   "prerequisite": null
+  },
+  {
+   "id": 154,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Steady_Aim_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_aim",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.1
+     }
+    }
+   ],
+   "parent": 20,
+   "prerequisite": null
+  },
+  {
+   "id": 155,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Steady_Aim_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_aim",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.1
+     }
+    }
+   ],
+   "parent": 154,
+   "prerequisite": null
+  },
+  {
+   "id": 156,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryMarksman",
+   "skillId": "SKILL_ID_Marksman_Steady_Aim_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 2,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "sniperrifle_aim",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.2
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Marksman_Steady_Aim",
+     "items": [],
+     "modifiers": {
+      "kCharModSniperRifleBarrelWander": -0.2
+     }
+    }
+   ],
+   "parent": 155,
+   "prerequisite": null
+  },
+  {
+   "id": 157,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_Improved_Knife_Damage_01",
+   "levelPrerequisite": 0,
+   "skillLevel": 1,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "knife_reach",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.05
+     }
+    }
+   ],
+   "parent": 38,
+   "prerequisite": null
+  },
+  {
+   "id": 158,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_Improved_Knife_Damage_02",
+   "levelPrerequisite": 0,
+   "skillLevel": 2,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "knife_reach",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.05
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.05
+     }
+    }
+   ],
+   "parent": 157,
+   "prerequisite": null
+  },
+  {
+   "id": 159,
+   "tier": null,
+   "group": "kSkillGroupSkill",
+   "category": "kSkillCategoryCloseQuarters",
+   "skillId": "SKILL_ID_Improved_Knife_Damage_03",
+   "levelPrerequisite": 0,
+   "skillLevel": 3,
+   "specialty": 1,
+   "specialtyWeight": 1,
+   "cost": 1,
+   "icon": "knife_reach",
+   "factions": [
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.1
+     }
+    },
+    {
+     "available": true,
+     "name": "SKILL_LONG_Improved_Knife_Damage",
+     "items": [],
+     "modifiers": {
+      "kCharModKnifeDamage": 0.1
+     }
+    }
+   ],
+   "parent": 158,
+   "prerequisite": null
+  }
+ ],
+ "itemLists": [
+  [
+   "first_aid_pack",
+   "medkit",
+   "repairkit",
+   "parachute",
+   "acoustic_locator",
+   "motion_tracker",
+   "satellite_jammer",
+   "explosive_detector",
+   "light_ammo_pack",
+   "turret_scrambler",
+   "heavy_ammo_pack",
+   "heavy_med_pack",
+   null,
+   "c4",
+   "scope_ironsights",
+   "scope_ironsights_rear",
+   "emp_grenade",
+   "emp_mine",
+   null,
+   "turret_scrambler_sight",
+   "sensor_disruptor",
+   "motion_sensor",
+   null
+  ],
+  [
+   "M9",
+   "steyr_tmp",
+   "mp5n",
+   "knife_green",
+   "mossberg590",
+   "m4a1",
+   "scar_l",
+   "scar_h",
+   "mk14_mod0",
+   "l96a1",
+   "cheytac",
+   "mk46_mod0",
+   "mk43_mod1",
+   null,
+   "smaw_dumb",
+   "smaw",
+   "rocket_sight_dumb",
+   "rocket_sight",
+   "m203",
+   "m203_scarl",
+   "m203_scarh",
+   "grenade_frag_green",
+   "grenade_smoke_green",
+   null,
+   "grenade_gas_green",
+   "grenade_flash_green",
+   "claymore_mine_green",
+   "anti_tank_mine_green",
+   null,
+   "pda_green",
+   "satchel_green",
+   "M2HB_vehicle",
+   "stryker_maingun",
+   "minigun_green",
+   "def_rocket_green",
+   "pave_hawk_turret",
+   "scope_reddot_green",
+   "scope_reddot_green_smg",
+   "scope_reddot_green_shotgun",
+   "scope_reddot_green_assault",
+   "scope_reddot_green_mg",
+   "scope_acog_green",
+   "scope_acog_green_default",
+   "scope_lowfixed_green",
+   "scope_lowfixed_green_default",
+   "scope_highfixed_green",
+   "scope_highvariable_green",
+   "large_suppressor1",
+   "large_suppressor1_assault",
+   "suppressor_small1",
+   "suppressor_small1_pdw",
+   "suppressor_small1_smg",
+   "bipod_small_1",
+   "bipod_small_1_sniper",
+   "bipod_small_1_mg",
+   "bipod_large_1",
+   "bipod_large_1_default",
+   "foregrip_1",
+   "foregrip_1_mg",
+   "foregrip_1_shotgun",
+   "foregrip_1_sniper",
+   "light_armor_green",
+   "medium_armor_green",
+   "heavy_armor_green",
+   "light_improved_armor_green",
+   "medium_improved_armor_green",
+   "heavy_improved_armor_green",
+   "green_light1_clothing1a",
+   "green_light1_clothing1b",
+   "green_light1_clothing1c",
+   "green_light1_clothing1d",
+   "green_light1_clothing1e",
+   "green_light1_clothing2a",
+   "green_light1_clothing2b",
+   "green_light1_clothing2c",
+   "green_light1_clothing2d",
+   null,
+   "green_light1_clothing3a",
+   "green_light1_clothing3b",
+   "green_light1_clothing3c",
+   "green_light1_clothing3d",
+   "green_light1_clothing3e",
+   "green_light2_clothing1a",
+   "green_light2_clothing1b",
+   "green_light2_clothing1c",
+   "green_light2_clothing1d",
+   "green_light2_clothing1e",
+   "green_light2_clothing2a",
+   "green_light2_clothing2b",
+   "green_light2_clothing2c",
+   "green_light2_clothing2d",
+   null,
+   "green_light2_clothing3a",
+   "green_light2_clothing3b",
+   "green_light2_clothing3c",
+   "green_light2_clothing3d",
+   "green_light2_clothing3e",
+   "green_med1_clothing1a",
+   "green_med1_clothing1b",
+   "green_med1_clothing1c",
+   "green_med1_clothing1d",
+   "green_med1_clothing1e",
+   "green_med1_clothing2a",
+   "green_med1_clothing2b",
+   "green_med1_clothing2c",
+   "green_med1_clothing2d",
+   null,
+   "green_med1_clothing3a",
+   "green_med1_clothing3b",
+   "green_med1_clothing3c",
+   "green_med1_clothing3d",
+   "green_med1_clothing3e",
+   "green_med2_clothing1a",
+   "green_med2_clothing1b",
+   "green_med2_clothing1c",
+   "green_med2_clothing1d",
+   "green_med2_clothing1e",
+   "green_med2_clothing2a",
+   "green_med2_clothing2b",
+   "green_med2_clothing2c",
+   "green_med2_clothing2d",
+   "green_med2_clothing2e",
+   "green_med2_clothing3a",
+   "green_med2_clothing3b",
+   "green_med2_clothing3c",
+   "green_med2_clothing3d",
+   "green_med2_clothing3e",
+   "green_heavy1_clothing1a",
+   "green_heavy1_clothing1b",
+   "green_heavy1_clothing1c",
+   "green_heavy1_clothing1d",
+   "green_heavy1_clothing1e",
+   "green_heavy1_clothing2a",
+   "green_heavy1_clothing2b",
+   "green_heavy1_clothing2c",
+   "green_heavy1_clothing2d",
+   null,
+   "green_heavy1_clothing3a",
+   "green_heavy1_clothing3b",
+   "green_heavy1_clothing3c",
+   "green_heavy1_clothing3d",
+   "green_heavy1_clothing3e",
+   "green_heavy2_clothing1a",
+   "green_heavy2_clothing1b",
+   "green_heavy2_clothing1c",
+   "green_heavy2_clothing1d",
+   "green_heavy2_clothing1e",
+   "green_heavy2_clothing2a",
+   "green_heavy2_clothing2b",
+   "green_heavy2_clothing2c",
+   "green_heavy2_clothing2d",
+   null,
+   "green_heavy2_clothing3a",
+   "green_heavy2_clothing3b",
+   "green_heavy2_clothing3c",
+   "green_heavy2_clothing3d",
+   "green_heavy2_clothing3e",
+   null,
+   "green_light_ranger_cap",
+   "green_light_beanie",
+   "green_medium_hard_helmet",
+   "green_medium_hard_helmet_1_2",
+   "green_medium_hard_helmet_1_3",
+   null,
+   null,
+   null,
+   "green_medium_hard_helmet_2_4",
+   "green_heavy_soft_helmet",
+   "green_heavy_soft_helmet_2",
+   "green_heavy_soft_helmet_3",
+   null,
+   null,
+   null,
+   "green_combat_helmet_1",
+   "green_combat_helmet_2",
+   "green_combat_helmet_3",
+   "green_riot_helmet_1",
+   "green_riot_helmet_2",
+   "green_riot_helmet_3",
+   null,
+   null,
+   "green_light_ranger_cap_2",
+   "green_light_ranger_cap_3",
+   "green_light_beanie_2",
+   "green_light_beanie_3",
+   null,
+   null,
+   null,
+   "green_sunglasses",
+   "green_sunglasses_2",
+   "green_goggles",
+   "bipod_small_1_sniper_2",
+   null,
+   "green_heavy2_clothing3f",
+   null,
+   "green_light1_clothing1f",
+   "green_light1_clothing2f",
+   "green_light1_clothing2g",
+   "green_light1_clothing3f",
+   "green_med1_clothing1f",
+   "green_med1_clothing2f",
+   "green_med1_clothing2g",
+   "green_med1_clothing3f",
+   "green_heavy1_clothing1f",
+   "green_heavy1_clothing2f",
+   "green_heavy1_clothing2g",
+   "green_heavy1_clothing3f",
+   "green_light2_clothing1f",
+   "green_light2_clothing2f",
+   "green_light2_clothing2g",
+   "green_light2_clothing3f",
+   "green_med2_clothing1f",
+   "green_med2_clothing2f",
+   "green_med2_clothing2g",
+   "green_med2_clothing3f",
+   "green_heavy2_clothing1f",
+   "green_heavy2_clothing2f",
+   "green_heavy2_clothing2g",
+   null,
+   "mk46_mod0_dlc",
+   "mk14_mod0_dlc",
+   null,
+   "passenger_gun_valor",
+   "m240b",
+   "remington_acr",
+   "ifv_turret_green",
+   "remington_msr",
+   "m203_remington_acr"
+  ],
+  [
+   "knife_black",
+   "fn57",
+   "mp7",
+   "p90",
+   "benelli_nova",
+   "steyr_aug_a3",
+   "f2000",
+   "sig_sapr",
+   "msg_90",
+   "mini_hecate",
+   "as50",
+   "ultimax_100",
+   "mg45",
+   "panzerfaust_3",
+   "panzerfaust_3_dumb",
+   "rocket_sight_panzer",
+   "rocket_sight_panzer_dumb",
+   "m320",
+   "f2000gl",
+   "m320_sig",
+   "grenade_frag_black",
+   "grenade_smoke_black",
+   null,
+   "grenade_gas_black",
+   "grenade_flash_black",
+   "anti_tank_mine_black",
+   "claymore_mine_black",
+   null,
+   "xm312_vehicle",
+   "minigun_black",
+   "def_rocket_black",
+   "nh90_turret",
+   "mrav_maingun",
+   "pda_black",
+   "satchel_black",
+   "scope_ironsights_p90",
+   "scope_reddot_black",
+   "scope_reddot_black_smg",
+   "scope_reddot_black_shotgun",
+   "scope_reddot_black_assault",
+   "scope_reddot_black_mg",
+   "scope_acog_black",
+   "scope_acog_black_default",
+   "steyr_aug_scope",
+   "f2000_default",
+   "scope_lowfixed_black",
+   "scope_lowfixed_black_default",
+   "scope_highfixed_black",
+   "scope_highvariable_black",
+   "suppressor_small2",
+   "suppressor_small2_pdw",
+   "suppressor_small2_smg",
+   "large_suppressor2",
+   "large_suppressor2_assault",
+   "bipod_small_2",
+   "bipod_small_2_sniper",
+   "bipod_small_2_mg",
+   "bipod_large_2",
+   "bipod_large_2_default",
+   "foregrip_2",
+   "foregrip_f2000",
+   "foregrip_2_sniper",
+   "foregrip_2_mg",
+   "foregrip_2_shotgun",
+   "light_armor_black",
+   "medium_armor_black",
+   "heavy_armor_black",
+   "light_improved_armor_black",
+   "medium_improved_armor_black",
+   "heavy_improved_armor_black",
+   "black_baseballcap_1",
+   "black_baseballcap_1b",
+   "black_baseballcap_1c",
+   "black_beret_1",
+   "black_beret_1b",
+   "black_beret_1c",
+   "black_medium_helmet_1",
+   "black_medium_helmet_1b",
+   "black_medium_helmet_1c",
+   null,
+   null,
+   null,
+   "black_medium_helmet_3",
+   "black_medium_helmet_3b",
+   "black_medium_helmet_3c",
+   "black_heavy_helmet_1",
+   "black_heavy_helmet_1b",
+   "black_heavy_helmet_1c",
+   "black_heavy_helmet_2",
+   "black_heavy_helmet_2b",
+   "black_heavy_helmet_2c",
+   null,
+   "black_headset_1",
+   "black_headset_2",
+   "black_glasses_1",
+   "black_light1_clothing1a",
+   "black_light1_clothing1b",
+   "black_light1_clothing1c",
+   "black_light1_clothing1d",
+   "black_light1_clothing1e",
+   "black_light1_clothing2a",
+   "black_light1_clothing2b",
+   "black_light1_clothing2c",
+   "black_light1_clothing2d",
+   "black_light1_clothing2e",
+   "black_light1_clothing3a",
+   "black_light1_clothing3b",
+   "black_light1_clothing3c",
+   "black_light1_clothing3d",
+   "black_light1_clothing3e",
+   "black_light2_clothing1a",
+   "black_light2_clothing1b",
+   "black_light2_clothing1c",
+   "black_light2_clothing1d",
+   "black_light2_clothing1e",
+   "black_light2_clothing2a",
+   "black_light2_clothing2b",
+   "black_light2_clothing2c",
+   "black_light2_clothing2d",
+   "black_light2_clothing2e",
+   "black_light2_clothing3a",
+   "black_light2_clothing3b",
+   "black_light2_clothing3c",
+   "black_light2_clothing3d",
+   "black_light2_clothing3e",
+   "black_med1_clothing1a",
+   "black_med1_clothing1b",
+   "black_med1_clothing1c",
+   "black_med1_clothing1d",
+   "black_med1_clothing1e",
+   "black_med1_clothing2a",
+   "black_med1_clothing2b",
+   "black_med1_clothing2c",
+   "black_med1_clothing2d",
+   "black_med1_clothing2e",
+   "black_med1_clothing3a",
+   "black_med1_clothing3b",
+   "black_med1_clothing3c",
+   "black_med1_clothing3d",
+   "black_med1_clothing3e",
+   "black_med2_clothing1a",
+   "black_med2_clothing1b",
+   "black_med2_clothing1c",
+   "black_med2_clothing1d",
+   "black_med2_clothing1e",
+   "black_med2_clothing2a",
+   "black_med2_clothing2b",
+   "black_med2_clothing2c",
+   "black_med2_clothing2d",
+   "black_med2_clothing2e",
+   "black_med2_clothing3a",
+   "black_med2_clothing3b",
+   "black_med2_clothing3c",
+   "black_med2_clothing3d",
+   "black_med2_clothing3e",
+   "black_heavy1_clothing1a",
+   "black_heavy1_clothing1b",
+   "black_heavy1_clothing1c",
+   "black_heavy1_clothing1d",
+   "black_heavy1_clothing1e",
+   "black_heavy1_clothing2a",
+   "black_heavy1_clothing2b",
+   "black_heavy1_clothing2c",
+   "black_heavy1_clothing2d",
+   "black_heavy1_clothing2e",
+   "black_heavy1_clothing3a",
+   "black_heavy1_clothing3b",
+   "black_heavy1_clothing3c",
+   "black_heavy1_clothing3d",
+   "black_heavy1_clothing3e",
+   "black_heavy2_clothing1a",
+   "black_heavy2_clothing1b",
+   "black_heavy2_clothing1c",
+   "black_heavy2_clothing1d",
+   "black_heavy2_clothing1e",
+   "black_heavy2_clothing2a",
+   "black_heavy2_clothing2b",
+   "black_heavy2_clothing2c",
+   "black_heavy2_clothing2d",
+   "black_heavy2_clothing2e",
+   "black_heavy2_clothing3a",
+   "black_heavy2_clothing3b",
+   "black_heavy2_clothing3c",
+   "black_heavy2_clothing3d",
+   "black_heavy2_clothing3e",
+   "black_med2_preorder1a",
+   "bipod_small_2_sniper_2",
+   "black_medium_helmet_1p",
+   "black_med1_clothing1f",
+   "black_med1_clothing2f",
+   "black_med1_clothing3f",
+   "black_light1_clothing1f",
+   "black_light1_clothing2f",
+   "black_light1_clothing3f",
+   "black_light2_clothing1f",
+   "black_light2_clothing2f",
+   "black_light2_clothing3f",
+   "black_med2_clothing1f",
+   "black_med2_clothing2f",
+   "black_med2_clothing3f",
+   "black_heavy1_clothing1f",
+   "black_heavy1_clothing2f",
+   "black_heavy1_clothing3f",
+   "black_heavy2_clothing1f",
+   "black_heavy2_clothing2f",
+   "black_heavy2_clothing3f",
+   "ultimax_100_dlc",
+   "msg_90_dlc",
+   null,
+   "passenger_gun_raven",
+   "m21e",
+   "fal_osw",
+   "ifv_turret_black",
+   "precision_dsr1",
+   "m320_fal_osw"
+  ],
+  [
+   "knife_red",
+   "yarygin_pya",
+   "kriss",
+   "bizon",
+   "toz_195",
+   null,
+   "ak_74u",
+   "an_94",
+   "ak103",
+   "dragunov",
+   "sv_98",
+   "ksvk",
+   "rpk_74",
+   "pecheneg",
+   null,
+   "rpg7",
+   "rpg7_dumb",
+   "rocket_sight_rpg",
+   "rocket_sight_rpg_dumb",
+   "gp_30_type03",
+   "gp_30_ak103",
+   "gp_30",
+   "grenade_frag_red",
+   "grenade_smoke_red",
+   null,
+   "grenade_gas_red",
+   "grenade_flash_red",
+   "anti_tank_mine_red",
+   "claymore_mine_red",
+   "pda_red",
+   "minigun_red",
+   "def_rocket_red",
+   "btr_maingun",
+   "btr_secondary",
+   "Kord_vehicle",
+   "hind_chin",
+   "satchel_red",
+   null,
+   "scope_ironsights_ak74u",
+   "scope_reddot_red",
+   "scope_reddot_red_smg",
+   "scope_reddot_red_shotgun",
+   "scope_reddot_red_assault",
+   "scope_reddot_red_mg",
+   "scope_acog_red",
+   "scope_acog_red_default",
+   "scope_lowfixed_red",
+   "scope_lowfixed_red_default",
+   "scope_highfixed_red",
+   "scope_highvariable_red",
+   "suppressor_small3_pdw",
+   "suppressor_small3_smg",
+   "suppressor_small3",
+   "large_suppressor3",
+   "large_suppressor3_assault",
+   "bipod_small_3",
+   "bipod_small_3_sniper",
+   "bipod_small_3_mg",
+   "bipod_small_3_rpk",
+   "bipod_large_3",
+   "bipod_large_3_default",
+   "foregrip_3",
+   "foregrip_3_sniper",
+   "foregrip_3_mg",
+   "foregrip_3_shotgun",
+   "light_armor_red",
+   "medium_armor_red",
+   "heavy_armor_red",
+   "light_improved_armor_red",
+   "medium_improved_armor_red",
+   "heavy_improved_armor_red",
+   "red_light_bandana",
+   "red_light_capback",
+   null,
+   null,
+   null,
+   "red_light_capbackb",
+   "red_light_capbackc",
+   "red_light_bandanab",
+   "red_light_bandanac",
+   null,
+   null,
+   null,
+   "red_medium_hard_helmet2",
+   "red_medium_hard_helmet2b",
+   "red_medium_hard_helmet2c",
+   "red_heavy_soft_helmet",
+   "red_heavy_soft_helmetb",
+   "red_heavy_soft_helmetc",
+   "red_heavy_soft_helmetd",
+   null,
+   null,
+   null,
+   "red_heavy_hard_helmet2",
+   "red_heavy_hard_helmet2b",
+   "red_heavy_hard_helmet2c",
+   "red_heavy_hard_helmet3",
+   "red_heavy_hard_helmet3b",
+   "red_heavy_hard_helmet3c",
+   "red_l2_black_d05",
+   "red_l2_tan_d01",
+   "red_l2_tan_d02",
+   "red_l2_tan_d03",
+   "red_l2_tan_d04",
+   "red_l2_tan_d05",
+   "red_l2_blue_d01",
+   "red_l2_blue_d02",
+   "red_l2_blue_d03",
+   "red_l2_blue_d04",
+   "red_l2_blue_d05",
+   "red_m1_black_d01",
+   "red_m1_black_d02",
+   "red_m1_black_d03",
+   "red_m1_black_d04",
+   "red_m1_black_d05",
+   "red_m1_tan_d01",
+   "red_m1_tan_d02",
+   "red_m1_tan_d03",
+   "red_m1_tan_d04",
+   "red_m1_tan_d05",
+   "red_m1_blue_d01",
+   "red_m1_blue_d02",
+   "red_m1_blue_d03",
+   "red_m1_blue_d04",
+   "red_m1_blue_d05",
+   "red_m2_black_d01",
+   "red_m2_black_d02",
+   "red_m2_black_d03",
+   "red_m2_black_d04",
+   "red_m2_black_d05",
+   "red_m2_black_pod01",
+   "red_m2_tan_d01",
+   "red_m2_tan_d02",
+   "red_m2_tan_d03",
+   "red_m2_tan_d04",
+   "red_m2_tan_d05",
+   null,
+   "red_m2_blue_d01",
+   "red_m2_blue_d02",
+   "red_m2_blue_d03",
+   "red_m2_blue_d04",
+   "red_m2_blue_d05",
+   null,
+   "red_h1_black_d01",
+   "red_h1_black_d02",
+   "red_h1_black_d03",
+   "red_h1_black_d04",
+   "red_h1_black_d05",
+   "red_h1_tan_d01",
+   "red_h1_tan_d02",
+   "red_h1_tan_d03",
+   "red_h1_tan_d04",
+   "red_h1_tan_d05",
+   "red_h1_blue_d01",
+   "red_h1_blue_d02",
+   "red_h1_blue_d03",
+   "red_h1_blue_d04",
+   "red_h1_blue_d05",
+   "red_h2_black_d01",
+   "red_h2_black_d02",
+   "red_h2_black_d03",
+   "red_h2_black_d04",
+   "red_h2_black_d05",
+   "red_h2_tan_d01",
+   "red_h2_tan_d02",
+   "red_h2_tan_d03",
+   "red_h2_tan_d04",
+   "red_h2_tan_d05",
+   "red_h2_blue_d01",
+   "red_h2_blue_d02",
+   "red_h2_blue_d03",
+   "red_h2_blue_d04",
+   "red_h2_blue_d05",
+   "red_l1_black_d01",
+   "red_l1_black_d02",
+   "red_l1_black_d03",
+   "red_l1_black_d04",
+   "red_l1_black_d05",
+   "red_l1_tan_d01",
+   "red_l1_tan_d02",
+   "red_l1_tan_d03",
+   "red_l1_tan_d04",
+   "red_l1_tan_d05",
+   "red_l1_blue_d01",
+   "red_l1_blue_d02",
+   "red_l1_blue_d03",
+   "red_l1_blue_d04",
+   "red_l1_blue_d05",
+   "red_l2_black_d01",
+   "red_l2_black_d02",
+   "red_l2_black_d03",
+   "red_l2_black_d04",
+   null,
+   null,
+   "red_hockeymask_3",
+   "red_hockeymask_4",
+   "red_hockeymask_5",
+   "red_hockeymask_6",
+   "red_hockeymask_7",
+   "red_hockeymask_8",
+   null,
+   "red_goggles_1",
+   null,
+   null,
+   "bipod_small_3_sniper_2",
+   "red_l1_black_d06",
+   "red_l1_tan_d06",
+   "red_l1_blue_d06",
+   "red_l2_black_d06",
+   "red_l2_tan_d06",
+   "red_l2_blue_d06",
+   "red_m1_black_d06",
+   "red_m1_tan_d06",
+   "red_m1_blue_d06",
+   "red_m2_black_d06",
+   "red_m2_tan_d06",
+   "red_m2_blue_d06",
+   "red_h1_black_d06",
+   "red_h1_tan_d06",
+   "red_h1_blue_d06",
+   "red_h2_black_d06",
+   "red_h2_tan_d06",
+   "red_h2_blue_d06",
+   "rpk_74_dlc",
+   "dragunov_dlc",
+   "negev",
+   "daewoo_k2",
+   "ifv_turret_red",
+   "sako_trg22",
+   "gp_30_daewoo_k2"
+  ]
+ ]
+}

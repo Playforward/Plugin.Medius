@@ -240,6 +240,15 @@ namespace Plugin.Medius.RT.Models
                 {
                     msg = Instantiate(classType, id, plain, mediusVersion);
                 }
+                else if (ClearHeaderLength(id, messageBuffer) is > 0 and var clear &&
+                         cipherService.DecryptAfter(clear, messageBuffer, hash, out var partPlain) is { } how)
+                {
+                    // Killzone 2 1.29 (SCE-RT 3.03) sends APP_LIST's target list and APP_SINGLE's target in the clear
+                    // and encrypts only the payload, the hash covering the payload [live 2026-10-31: APP_LIST
+                    // decrypted this way, "hash over payload"].
+                    Serilog.Log.Debug("[medius] {Id}: header in the clear, payload decrypted (hash over {How})", id, how);
+                    msg = Instantiate(classType, id, partPlain, mediusVersion);
+                }
                 else
                 {
                     Serilog.Log.Error($"Unable to decrypt {id}, HASH:{BitConverter.ToString(hash)} DATA:{BitConverter.ToString(messageBuffer).Replace("-", "")}");
@@ -252,6 +261,18 @@ namespace Plugin.Medius.RT.Models
 
             return msg;
         }
+
+        /// <summary>How many leading bytes an app message to other players carries unencrypted: APP_LIST's size byte and
+        /// mask, APP_SINGLE's 16-bit target, APP_BROADCAST_QOS's QoS byte; 0 for the rest.</summary>
+        private static int ClearHeaderLength(RT_MSG_TYPE id, byte[] buffer) => id switch
+        {
+            RT_MSG_TYPE.RT_MSG_CLIENT_APP_LIST when buffer.Length > 0 => 1 + buffer[0],
+            RT_MSG_TYPE.RT_MSG_CLIENT_APP_SINGLE => 2,
+            // Resistance: Fall of Man's QoS broadcasts keep their QoS byte in the clear; whole-message decryption
+            // fails on them (DATA 00F258F6, 00CC2BE7...) [live 2026-11-01]; payload-only is the [guess].
+            RT_MSG_TYPE.RT_MSG_CLIENT_APP_BROADCAST_QOS => 1,
+            _ => 0,
+        };
 
         private static BaseScertMessage Instantiate(Type classType, RT_MSG_TYPE id, byte[] plain, int mediusVersion)
         {

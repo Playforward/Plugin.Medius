@@ -15,13 +15,16 @@ namespace Plugin.Medius.RT.Models
 
         public string Version = "2.10.1143227940";
 
+        /// <summary>Bytes of Version on the wire: 16 (Horizon) or 20 (SCE-RT 3.03 DME, e.g. Resistance 2 [C 1.60 reader 0x851798]).</summary>
+        public int VersionLength = Constants.DME_VERSION_LENGTH;
+
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
             // 
             base.Deserialize(reader);
 
             // 
-            Version = reader.ReadString(Constants.DME_VERSION_LENGTH);
+            Version = reader.ReadString(VersionLength);
         }
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)
@@ -30,7 +33,7 @@ namespace Plugin.Medius.RT.Models
             base.Serialize(writer);
 
             // 
-            writer.Write(Version, Constants.DME_VERSION_LENGTH);
+            writer.Write(Version, VersionLength);
         }
 
 

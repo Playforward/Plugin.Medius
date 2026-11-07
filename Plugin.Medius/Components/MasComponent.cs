@@ -47,6 +47,9 @@ public sealed class MasComponent(MediusContext context) : MediusComponent(contex
             case MediusSetLocalizationParamsRequest1 request:
                 connection.SendApp(new MediusSetLocalizationParamsResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusSuccess });
                 break;
+            case MediusSetLocalizationParamsRequest2 request:
+                connection.SendApp(new MediusSetLocalizationParamsResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusSuccess });
+                break;
 
             case MediusDnasSignaturePost:
                 // DNAS was the PS2's console check; nothing to verify against any more.
@@ -66,16 +69,6 @@ public sealed class MasComponent(MediusContext context) : MediusComponent(contex
 
             case MediusAnonymousLoginRequest request:
                 LoginAnonymously(connection, title, request);
-                break;
-
-            case MediusAccountGetIDRequest request:
-                MediusAccount? found = Context.Lobby.Accounts.Find(title.Descriptor.TitleId, request.AccountName);
-                connection.SendApp(new MediusAccountGetIDResponse
-                {
-                    MessageID = request.MessageID,
-                    AccountID = found?.AccountId ?? -1,
-                    StatusCode = found is null ? MediusCallbackStatus.MediusAccountNotFound : MediusCallbackStatus.MediusSuccess,
-                });
                 break;
 
             case MediusAccountLogoutRequest request:
@@ -240,7 +233,7 @@ public sealed class MasComponent(MediusContext context) : MediusComponent(contex
         },
     };
 
-    internal override void Disconnected(ScertConnection connection)
+    protected internal override void Disconnected(ScertConnection connection)
     {
         // The session stays: the client is on its way to the MLS with it.
         if (connection.Client is { } client && client.Connection == connection)

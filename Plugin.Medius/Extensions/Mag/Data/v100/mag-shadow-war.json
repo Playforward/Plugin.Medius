@@ -1,0 +1,38 @@
+{
+ "source": "disc 1.00 shadowwar_contract_bonuses.zpr, by tools/re/shadowwar.py",
+ "gameTypes": {
+  "GameType64": [
+   {
+    "kGlobalModXP": 0.05
+   },
+   {
+    "kGlobalModXP": 0.05
+   },
+   {
+    "kGlobalModXP": 0.05
+   }
+  ],
+  "GameType128": [
+   {
+    "kGlobalModLeadershipAura": 0.05
+   },
+   {
+    "kGlobalModLeadershipAura": 0.05
+   },
+   {
+    "kGlobalModLeadershipAura": 0.05
+   }
+  ],
+  "GameType256": [
+   {
+    "kGlobalModTacticalStrikeCD": -0.05
+   },
+   {
+    "kGlobalModTacticalStrikeCD": -0.05
+   },
+   {
+    "kGlobalModTacticalStrikeCD": -0.05
+   }
+  ]
+ }
+}

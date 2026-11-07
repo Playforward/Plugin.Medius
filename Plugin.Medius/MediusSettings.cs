@@ -112,4 +112,14 @@ public static class MediusComponentNames
     /// UDP listener (the "aux UDP" channel).
     /// </summary>
     public const string Dme = "DME";
+    /// <summary>
+    /// SCE-RT reliable UDP: the UDP-only game server a title's lobby can send
+    /// players to (Resistance 2: host/connection type 5, UDP 11001). See RudpComponent.
+    /// </summary>
+    public const string Rudp = "RUDP";
+    /// <summary>
+    /// HTTPS (TLS ended in-process, TLS 1.0 and up) for title extensions that run a
+    /// web service beside Medius (Resistance 2's stats on 10091). See Web/WebComponent.
+    /// </summary>
+    public const string Web = "WEB";
 }

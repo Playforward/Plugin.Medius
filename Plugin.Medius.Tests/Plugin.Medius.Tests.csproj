@@ -19,4 +19,13 @@
   <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
+  <!-- Plugin.MagGameServer's tests reuse the fixture, test client and MAG client steps. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="Plugin.MagGameServer.Tests" />
+    <!-- tools/MediusProxy.Tests uses the fixture and client as upstream and game. -->
+    <InternalsVisibleTo Include="MediusProxy.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data/**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>

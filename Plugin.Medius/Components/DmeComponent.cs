@@ -1,3 +1,4 @@
+using Plugin.Medius.RT.Cryptography;
 using Plugin.Medius.Lobby;
 using Plugin.Medius.RT.Common;
 using Plugin.Medius.RT.Models;
@@ -22,7 +23,7 @@ namespace Plugin.Medius.Components;
 /// CLIENT_CONNECT_READY_REQUIRE -> SERVER_CONNECT_ACCEPT_TCP (player index, scert id)
 /// CLIENT_CONNECT_READY_TCP     -> SERVER_STARTUP_INFO_NOTIFY, SERVER_INFO_AUX_UDP (UDP address)
 ///   udp: CLIENT_CONNECT_AUX_UDP -> SERVER_CONNECT_ACCEPT_AUX_UDP
-/// CLIENT_CONNECT_READY_AUX_UDP -> SERVER_CONNECT_COMPLETE, DMEServerVersion; others get CONNECT_NOTIFY
+/// CLIENT_CONNECT_READY_AUX_UDP -> SERVER_CONNECT_COMPLETE, DMEServerVersion (per title); others get CONNECT_NOTIFY
 /// </code>
 /// A PS2 client at 108 gets the key, accept and UDP address straight away.
 /// Ported from Horizon's Server.Dme (MIT), which one DME process per world
@@ -31,7 +32,6 @@ namespace Plugin.Medius.Components;
 /// </remarks>
 public sealed class DmeComponent(MediusContext context) : MediusComponent(context)
 {
-    private const string ServerVersion = "2.10.0009";
 
     private readonly ConcurrentDictionary<EndPoint, DmePlayer> _udpPeers = new();
 
@@ -86,6 +86,28 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
             case RT_MSG_CLIENT_FLUSH_SINGLE:
                 return true;
 
+            case RT_MSG_CLIENT_PEER_QUERY query:
+                (ushort max, ushort min, ushort average) = (connection.Transport as RudpConnection)?.Latency() ?? (0, 0, 0);
+                connection.Send(new RT_MSG_SERVER_PEER_QUERY_NOTIFY
+                {
+                    QueryType = query.QueryType,
+                    PlayerIndex = query.PlayerIndex,
+                    MaxLatency = max,
+                    MinLatency = min,
+                    AverageLatency = average,
+                });
+                return true;
+
+            case RT_MSG_CLIENT_TOKEN_MESSAGE token when token.Contents is { Length: > 0 } contents:
+                if (TokenReplies.TryGetValue(contents[0], out byte reply))
+                    connection.Send(new RT_MSG_SERVER_TOKEN_MESSAGE { Contents = [reply, .. contents[1..]] });
+                else
+                    Log.Warning("{Tag} {Seat}: token message {Contents} has no known answer", Tag, seat, Convert.ToHexString(contents));
+                return true;
+
+            case RT_MSG_CLIENT_FLUSH_ALL:
+                return true;
+
             case RT_MSG_CLIENT_TIMEBASE_QUERY query:
                 connection.Send(new RT_MSG_SERVER_TIMEBASE_QUERY_NOTIFY { ClientTime = query.Timestamp, ServerTime = (uint)seat.Game.Clock.ElapsedMilliseconds });
                 return true;
@@ -93,6 +115,48 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
             default:
                 return Relay(seat, message, udp: false);
         }
+    }
+
+    /// <summary>
+    /// Token messages answered as PSRewired's Resistance 2 server does: 02 xxxx -> 08 xxxx,
+    /// 03 xxxx -> 09 xxxx (xxxx the token) [live]. What the types mean is not known.
+    /// </summary>
+    private static readonly Dictionary<byte, byte> TokenReplies = new() { [0x02] = 0x08, [0x03] = 0x09 };
+
+    protected override void HandleMedius(ScertConnection connection, BaseMediusMessage message)
+    {
+        switch (message)
+        {
+            // Answered with the Unix time in seconds [live PSRewired].
+            case DMETypePing:
+                connection.SendApp(new DMETypePing { Time = (uint)DateTimeOffset.UtcNow.ToUnixTimeSeconds() });
+                break;
+            default:
+                Unhandled(connection, message);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Over RUdp there is no CONNECT_REQUIRE step: the connect is answered with the
+    /// server version and the accept [live PSRewired].
+    /// </summary>
+    protected override void ConnectAccepted(ScertConnection connection)
+    {
+        if (connection.Transport is not RudpConnection || SeatOf(connection) is not { } seat)
+        {
+            base.ConnectAccepted(connection);
+            return;
+        }
+        SendServerVersion(connection, seat);
+        SendAccept(connection);
+    }
+
+    private static void SendServerVersion(ScertConnection connection, DmePlayer seat)
+    {
+        MediusDmeSettings dme = seat.Game.Title.Dme;
+        if (connection.MediusVersion > 108 && dme.SendServerVersion)
+            connection.SendApp(new DMEServerVersion { Version = dme.ServerVersion, VersionLength = seat.Game.Title.RtLayout.DmeServerVersionLength });
     }
 
     protected override void SendAccept(ScertConnection connection)
@@ -106,7 +170,7 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
         {
             PlayerId = (ushort)seat.Index,
             ScertId = seat.ScertId,
-            PlayerCount = (ushort)seat.Game.Players.Length,
+            PlayerCount = (ushort)seat.Game.SeatCount,
             IP = connection.Remote?.Address ?? IPAddress.Any,
         });
     }
@@ -129,7 +193,7 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
         SendUdpInfo(connection);
     }
 
-    internal override void Disconnected(ScertConnection connection)
+    protected internal override void Disconnected(ScertConnection connection)
     {
         if (SeatOf(connection) is not { } seat || seat.Connection != connection)
             return;
@@ -176,6 +240,7 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
                         break;
                     case RT_MSG_SERVER_ECHO:
                     case RT_MSG_CLIENT_FLUSH_SINGLE:
+                    case RT_MSG_CLIENT_FLUSH_ALL:
                     case RT_MSG_CLIENT_DISCONNECT:
                     case RT_MSG_CLIENT_DISCONNECT_WITH_REASON:
                         break;
@@ -190,10 +255,25 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
 
         // Unknown sender: only a connect is understood, and its layout depends
         // on the library version, which is not known until the seat is found.
-        foreach (int version in new[] { 113, 108 })
+        // PS3 clients at 113 may encrypt it with their DME TCP session key
+        // (Resistance 2 sends 0x96 = encrypted 0x16, live 2026-10-28), so each
+        // seat still waiting for its UDP is tried with its own cipher too.
+        IEnumerable<(int Version, CipherService? Cipher)> attempts =
+            new (int, CipherService?)[] { (113, null), (108, null) }.Concat(
+                Context.Lobby.PendingUdpSeats().Select(p => (p.Connection!.MediusVersion, (CipherService?)p.Connection!.Cipher)));
+        foreach ((int version, CipherService? cipher) in attempts)
         {
-            // Read with the wrong layout, the ids come out as nonsense and match no seat.
-            if (ScertDatagramPeer.Parse(datagram, version, null).OfType<RT_MSG_CLIENT_CONNECT_AUX_UDP>().FirstOrDefault() is not { } connect)
+            // Read with the wrong layout or key, the ids come out as nonsense and match no seat.
+            List<BaseScertMessage> parsed;
+            try
+            {
+                parsed = ScertDatagramPeer.Parse(datagram, version, cipher);
+            }
+            catch (Exception)
+            {
+                continue;
+            }
+            if (parsed.OfType<RT_MSG_CLIENT_CONNECT_AUX_UDP>().FirstOrDefault() is not { } connect)
                 continue;
 
             DmePlayer? candidate = Context.Lobby.GameByWorldId((int)connect.WorldId)?.Player(connect.PlayerId);
@@ -207,7 +287,8 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
             AcceptUdp(session, candidate);
             return;
         }
-        Log.Debug("{Tag} {Remote}: UDP from an unknown peer dropped", Tag, session.EndPoint);
+        Log.Debug("{Tag} {Remote}: UDP from an unknown peer dropped ({Length} bytes: {Data})", Tag, session.EndPoint,
+            datagram.Length, Convert.ToHexString(datagram[..Math.Min(datagram.Length, 96)]));
     }
 
     private void AcceptUdp(CoreUdpSession session, DmePlayer seat)
@@ -259,8 +340,37 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
         seat.Game.MarkStarted();
 
         connection.Send(new RT_MSG_SERVER_CONNECT_COMPLETE { ARG1 = (ushort)seat.Game.PlayerCount });
-        if (connection.MediusVersion > 108)
-            connection.SendApp(new DMEServerVersion { Version = ServerVersion });
+        if (connection.Transport is RudpConnection)
+        {
+            // Over RUdp the version went with the accept; the completion is followed by the
+            // startup info and the players already there, the game server's own seat
+            // first [live PSRewired; the others are a guess, it was alone].
+            connection.Send(new RT_MSG_SERVER_STARTUP_INFO_NOTIFY
+            {
+                GameHostType = (byte)MGCL_GAME_HOST_TYPE.MGCLGameHostClientServerAuxUDP,
+                Timestamp = (uint)seat.Game.Clock.ElapsedMilliseconds,
+            });
+            if (seat.Game.FirstPlayerIndex > 0)
+                connection.Send(new RT_MSG_SERVER_CONNECT_NOTIFY { PlayerIndex = 0, ScertId = (short)MediusGame.HostSeatScertId, IP = Context.PublicAddress });
+            foreach (DmePlayer other in seat.Game.JoinedPlayers.Where(p => p != seat))
+                connection.Send(new RT_MSG_SERVER_CONNECT_NOTIFY
+                {
+                    PlayerIndex = (short)other.Index,
+                    ScertId = (short)other.ScertId,
+                    IP = other.Connection?.Remote?.Address ?? IPAddress.Any,
+                });
+        }
+        else
+        {
+            SendServerVersion(connection, seat);
+            // The newcomer is not told who is already there: it learns each of them from their ClientConnects
+            // (DME 0x10, sent when they get the notify below). SCE-RT 3.03 counts the completion's player count
+            // less one down on those, and a CONNECT_NOTIFY reaching a connected client adds one before it is
+            // handled, so it never counts, yet marks the player known and the later ClientConnects no longer
+            // counts either: the count stays at 1, the client never finishes connecting and Killzone 2 fails
+            // with 10002 [C 1.29 0x6f8eb0 (+1 then 0x6f8a00), 0x6f8b58 (-1 only while unknown), 0x6f6f58 (count - 1);
+            // live 2026-10-31].
+        }
 
         foreach (DmePlayer other in seat.Game.JoinedPlayers.Where(p => p != seat && p.Receives(RT_RECV_FLAG.RECV_NOTIFICATION)))
             other.Send(new RT_MSG_SERVER_CONNECT_NOTIFY
@@ -289,6 +399,17 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
                 payload = broadcast.Payload;
                 flag = RT_RECV_FLAG.RECV_BROADCAST;
                 break;
+            case RT_MSG_CLIENT_APP_BROADCAST_QOS broadcast:
+                // Delivered as a plain app message from the sender, without the QoS byte [guess]: no server-side
+                // QoS message exists, and the payload is laid out like a plain broadcast's (Resistance: Fall of Man) [live].
+                targets = source.Game.JoinedPlayers.Where(p => p != source);
+                payload = broadcast.Payload;
+                flag = RT_RECV_FLAG.RECV_BROADCAST;
+                break;
+            case RT_MSG_CLIENT_APP_SINGLE single when single.TargetOrSource < source.Game.FirstPlayerIndex:
+                // To the game server's own seat: the match host, not written yet.
+                Log.Debug("[medius/DME] {Seat} -> host seat: {Data}", source, Convert.ToHexString(single.Payload ?? []));
+                return true;
             case RT_MSG_CLIENT_APP_SINGLE single:
                 targets = source.Game.Player(single.TargetOrSource) is { Joined: true } target ? [target] : [];
                 payload = single.Payload;
@@ -303,7 +424,9 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
                 return false;
         }
 
-        RT_MSG_CLIENT_APP_SINGLE relayed = new() { TargetOrSource = (short)source.Index, Payload = payload ?? [] };
+        // Sent unencrypted: SCE-RT 3.03 clients encrypt only the payload of these (the source stays in the clear), which
+        // a whole-message encryption would not match; a message without the encrypted bit is read as it is.
+        RT_MSG_CLIENT_APP_SINGLE relayed = new() { TargetOrSource = (short)source.Index, Payload = payload ?? [], SkipEncryption = true };
         foreach (DmePlayer target in targets.Where(t => t.Receives(flag)))
             target.Send(relayed, udp);
         return true;

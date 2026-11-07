@@ -12,6 +12,18 @@ namespace Plugin.Medius.RT.Models
     {
 		public override byte PacketType => (byte)MediusLobbyExtMessageIds.UniverseVariableInformationResponse;
 
+        /// <summary>
+        /// Bytes of ExtendedInfo on the wire. 128 in the PS2-era layout; the SCE-RT
+        /// 3.03 PS3 client (Resistance 2, serializer 0x817190) has 256 [C].
+        /// </summary>
+        public int ExtendedInfoLength = Constants.UNIVERSE_EXTENDED_INFO_MAXLEN;
+
+        /// <summary>
+        /// Three pad bytes after EndOfList (PS2-era struct padding). The SCE-RT 3.03
+        /// PS3 client reads EndOfList last and nothing after it [C].
+        /// </summary>
+        public bool PadAfterEndOfList = true;
+
         public bool IsSuccess => StatusCode >= 0;
 
         public MessageId MessageID { get; set; }
@@ -76,13 +88,14 @@ namespace Plugin.Medius.RT.Models
             }
 
             if (InfoFilter.IsSet(MediusUniverseVariableInformationInfoFilter.INFO_EXTRAINFO))
-                ExtendedInfo = reader.ReadString(Constants.UNIVERSE_EXTENDED_INFO_MAXLEN);
+                ExtendedInfo = reader.ReadString(ExtendedInfoLength);
 
             //if (InfoFilter.IsSet(MediusUniverseVariableInformationInfoFilter.INFO_SVO_URL))
             //    SvoURL = reader.ReadString(Constants.UNIVERSE_SVO_URL_MAXLEN);
 
             EndOfList = reader.ReadBoolean();
-            reader.ReadBytes(3);
+            if (PadAfterEndOfList)
+                reader.ReadBytes(3);
         }
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)
@@ -126,14 +139,15 @@ namespace Plugin.Medius.RT.Models
             }
 
             if (InfoFilter.IsSet(MediusUniverseVariableInformationInfoFilter.INFO_EXTRAINFO))
-                writer.Write(ExtendedInfo, Constants.UNIVERSE_EXTENDED_INFO_MAXLEN);
+                writer.Write(ExtendedInfo, ExtendedInfoLength);
 
             //if (InfoFilter.IsSet(MediusUniverseVariableInformationInfoFilter.INFO_SVO_URL))
             //    writer.Write(SvoURL, Constants.UNIVERSE_SVO_URL_MAXLEN);
 
 
             writer.Write(EndOfList);
-            writer.Write(new byte[3]);
+            if (PadAfterEndOfList)
+                writer.Write(new byte[3]);
         }
 
 

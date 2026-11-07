@@ -133,17 +133,42 @@ namespace Plugin.Medius.RT.Common
         MediusSubscriptionAborted = -937,
         MediusSubscriptionInvalid = -936,
         MediusNotAMember = -935,
+        // From here on: the value/name table of the SCE-RT 3.03 client in
+        // Resistance 2's EBOOT (0xd01380) [C].
+        MediusBillingVerificationRequired = -934,
+        MediusAccessLevelInsufficient = -933,
+        MediusWorldClosed = -932,
+        MediusTransactionTimedOut = -931,
+        MediusStepSendFailed = -930,
+        MediusMatchTypeNoMatch_DEPRECATED = -929,
+        MediusMatchServerNotFound = -928,
+        MediusMatchGameCreationFailed = -927,
+        MediusGameListSortOperationFailed = -926,
+        MediusNumSortCriteriaAtMax = -925,
+        MediusSortCriteriaNotFound = -924,
         MediusSuccess = 0,
         MediusNoResult = 1,
         MediusRequestAccepted = 2,
         MediusWorldCreatedSizeReduced = 3,
         MediusPass = 4,
+        MediusInQueue = 5,
+        /// <summary>Matchmaking found a game: the reply carries the world to join [C].</summary>
+        MediusJoinAssignedGame = 6,
+        MediusMatchTypeHostGame = 7,
+        MediusMatchTypeReferral = 8,
     }
 
     public enum MediusAccountType : int
     {
         MediusChildAccount,
         MediusMasterAccount,
+    }
+
+    /// <summary>How a buddy invitation adds: to the inviter's list only, or to both lists.</summary>
+    public enum MediusBuddyAddType : int
+    {
+        AddSingle = 0,
+        AddSymmetric = 1,
     }
 
     public enum MediusLadderType : int
@@ -347,6 +372,12 @@ namespace Plugin.Medius.RT.Common
         MediusGameHostPeerToPeer = 2,
         MediusGameHostLANPlay = 3,
         MediusGameHostClientServerAuxUDP = 4,
+        /// <summary>
+        /// [live] Resistance 2 asks for it in MediusJoinGameRequest and the PSRewired R2
+        /// server answers with it; the client then plays over UDP only, with the
+        /// game's own protocol (no DME). Name unknown.
+        /// </summary>
+        MediusGameHostType5 = 5,
     }
 
     public enum MediusWorldAttributesType : int
@@ -442,7 +473,9 @@ namespace Plugin.Medius.RT.Common
         NetConnectionTypeClientServerTCP = 1,
         NetConnectionTypePeerToPeerUDP = 2,
         NetConnectionTypeClientServerTCPAuxUDP = 3,
-        NetConnectionTypeClientListenerTCP = 4
+        NetConnectionTypeClientListenerTCP = 4,
+        /// <summary>[live] Paired with MediusGameHostType5 in R2's join reply (UDP game server). Name unknown.</summary>
+        NetConnectionType5 = 5,
     }
 
     public enum SERVER_FORCE_DISCONNECT_REASON : byte
@@ -494,7 +527,10 @@ namespace Plugin.Medius.RT.Common
         RECV_BROADCAST = 1,
         RECV_LIST = 2,
         RECV_SINGLE = 4,
-        RECV_NOTIFICATION = 8
+        RECV_NOTIFICATION = 8,
+        // Killzone 2 1.29's play-world connections ask for 0x21 and never change it, yet its players announce
+        // themselves and talk there with APP_LIST/APP_SINGLE; read as "everything" [guess, live 2026-10-31].
+        RECV_ALL_20 = 0x20,
     }
 
     public enum NetAddressType : int
@@ -888,6 +924,16 @@ namespace Plugin.Medius.RT.Common
 		// PS3
         TicketLogin = 0x58,
         TicketLoginResponse = 0x59,
+        // Resistance: Fall of Man's disc build (SCE-RT 3.98) sends its localization here; the
+        // patch moved it to 0x7B (disc registration 0x60eee4, codec 0x61ff10) [C]. Name [guess].
+        SetLocalizationParams2 = 0x5A,
+        // Resistance: Fall of Man's party join (SCE-RT 3.02 patch, registered at 0x64fc94/0x64fcb0):
+        // a JoinGame carrying the client's RSA key, answered by a 0xBC JoinGameResponse [C]. Names [guess].
+        JoinGameEx = 0x67,
+        JoinGameExResponse = 0x68,
+        // Its quick match (registered at 0x64fd04/0x64fd20; codecs 0x65697c/0x656e4c) [C]. Names [guess].
+        MatchFindGame = 0x78,
+        MatchFindGameResponse = 0x60,
         GenericChatMessage1 = 0x73,
         GenericChatFwdMessage1 = 0x74,
         MediusTextFilter1 = 0x75,
@@ -896,6 +942,48 @@ namespace Plugin.Medius.RT.Common
         SetLobbyWorldFilter1 = 0x86,
         SetLobbyWorldFilterResponse1 = 0x87,
         SessionBegin1 = 0x8B,
+
+        // Matchmaking (the SCE-RT 3.03 "MMS" messages). Ids from the client's
+        // message registration table (Resistance 2 EBOOT 0x8005c8) [C];
+        // names from its log strings. See docs/MATCHMAKING.md.
+        MatchListSupersets = 0x5D,
+        MatchListSupersetsResponse = 0x5E,
+        MatchCloseLateJoin = 0x79,
+        MatchCloseLateJoinResponse = 0x7A,
+        MatchParty = 0x88,
+        MatchPartyResponse = 0x89,
+        MatchFoundResponse = 0x8A,
+
+        // Variable-length binary messages of the SCE-RT 3.03 client (Resistance 2
+        // registration table 0x8005c8: 0x5B sent, 0x5C delivered) [C].
+        BinaryMessage1 = 0x5B,
+        BinaryFwdMessage1 = 0x5C,
+
+        // Game-world messages of the SCE-RT 3.03 client (Killzone 2 1.29
+        // registration table 0x720bb0.., class 4) [C]. 0x87 is a client request
+        // here, while later libraries' SetLobbyWorldFilterResponse1 shares the
+        // id; the registry picks the model by direction.
+        // Buddy invitations of the same client: its AddBuddy sender (0x7197b8) uses 0x63, registered
+        // beside 0x05 with the same codec (0x731f80); the answer 0x64 shares lobby 0x44's codec (0x731ee8) [C].
+        AddToBuddyListConfirmationRequest = 0x63,
+        AddToBuddyListConfirmationResponse = 0x64,
+        CreateGame2 = 0x65,
+        CreateGame2Response = 0x66,
+        GameCount = 0x7E,
+        GameCountResponse = 0x7F,
+        JoinGame2 = 0x87,
+        JoinGame2Response = 0x8E,
+    }
+
+    /// <summary>
+    /// Which worlds MediusFindWorldByName searches [guess, Horizon's order];
+    /// Killzone 2 sends 2 to find its play world [live].
+    /// </summary>
+    public enum MediusFindWorldType : int
+    {
+        FindGameWorld,
+        FindLobbyWorld,
+        FindAllWorlds,
     }
 
     public enum MGCL_TRUST_LEVEL : int

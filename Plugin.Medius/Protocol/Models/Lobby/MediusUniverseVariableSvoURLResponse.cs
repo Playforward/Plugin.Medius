@@ -18,6 +18,9 @@ namespace Plugin.Medius.RT.Models
 
         public string URL { get; set; }
 
+        /// <summary>Bytes of the length-prefixed URL field when the client reads a fixed-size one; null writes only what the URL needs.</summary>
+        public int? UrlFieldLength;
+
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
             //
@@ -64,6 +67,12 @@ namespace Plugin.Medius.RT.Models
                     writer.Write((byte)(URL.Length + 1));
                     writer.Write(URL, URL.Length + 1);
                 }
+                // Pad the field (length byte included) to a fixed size when the
+                // library expects one: SCE-RT 3.03 clients get 128 bytes from
+                // PSRewired's R2 server (151-byte message) [live R2 1.60].
+                int written = 1 + (URL == null ? 0 : URL.Length + 1);
+                if (UrlFieldLength is int field && field > written)
+                    writer.Write(new byte[field - written]);
             }
             else
             {

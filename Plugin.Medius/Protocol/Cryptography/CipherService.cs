@@ -75,5 +75,29 @@ namespace Plugin.Medius.RT.Cryptography
             return cipher.Decrypt(input, hash, out plain);
         }
 
+        /// <summary>
+        /// Decrypts a message whose first <paramref name="clear"/> bytes were sent unencrypted, trying the
+        /// hash over the encrypted part alone and then over the whole message. Returns how it matched
+        /// ("payload" or "whole"), or null when neither did.
+        /// </summary>
+        public string DecryptAfter(int clear, byte[] input, byte[] hash, out byte[] plain)
+        {
+            plain = null;
+            var context = (CipherContext)(hash[3] >> 5);
+            if (clear <= 0 || clear >= input.Length || !_ciphers.TryGetValue(context, out var cipher) || cipher == null)
+                return null;
+            byte[] encrypted = input[clear..];
+            bool payloadHash = cipher.Decrypt(encrypted, hash, out byte[] decrypted);
+            if (decrypted == null)
+                return null;
+            plain = [.. input[..clear], .. decrypted];
+            if (payloadHash)
+                return "payload";
+            if (cipher is PS3_RCQ && PS3_RCQ.Hash(plain, context).AsSpan().SequenceEqual(hash))
+                return "whole";
+            plain = null;
+            return null;
+        }
+
     }
 }

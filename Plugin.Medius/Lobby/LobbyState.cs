@@ -18,6 +18,10 @@ public sealed class LobbyState(AccountStore accounts)
 
     public AccountStore Accounts { get; } = accounts;
 
+    /// <summary>Parties waiting for a match (the MediusMatch* messages).</summary>
+    public MediusMatchmaker Matchmaker => _matchmaker ??= new MediusMatchmaker();
+    private MediusMatchmaker? _matchmaker;
+
     public MediusClient BeginSession(MediusTitle title, int appId, int mediusVersion)
     {
         MediusClient client = new(title, appId, mediusVersion);
@@ -25,11 +29,26 @@ public sealed class LobbyState(AccountStore accounts)
         return client;
     }
 
-    public void EndSession(MediusClient client)
+    /// <summary>
+    /// Ends the client's Medius session. With <paramref name="keepGameSeat"/>
+    /// a game seat it has reserved but not yet taken up on the DME survives,
+    /// with the account it belongs to: Resistance 2 joins a game on the MLS,
+    /// ends its session there, and only then connects to the DME (live,
+    /// 2026-10-28). Seats nobody takes up are freed by <see cref="SweepGames"/>.
+    /// </summary>
+    public void EndSession(MediusClient client, bool keepGameSeat = false)
     {
-        if (client.GameSeat is { Connection: null } seat)
-            LeaveGame(seat);
-        client.Logout();
+        if (keepGameSeat && client.GameSeat is not null)
+        {
+            client.Channel?.Leave(client);
+            client.Channel = null;
+        }
+        else
+        {
+            if (client.GameSeat is { Connection: null } seat)
+                LeaveGame(seat);
+            client.Logout();
+        }
         _bySessionKey.TryRemove(client.SessionKey, out _);
     }
 
@@ -80,14 +99,18 @@ public sealed class LobbyState(AccountStore accounts)
     /// (null) when the title already has an open game of that name whose host
     /// is still in it.
     /// </summary>
-    public MediusGame? CreateGame(MediusTitle title, Func<int, MediusGame> create)
+    public MediusGame? CreateGame(MediusTitle title, Func<int, MediusGame> create) => CreateGame(title, create, out _);
+
+    /// <summary>As <see cref="CreateGame(MediusTitle, Func{int, MediusGame})"/>; on failure <paramref name="existing"/> is the open game of that name.</summary>
+    public MediusGame? CreateGame(MediusTitle title, Func<int, MediusGame> create, out MediusGame? existing)
     {
         MediusGame game = create(Interlocked.Increment(ref _nextGameId));
         var games = _games.GetOrAdd(title, _ => new ConcurrentDictionary<int, MediusGame>());
         lock (games)
         {
-            if (games.Values.Any(g => g.Status != RT.Common.MediusWorldStatus.WorldClosed && g.Host is not null &&
-                                      string.Equals(g.Name, game.Name, StringComparison.OrdinalIgnoreCase)))
+            existing = games.Values.OrderBy(g => g.Id).FirstOrDefault(g => g.Status != RT.Common.MediusWorldStatus.WorldClosed && g.Host is not null &&
+                                      string.Equals(g.Name, game.Name, StringComparison.OrdinalIgnoreCase));
+            if (existing is not null)
                 return null;
             games[game.Id] = game;
         }
@@ -96,16 +119,31 @@ public sealed class LobbyState(AccountStore accounts)
 
     /// <summary>
     /// Seats the client in the game, leaving any other game it had a seat in
-    /// but had not connected to yet. Null when the game is full.
+    /// but had not connected to yet. Null when the game is full. A seat already
+    /// on the DME stays: Killzone 2's host keeps its listed game while it joins
+    /// its play world (0x4b9388) [C; live].
     /// </summary>
     public DmePlayer? JoinGame(MediusClient client, MediusGame game)
     {
-        if (client.GameSeat is { } previous && previous.Game != game)
+        if (client.GameSeat is { Connection: null } previous && previous.Game != game)
             LeaveGame(previous);
         DmePlayer? seat = game.Reserve(client);
         if (seat is not null)
             client.GameSeat = seat;
         return seat;
+    }
+
+    /// <summary>Seats connected to the DME over TCP that asked for aux UDP and have not connected it yet.</summary>
+    public IEnumerable<DmePlayer> PendingUdpSeats() =>
+        _games.Values.SelectMany(g => g.Values).SelectMany(g => g.Players).Where(p => p.Connection is not null && p.AuxUdp && p.Udp is null);
+
+    /// <summary>The seat whose access key hashes to an RUdp hello's id (<see cref="Transport.RudpCrypto.HelloId"/>).</summary>
+    public DmePlayer? SeatByRudpHelloId(ReadOnlySpan<byte> id)
+    {
+        foreach (DmePlayer seat in _games.Values.SelectMany(g => g.Values).SelectMany(g => g.Players))
+            if (seat.RudpHelloId.AsSpan().SequenceEqual(id))
+                return seat;
+        return null;
     }
 
     public DmePlayer? SeatByAccessKey(string? accessKey) =>

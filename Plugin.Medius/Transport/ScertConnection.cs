@@ -21,24 +21,34 @@ public sealed class ScertConnection
 {
     private const int MaxFrameLength = 16 * 1024;
 
-    private readonly TcpSession _session;
+    private readonly IScertTransport _transport;
     private readonly RsaKeyPair _serverKey;
     private readonly List<byte> _pending = [];
     private readonly object _sendLock = new();
+    private readonly bool _logMessages;
 
-    internal ScertConnection(TcpSession session, string component, RsaKeyPair serverKey)
+    internal ScertConnection(TcpSession session, string component, RsaKeyPair serverKey, bool logMessages = false)
+        : this(new TcpScertTransport(session), component, serverKey, logMessages)
     {
-        _session = session;
+    }
+
+    internal ScertConnection(IScertTransport transport, string component, RsaKeyPair serverKey, bool logMessages = false)
+    {
+        _transport = transport;
+        _logMessages = logMessages;
         _serverKey = serverKey;
         Component = component;
-        Remote = session.Socket?.RemoteEndPoint as IPEndPoint;
+        Remote = transport.Remote;
         MediusVersion = 108;
     }
 
-    public Guid Id => _session.Id;
+    public Guid Id => _transport.Id;
     public string Component { get; }
     public IPEndPoint? Remote { get; }
-    public int LocalPort => _session.Server.Port;
+    public int LocalPort => _transport.LocalPort;
+
+    /// <summary>What carries the RT frames: TCP, or a datagram transport such as <see cref="RudpConnection"/>.</summary>
+    public IScertTransport Transport => _transport;
     public DateTime LastEchoSent { get; set; } = DateTime.UtcNow;
 
     /// <summary>The SCE-RT library version the client announced in its hello; 108 until it says.</summary>
@@ -56,10 +66,11 @@ public sealed class ScertConnection
     /// <summary>Per-component scratch state, for a component that needs more than the client.</summary>
     public object? ComponentState { get; set; }
 
+    /// <summary>RT-level encryption; always off on a transport that encrypts by itself (<see cref="IScertTransport.RtEncryption"/>).</summary>
     public bool Encrypt
     {
         get => Cipher.EnableEncryption;
-        set => Cipher.EnableEncryption = value;
+        set => Cipher.EnableEncryption = value && _transport.RtEncryption;
     }
 
     public void SetMediusVersion(int version)
@@ -70,7 +81,7 @@ public sealed class ScertConnection
             ? new CipherService(new PS3CipherFactory())
             : new CipherService(new PS2CipherFactory());
         Cipher.SetCipher(CipherContext.RSA_AUTH, IsPs3 ? _serverKey.ToPS3() : _serverKey.ToPS2());
-        Cipher.EnableEncryption = encrypt;
+        Cipher.EnableEncryption = encrypt && _transport.RtEncryption;
     }
 
     /// <summary>Appends received bytes and returns every message they complete.</summary>
@@ -116,17 +127,16 @@ public sealed class ScertConnection
     public void Send(BaseScertMessage message)
     {
         Cipher ??= InitialCipher();
+        if (_logMessages && message is not RT_MSG_SERVER_ECHO)
+            Log.Debug("[medius/{Component}] {Connection} -> {Message}", Component, this, message);
         lock (_sendLock)
-        {
-            foreach (byte[] frame in message.Serialize(MediusVersion, Cipher))
-                _session.SendAsync(frame);
-        }
+            _transport.Send(message.Serialize(MediusVersion, Cipher));
     }
 
     /// <summary>Wraps a Medius message in RT_MSG_SERVER_APP and sends it.</summary>
     public void SendApp(BaseMediusMessage message) => Send(new RT_MSG_SERVER_APP { Message = message });
 
-    public void Disconnect() => _session.Disconnect();
+    public void Disconnect() => _transport.Disconnect();
 
     private CipherService InitialCipher()
     {
@@ -135,4 +145,40 @@ public sealed class ScertConnection
     }
 
     public override string ToString() => $"{Component}:{Remote}{(Client is null ? "" : $" ({Client.AccountName})")}";
+}
+
+/// <summary>What a <see cref="ScertConnection"/> sends its RT frames over.</summary>
+public interface IScertTransport
+{
+    Guid Id { get; }
+    IPEndPoint? Remote { get; }
+    int LocalPort { get; }
+
+    /// <summary>
+    /// Whether RT frames may be encrypted themselves (TCP). False for a transport that
+    /// encrypts what it carries (RUdp): its RT frames go plain [live R2/PSRewired].
+    /// </summary>
+    bool RtEncryption { get; }
+
+    /// <summary>Sends the frames of one RT message, in order.</summary>
+    void Send(IReadOnlyList<byte[]> frames);
+
+    void Disconnect();
+}
+
+/// <summary>An RT connection over one TCP session.</summary>
+internal sealed class TcpScertTransport(TcpSession session) : IScertTransport
+{
+    public Guid Id => session.Id;
+    public IPEndPoint? Remote { get; } = session.Socket?.RemoteEndPoint as IPEndPoint;
+    public int LocalPort => session.Server.Port;
+    public bool RtEncryption => true;
+
+    public void Send(IReadOnlyList<byte[]> frames)
+    {
+        foreach (byte[] frame in frames)
+            session.SendAsync(frame);
+    }
+
+    public void Disconnect() => session.Disconnect();
 }

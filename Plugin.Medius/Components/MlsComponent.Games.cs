@@ -32,9 +32,64 @@ public sealed partial class MlsComponent
             case MediusCreateGameRequest1 request:
                 CreateGame(connection, client, request.MessageID, id => new MediusGame(id, title, client, request));
                 return true;
+            case MediusCreateGameRequest2 request:
+                // An open world of that name is answered with its id, so players
+                // can "create" the world they are about to join (Killzone 2 takes
+                // MediusGameNameExists as success, 0x4b9b18) [C].
+                CreateGame(connection, client, id => new MediusGame(id, title, client, request),
+                    (status, game) => new MediusCreateGameResponse2 { MessageID = request.MessageID, StatusCode = status, MediusWorldID = game?.Id ?? -1 },
+                    existingByName: true);
+                return true;
 
             case MediusJoinGameRequest request:
-                JoinGame(connection, client, request);
+                JoinGame(connection, client, request.MessageID, request.MediusWorldID, request.JoinType, request.GamePassword,
+                    (status, hostType, connectInfo) => new MediusJoinGameResponse
+                    {
+                        MessageID = request.MessageID,
+                        StatusCode = status,
+                        GameHostType = hostType,
+                        ConnectInfo = connectInfo,
+                        TrailingPadLength = title.RtLayout.JoinGameTrailingPadLength,
+                    });
+                return true;
+            case MediusJoinGameRequest2 request:
+                JoinGame(connection, client, request.MessageID, request.MediusWorldID, MediusJoinType.MediusJoinAsPlayer, request.GamePassword,
+                    (status, hostType, connectInfo) => new MediusJoinGameResponse2
+                    {
+                        MessageID = request.MessageID,
+                        StatusCode = status,
+                        GameHostType = hostType,
+                        ConnectInfo = connectInfo,
+                        // Unread by Killzone 2 (0x4b9c98); PS Rewired sends 2 [live], here
+                        // the world's status [guess].
+                        Unknown_BC = (int)(Context.Lobby.Game(title, request.MediusWorldID)?.Status ?? MediusWorldStatus.WorldClosed),
+                    });
+                return true;
+
+            case MediusJoinGameExRequest request:
+                // Resistance: Fall of Man's party join, right after CreateGame2 (lobby-ext 0x67/0x68) [live].
+                JoinGame(connection, client, request.MessageID, request.MediusWorldID, MediusJoinType.MediusJoinAsPlayer, request.GamePassword,
+                    (status, hostType, connectInfo) => new MediusJoinGameExResponse
+                    {
+                        MessageID = request.MessageID,
+                        StatusCode = status,
+                        GameHostType = hostType,
+                        ConnectInfo = connectInfo,
+                    });
+                return true;
+
+            case MediusFindWorldByNameRequest request:
+                FindWorldByName(connection, client, request);
+                return true;
+
+            case MediusGameCountRequest request:
+                // What Killzone 2 counts is not known; the open games are a [guess].
+                connection.SendApp(new MediusGameCountResponse
+                {
+                    MessageID = request.MessageID,
+                    StatusCode = MediusCallbackStatus.MediusSuccess,
+                    Count = Context.Lobby.Games(title).Count(g => g.IsListed),
+                });
                 return true;
 
             case MediusGameList_ExtraInfoRequest request:
@@ -203,70 +258,142 @@ public sealed partial class MlsComponent
         return false;
     }
 
-    private void CreateGame(ScertConnection connection, MediusClient client, MessageId messageId, Func<int, MediusGame> create)
+    private void CreateGame(ScertConnection connection, MediusClient client, MessageId messageId, Func<int, MediusGame> create) =>
+        CreateGame(connection, client, create,
+            (status, game) => new MediusCreateGameResponse { MessageID = messageId, StatusCode = status, MediusWorldID = game?.Id ?? -1 });
+
+    /// <summary>
+    /// Creates a game world and answers with <paramref name="reply"/>. A name
+    /// already open fails with MediusGameNameExists; with
+    /// <paramref name="existingByName"/> the reply carries that world.
+    /// </summary>
+    private void CreateGame(ScertConnection connection, MediusClient client, Func<int, MediusGame> create,
+        Func<MediusCallbackStatus, MediusGame?, BaseMediusMessage> reply, bool existingByName = false)
     {
         if (Context.Settings.PortOf(MediusComponentNames.Dme, udp: false) == 0)
         {
             Log.Error("{Tag} {Client} tried to create a game, but no DME listener is configured; add DME listeners to MediusConfig.json", Tag, client);
-            connection.SendApp(new MediusCreateGameResponse { MessageID = messageId, StatusCode = MediusCallbackStatus.MediusFail, MediusWorldID = -1 });
+            connection.SendApp(reply(MediusCallbackStatus.MediusFail, null));
             return;
         }
 
-        MediusGame? game = Context.Lobby.CreateGame(client.Title, create);
+        MediusGame? game = Context.Lobby.CreateGame(client.Title, create, out MediusGame? existing);
         if (game is null)
         {
-            connection.SendApp(new MediusCreateGameResponse { MessageID = messageId, StatusCode = MediusCallbackStatus.MediusGameNameExists, MediusWorldID = -1 });
+            Log.Information("{Tag} {Client}: game name of {Game} is taken", Tag, client, existing);
+            connection.SendApp(reply(MediusCallbackStatus.MediusGameNameExists, existingByName ? existing : null));
             return;
         }
         Log.Information("{Tag} {Client} created {Game} ({Max} players, host type {HostType})", Tag, client, game, game.MaxPlayers, game.HostType);
-        connection.SendApp(new MediusCreateGameResponse { MessageID = messageId, StatusCode = MediusCallbackStatus.MediusSuccess, MediusWorldID = game.Id });
+        connection.SendApp(reply(MediusCallbackStatus.MediusSuccess, game));
     }
 
-    private void JoinGame(ScertConnection connection, MediusClient client, MediusJoinGameRequest request)
+    /// <summary>
+    /// Every open game world (and, by WorldType, channel) with the name, one
+    /// answer each, oldest first; MediusNoResult when there is none.
+    /// </summary>
+    private void FindWorldByName(ScertConnection connection, MediusClient client, MediusFindWorldByNameRequest request)
     {
-        MediusGame? game = Context.Lobby.Game(client.Title, request.MediusWorldID);
-        string password = request.JoinType == MediusJoinType.MediusJoinAsPlayer ? game?.Password ?? "" : game?.SpectatorPassword ?? "";
+        MediusTitle title = client.Title;
+        bool named(string name) => string.Equals(name, request.Name, StringComparison.OrdinalIgnoreCase);
+        List<MediusFindWorldByNameResponse> found = [];
+        if (request.WorldType != MediusFindWorldType.FindLobbyWorld)
+            found.AddRange(Context.Lobby.Games(title).Where(g => g.Status != MediusWorldStatus.WorldClosed && named(g.Name)).Select(g => new MediusFindWorldByNameResponse
+            {
+                ApplicationID = g.AppId,
+                ApplicationName = "",
+                ApplicationType = MediusApplicationType.MediusAppTypeGame,
+                MediusWorldID = g.Id,
+                WorldName = g.Name,
+                WorldStatus = g.Status,
+            }));
+        if (request.WorldType != MediusFindWorldType.FindGameWorld)
+            found.AddRange(Context.Lobby.Channels(title).Where(c => named(c.Name)).Select(c => new MediusFindWorldByNameResponse
+            {
+                ApplicationID = client.AppId,
+                ApplicationName = "",
+                ApplicationType = MediusApplicationType.LobbyChatChannel,
+                MediusWorldID = c.Id,
+                WorldName = c.Name,
+                WorldStatus = MediusWorldStatus.WorldActive,
+            }));
+
+        if (found.Count == 0)
+        {
+            connection.SendApp(new MediusFindWorldByNameResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusNoResult, ApplicationName = "", WorldName = "", EndOfList = true });
+            return;
+        }
+        for (int i = 0; i < found.Count; i++)
+        {
+            found[i].MessageID = request.MessageID;
+            found[i].StatusCode = MediusCallbackStatus.MediusSuccess;
+            found[i].EndOfList = i == found.Count - 1;
+            connection.SendApp(found[i]);
+        }
+    }
+
+    /// <summary>
+    /// Where a title's game worlds are played: its own game server when it
+    /// names one (<see cref="MediusTitle.GameServer"/>), else the DME; then
+    /// the NAT service for the client's UDP address.
+    /// </summary>
+    private NetAddressList GameAddressList(MediusTitle title, bool matchReply)
+    {
+        MediusGameServerSettings server = title.GameServer;
+        if (!server.IsSet)
+            return DmeAddressList();
+        string host = string.IsNullOrWhiteSpace(server.Host) ? Context.PublicAddress.ToString() : server.Host;
+        return new NetAddressList
+        {
+            AddressList =
+            [
+                new NetAddress { Address = host, Port = (uint)server.Port, AddressType = matchReply ? server.MatchAddressType : server.JoinAddressType },
+                new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Nat), AddressType = NetAddressType.NetAddressTypeNATService },
+            ],
+        };
+    }
+
+    /// <summary>Where game worlds are played: the DME, and the NAT service for the client's UDP address.</summary>
+    private NetAddressList DmeAddressList() => new()
+    {
+        AddressList =
+        [
+            new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Dme, udp: false), AddressType = NetAddressType.NetAddressTypeExternal },
+            new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Nat), AddressType = NetAddressType.NetAddressTypeNATService },
+        ],
+    };
+
+    /// <summary>Seats the client in a game world and answers with <paramref name="reply"/> (status, host type, where to connect).</summary>
+    private void JoinGame(ScertConnection connection, MediusClient client, MessageId messageId, int worldId, MediusJoinType joinType, string? gamePassword,
+        Func<MediusCallbackStatus, MediusGameHostType, NetConnectionInfo, BaseMediusMessage> reply)
+    {
+        MediusGame? game = Context.Lobby.Game(client.Title, worldId);
+        string password = joinType == MediusJoinType.MediusJoinAsPlayer ? game?.Password ?? "" : game?.SpectatorPassword ?? "";
         MediusCallbackStatus status =
             game is null || game.Status == MediusWorldStatus.WorldClosed ? MediusCallbackStatus.MediusGameNotFound
-            : password.Length > 0 && password != request.GamePassword ? MediusCallbackStatus.MediusInvalidPassword
+            : password.Length > 0 && password != gamePassword ? MediusCallbackStatus.MediusInvalidPassword
             : client.GameSeat?.Game != game && game.PlayerCount >= game.MaxPlayers ? MediusCallbackStatus.MediusWorldIsFull
             : MediusCallbackStatus.MediusSuccess;
 
         DmePlayer? seat = status == MediusCallbackStatus.MediusSuccess ? Context.Lobby.JoinGame(client, game!) : null;
         if (seat is null)
         {
-            connection.SendApp(new MediusJoinGameResponse
-            {
-                MessageID = request.MessageID,
-                StatusCode = status == MediusCallbackStatus.MediusSuccess ? MediusCallbackStatus.MediusWorldIsFull : status,
-                ConnectInfo = new NetConnectionInfo(),
-            });
+            connection.SendApp(reply(status == MediusCallbackStatus.MediusSuccess ? MediusCallbackStatus.MediusWorldIsFull : status, default, new NetConnectionInfo()));
             return;
         }
 
         Log.Information("{Tag} {Client} joining {Game} as player {Index}", Tag, client, seat.Game, seat.Index);
-        connection.SendApp(new MediusJoinGameResponse
-        {
-            MessageID = request.MessageID,
-            StatusCode = MediusCallbackStatus.MediusSuccess,
-            GameHostType = seat.Game.HostType,
-            ConnectInfo = new NetConnectionInfo
+        connection.SendApp(reply(MediusCallbackStatus.MediusSuccess, seat.Game.HostType,
+            new NetConnectionInfo
             {
-                Type = NetConnectionType.NetConnectionTypeClientServerTCPAuxUDP,
+                Type = client.Title.GameServer.IsSet ? client.Title.GameServer.ConnectionType : NetConnectionType.NetConnectionTypeClientServerTCPAuxUDP,
                 AccessKey = seat.AccessKey,
                 SessionKey = client.SessionKey,
                 WorldID = seat.Game.Id,
-                ServerKey = LobbyCommon.PublicKeyOf(Context.ServerKey),
-                AddressList = new NetAddressList
-                {
-                    AddressList =
-                    [
-                        new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Dme, udp: false), AddressType = NetAddressType.NetAddressTypeExternal },
-                        new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Nat), AddressType = NetAddressType.NetAddressTypeNATService },
-                    ],
-                },
-            },
-        });
+                ServerKey = client.Title.GameServer is { IsSet: true, ZeroServerKey: true } || client.Title is { GameServer.IsSet: false, Dme.ZeroServerKey: true }
+                    ? new RSA_KEY() : LobbyCommon.PublicKeyOf(Context.ServerKey),
+                AddressList = GameAddressList(client.Title, matchReply: false),
+            }));
     }
 
     /// <summary>Sends one page of the games the player's filters let through, oldest first.</summary>

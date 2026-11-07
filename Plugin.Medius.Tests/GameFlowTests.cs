@@ -54,6 +54,8 @@ public sealed class GameFlowTests(LobbyFlowFixture fixture)
 
         RT_MSG_SERVER_CONNECT_NOTIFY arrived = await aliceDme.ExpectAsync<RT_MSG_SERVER_CONNECT_NOTIFY>();
         Assert.Equal((short)bobAccept.PlayerId, arrived.PlayerIndex);
+        // Bob is not told who is already there (SCE-RT 3.03 learns them from their ClientConnects): a notify
+        // to him would fail his next ExpectAsync below.
 
         // TCP broadcast from Bob reaches Alice as a single from Bob.
         bobDme.Send(new RT_MSG_CLIENT_APP_BROADCAST { Payload = [1, 2, 3] });
@@ -75,6 +77,14 @@ public sealed class GameFlowTests(LobbyFlowFixture fixture)
         RT_MSG_CLIENT_APP_SINGLE udp = await aliceDme.ExpectUdpAsync<RT_MSG_CLIENT_APP_SINGLE>();
         Assert.Equal((short)bobAccept.PlayerId, udp.TargetOrSource);
         Assert.Equal(new byte[] { 7, 8 }, udp.Payload);
+
+        // QoS broadcasts (Resistance: Fall of Man's game state) arrive without their QoS byte, on both channels.
+        bobDme.Send(new RT_MSG_CLIENT_APP_BROADCAST_QOS { QosFlags = 0x50, Payload = [0x02, 0x8C, 0x00] });
+        Assert.Equal(new byte[] { 0x02, 0x8C, 0x00 }, (await aliceDme.ExpectAsync<RT_MSG_CLIENT_APP_SINGLE>()).Payload);
+        bobDme.SendUdp(new RT_MSG_CLIENT_APP_BROADCAST_QOS { QosFlags = 0x00, Payload = [0x02, 0x81] });
+        RT_MSG_CLIENT_APP_SINGLE qosUdp = await aliceDme.ExpectUdpAsync<RT_MSG_CLIENT_APP_SINGLE>();
+        Assert.Equal((short)bobAccept.PlayerId, qosUdp.TargetOrSource);
+        Assert.Equal(new byte[] { 0x02, 0x81 }, qosUdp.Payload);
 
         // The MLS sees both players in the world.
         bob.Mls.SendApp(new MediusGameWorldPlayerListRequest { MessageID = new MessageId("pl"), MediusWorldID = worldId });
@@ -153,7 +163,7 @@ public sealed class GameFlowTests(LobbyFlowFixture fixture)
     }
 
     /// <summary>A logged-in player sitting in the lobby.</summary>
-    private sealed class Player : IAsyncDisposable
+    internal sealed class Player : IAsyncDisposable
     {
         private int _messageId;
 

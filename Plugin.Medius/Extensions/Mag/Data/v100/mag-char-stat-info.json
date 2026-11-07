@@ -1,0 +1,732 @@
+{
+ "source": "mage_g 1.00 + disc character_stats.zpr: ids from mag-char-stats.json, SVO names and update types from character_stats.zpr, by tools/re/charstatinfo.py",
+ "stats": {
+  "None": {
+   "id": 0
+  },
+  "TotalExperience": {
+   "id": 1,
+   "svo": "TOTAL EXPERIENCE",
+   "update": "Max",
+   "display": "Int"
+  },
+  "BattleExperience": {
+   "id": 2,
+   "update": "None",
+   "display": "None"
+  },
+  "FRAGOBonusPoints": {
+   "id": 3,
+   "svo": "FRAGOBONUS POINTS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "VictoryBonus": {
+   "id": 4,
+   "svo": "VICTORY BONUS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "RibbonCount": {
+   "id": 5,
+   "svo": "RIBBON COUNT",
+   "update": "Add",
+   "display": "Int"
+  },
+  "DirectiveBonus": {
+   "id": 6,
+   "svo": "DIRECTIVE BONUS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "LeadershipPoints": {
+   "id": 7,
+   "svo": "LEADERSHIP POINTS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ShadowWarBonus": {
+   "id": 8,
+   "svo": "SHADOW WAR BONUS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "VeteranLevelBonus": {
+   "id": 9,
+   "update": "None",
+   "display": "None"
+  },
+  "EnemiesKilled": {
+   "id": 10,
+   "svo": "ENEMIES KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "Assists": {
+   "id": 11,
+   "svo": "ASSISTS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "Deaths": {
+   "id": 12,
+   "svo": "DEATHS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "Suicides": {
+   "id": 13,
+   "svo": "SUICIDES",
+   "update": "Add",
+   "display": "Int"
+  },
+  "FriendliesKilled": {
+   "id": 14,
+   "svo": "FRIENDLIES KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "KillStreakMax": {
+   "id": 15,
+   "svo": "KILL STREAK MAX",
+   "update": "Max",
+   "display": "Int"
+  },
+  "LongDistanceKills": {
+   "id": 16,
+   "svo": "KILLS AT200M",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ParatroopersKilled": {
+   "id": 17,
+   "svo": "PARATROOPERS KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "EnemyVehiclesDestroyed": {
+   "id": 18,
+   "svo": "ENEMY VEHICLES DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "EscortVehiclesDestroyed": {
+   "id": 19,
+   "svo": "ESCORT VEHICLES DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "EnemyTurretsDestroyed": {
+   "id": 20,
+   "svo": "ENEMY TURRETS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "FriendlyVehiclesDestroyed": {
+   "id": 21,
+   "svo": "FRIENDLY VEHICLES DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "HeadshotKills": {
+   "id": 22,
+   "svo": "HEADSHOT KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "EnemyHelicoptersDestroyed": {
+   "id": 23,
+   "svo": "ENEMY HELICOPTERS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "FinishingMoves": {
+   "id": 24,
+   "svo": "FINISHING MOVES",
+   "update": "Add",
+   "display": "Int"
+  },
+  "PoisonGasKills": {
+   "id": 25,
+   "svo": "POISON GAS KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "KillDeathRatio": {
+   "id": 26,
+   "svo": "KILL DEATH RATIO",
+   "update": "Custom",
+   "display": "Float"
+  },
+  "FieldSupportsKilled": {
+   "id": 27,
+   "svo": "FIELD SUPPORTS KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "RapidAssaultsKilled": {
+   "id": 28,
+   "svo": "RAPID ASSAULTS KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SnipersKilled": {
+   "id": 29,
+   "svo": "SNIPERS KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "DirectActionsKilled": {
+   "id": 30,
+   "svo": "DIRECT ACTIONS KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "CommandoesKilled": {
+   "id": 31,
+   "svo": "COMMANDOES KILLED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AmountHealedOther": {
+   "id": 32,
+   "svo": "AMOUNT HEALED OTHER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AmountHealedSelf": {
+   "id": 33,
+   "svo": "AMOUNT HEALED SELF",
+   "update": "Add",
+   "display": "Int"
+  },
+  "Resuscitations": {
+   "id": 34,
+   "svo": "RESUSCITATIONS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "RepairUnits": {
+   "id": 35,
+   "svo": "REPAIR UNITS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "VehiclesRepaired": {
+   "id": 36,
+   "svo": "VEHICLES REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "PrimaryObjectivesActivated": {
+   "id": 37,
+   "svo": "PRIMARY OBJECTIVES ACTIVATED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "PrimaryObjectivesSecured": {
+   "id": 38,
+   "svo": "PRIMARY OBJECTIVES SECURED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "PrimaryObjectivesCompleted": {
+   "id": 39,
+   "svo": "PRIMARY OBJECTIVES COMPLETED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SecondaryObjectivesCompleted": {
+   "id": 40
+  },
+  "TaggedObjectivesCompleted": {
+   "id": 41,
+   "svo": "TAGGED OBJECTIVES COMPLETED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "DefensiveEmplacementsDestroyed": {
+   "id": 42,
+   "svo": "DEFENSIVE EMPLACEMENTS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "DefensiveEmplacementsRepaired": {
+   "id": 43,
+   "svo": "DEFENSIVE EMPLACEMENTS REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "BridgesDestroyed": {
+   "id": 44,
+   "svo": "BRIDGES DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "BridgesRepaired": {
+   "id": 45,
+   "svo": "BRIDGES REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "FortificationsDestroyed": {
+   "id": 46,
+   "svo": "FORTIFICATIONS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "FortificationsRepaired": {
+   "id": 47,
+   "svo": "FORTIFICATIONS REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "GatesDestroyed": {
+   "id": 48,
+   "svo": "GATES DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "GatesRepaired": {
+   "id": 49,
+   "svo": "GATES REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MortarsDestroyed": {
+   "id": 50,
+   "svo": "MORTARS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MortarsRepaired": {
+   "id": 51,
+   "svo": "MORTARS REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SensorNetworksDestroyed": {
+   "id": 52,
+   "svo": "SENSOR NETWORKS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SensorNetworksRepaired": {
+   "id": 53,
+   "svo": "SENSOR NETWORKS REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AntiAircraftDestroyed": {
+   "id": 54,
+   "svo": "ANTI AIRCRAFT DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AntiAircraftRepaired": {
+   "id": 55,
+   "svo": "ANTI AIRCRAFT REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MotorPoolsDestroyed": {
+   "id": 56,
+   "svo": "MOTOR POOLS DESTROYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MotorPoolsRepaired": {
+   "id": 57,
+   "svo": "MOTOR POOLS REPAIRED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "EscortVehiclesCaptured": {
+   "id": 58,
+   "svo": "ESCORT VEHICLES CAPTURED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "EscortVehiclesDelivered": {
+   "id": 59,
+   "svo": "ESCORT VEHICLES DELIVERED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ChargesPlanted": {
+   "id": 60,
+   "svo": "CHARGES PLANTED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ChargesDetonated": {
+   "id": 61,
+   "svo": "CHARGES DETONATED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ChargesDefused": {
+   "id": 62,
+   "svo": "CHARGES DEFUSED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MinesDeployed": {
+   "id": 63,
+   "svo": "MINES DEPLOYED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MinesDisarmed": {
+   "id": 64,
+   "svo": "MINES DISARMED",
+   "update": "Add",
+   "display": "None"
+  },
+  "TimePlayedSec": {
+   "id": 65,
+   "svo": "TIME PLAYED SEC",
+   "update": "Add",
+   "display": "Time"
+  },
+  "BattlesCompleted": {
+   "id": 66,
+   "svo": "BATTLES COMPLETED",
+   "update": "Add",
+   "display": "Int"
+  },
+  "WinsAsAttacker": {
+   "id": 67,
+   "svo": "WINS AS ATTACKER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "WinsAsDefender": {
+   "id": 68,
+   "svo": "WINS AS DEFENDER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "LossesAsAttacker": {
+   "id": 69,
+   "svo": "LOSSES AS ATTACKER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "LossesAsDefender": {
+   "id": 70,
+   "svo": "LOSSES AS DEFENDER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MajorVictories": {
+   "id": 71,
+   "svo": "MAJOR VICTORIES",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MinorVictories": {
+   "id": 72,
+   "svo": "MINOR VICTORIES",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MajorDefeats": {
+   "id": 73,
+   "svo": "MAJOR DEFEATS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MinorDefeats": {
+   "id": 74,
+   "svo": "MINOR DEFEATS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "WinsAsSquadLeader": {
+   "id": 75,
+   "svo": "WINS AS SQUAD LEADER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "LossesAsSquadLeader": {
+   "id": 76,
+   "svo": "LOSSES AS SQUAD LEADER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "WinsAsPlatoonLeader": {
+   "id": 77,
+   "svo": "WINS AS PLATOON LEADER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "LossesAsPlatoonLeader": {
+   "id": 78,
+   "svo": "LOSSES AS PLATOON LEADER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "WinsAsTeamLeader": {
+   "id": 79,
+   "svo": "WINS AS TEAM LEADER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "LossesAsTeamLeader": {
+   "id": 80,
+   "svo": "LOSSES AS TEAM LEADER",
+   "update": "Add",
+   "display": "Int"
+  },
+  "FirstPlaceMVP": {
+   "id": 81,
+   "svo": "FIRST PLACE MVP",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SecondPlaceMVP": {
+   "id": 82,
+   "svo": "SECOND PLACE MVP",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ThirdPlaceMVP": {
+   "id": 83,
+   "svo": "THIRD PLACE MVP",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SquadMVP": {
+   "id": 84,
+   "svo": "SQUAD MVP",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SpawnCount": {
+   "id": 85,
+   "svo": "SPAWN COUNT",
+   "update": "Add",
+   "display": "Int"
+  },
+  "CombatDrops": {
+   "id": 86,
+   "svo": "COMBAT DROPS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "DirectiveMatchesWon": {
+   "id": 87,
+   "svo": "DIRECTIVE MATCHES WON",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AirStrikeOrders": {
+   "id": 88,
+   "svo": "AIR STRIKE ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AirStrikeKills": {
+   "id": 89,
+   "svo": "AIR STRIKE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MortarBombardmentOrders": {
+   "id": 90,
+   "svo": "MORTAR BOMBARDMENT ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MortarBombardmentKills": {
+   "id": 91,
+   "svo": "MORTAR BOMBARDMENT KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "PrecisionAirStrikeOrders": {
+   "id": 92,
+   "svo": "PRECISION AIR STRIKE ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SurveillanceUAVOrders": {
+   "id": 93,
+   "svo": "SURVEILLANCE UAVORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SensorNetworkOrders": {
+   "id": 94,
+   "svo": "SENSOR NETWORK ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SignalJammingOrders": {
+   "id": 95,
+   "svo": "SIGNAL JAMMING ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "CommsJammingOrders": {
+   "id": 96
+  },
+  "RapidResupplyOrders": {
+   "id": 97,
+   "svo": "RAPID RESUPPLY ORDERS",
+   "update": "Add",
+   "display": "None"
+  },
+  "SatelliteSweepOrders": {
+   "id": 98,
+   "svo": "SATELLITE SWEEP ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "TacticalStrikeOrders": {
+   "id": 99,
+   "svo": "TACTICAL STRIKE ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "BlockadeOrders": {
+   "id": 100,
+   "svo": "BLOCKADE ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "StrategicChargeOrders": {
+   "id": 101,
+   "svo": "STRATEGIC CHARGE ORDERS",
+   "update": "Add",
+   "display": "None"
+  },
+  "RapidDeploymentOrders": {
+   "id": 102,
+   "svo": "RAPID DEPLOYMENT ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SupplyLineStrikeOrders": {
+   "id": 103
+  },
+  "GasBombardmentOrders": {
+   "id": 104,
+   "svo": "GAS BOMBARDMENT ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "StrafingRunOrders": {
+   "id": 105,
+   "svo": "STRAFING RUN ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "GuidedArtilleryOrders": {
+   "id": 106,
+   "svo": "GUIDED ARTILLERY ORDERS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AssaultRifleKills": {
+   "id": 107,
+   "svo": "ASSAULT RIFLE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "GrenadeKills": {
+   "id": 108,
+   "svo": "GRENADE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "GrenadeLauncherKills": {
+   "id": 109,
+   "svo": "GRENADE LAUNCHER KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "KnifeKills": {
+   "id": 110,
+   "svo": "KNIFE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "MachineGunKills": {
+   "id": 111,
+   "svo": "MACHINE GUN KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ClaymoreMineKills": {
+   "id": 112,
+   "svo": "CLAYMORE MINE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "AntiTankMineKills": {
+   "id": 113,
+   "svo": "ANTI TANK MINE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "RemoteMineKills": {
+   "id": 114
+  },
+  "RocketLauncherKills": {
+   "id": 115,
+   "svo": "ROCKET LAUNCHER KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "ShotgunKills": {
+   "id": 116,
+   "svo": "SHOTGUN KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SideArmKills": {
+   "id": 117,
+   "svo": "SIDE ARM KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SniperRifleKills": {
+   "id": 118,
+   "svo": "SNIPER RIFLE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "SubMachineGunKills": {
+   "id": 119,
+   "svo": "SUB MACHINE GUN KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "TurretGunKills": {
+   "id": 120,
+   "svo": "TURRET GUN KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "TurretRocketKills": {
+   "id": 121,
+   "svo": "TURRET ROCKET KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "VehicleKills": {
+   "id": 122,
+   "svo": "VEHICLE KILLS",
+   "update": "Add",
+   "display": "Int"
+  },
+  "VehicleWeaponKills": {
+   "id": 123,
+   "svo": "VEHICLE WEAPON KILLS",
+   "update": "Add",
+   "display": "Int"
+  }
+ }
+}

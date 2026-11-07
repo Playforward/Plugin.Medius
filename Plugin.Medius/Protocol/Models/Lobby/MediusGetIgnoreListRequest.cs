@@ -26,7 +26,9 @@ namespace Plugin.Medius.RT.Models
 
             // 
             SessionKey = reader.ReadString(Constants.SESSIONKEY_MAXLEN);
-            reader.ReadBytes(2);
+            // Killzone 2 1.29 sends no pad after the session key (codec 0x72d878, 38 bytes) [C].
+            if (reader.BaseStream.Length - reader.BaseStream.Position >= 2)
+                reader.ReadBytes(2);
         }
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)

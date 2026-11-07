@@ -1,7 +1,10 @@
+using ModdableWebServer.Helper;
+using ModdableWebServer.Interfaces;
 using Plugin.Medius.Components;
 using Plugin.Medius.Extensions;
 using Plugin.Medius.Lobby;
 using Plugin.Medius.Transport;
+using Plugin.Medius.Web;
 using ServerShared.Controllers;
 using ServerShared.EventArguments;
 using ServerShared.Plugins;
@@ -28,6 +31,9 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
     private MediusContext? _context;
     private readonly Dictionary<int, MediusComponent> _tcpComponents = [];
     private readonly Dictionary<int, Action<CoreUdpSession, ReadOnlyMemory<byte>>> _udpHandlers = [];
+    private readonly List<RudpComponent> _rudpComponents = [];
+    private readonly HashSet<int> _webPorts = [];
+    private WebComponent? _web;
     private readonly ConcurrentDictionary<Guid, ScertConnection> _connections = new();
     private Timer? _ticker;
 
@@ -71,6 +77,15 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
         foreach (MediusComponent component in extensions.Values.Distinct().SelectMany(e => e.CreateComponents(_context)))
             components[component.Name] = component;
 
+        List<IMediusWebService> webServices = [.. extensions.Values.Distinct().OfType<IMediusWebService>()];
+        if (webServices.Count > 0 && Config.PortOf(MediusComponentNames.Web) != 0)
+        {
+            LegacyTlsCredentials credentials = LegacyTlsCredentials.LoadOrCreate(Path.Combine(Config.DataDir, "web"),
+                webServices.SelectMany(s => s.WebHosts).FirstOrDefault() ?? "medius");
+            _web = new WebComponent(webServices, credentials);
+            MediusHttpRoutes.Web = _web;
+        }
+
         if (!BindListeners(components))
             return;
 
@@ -96,12 +111,19 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
         _connections.Clear();
         _tcpComponents.Clear();
         _udpHandlers.Clear();
+        _webPorts.Clear();
+        _web = null;
+        MediusHttpRoutes.Web = null;
+        foreach (RudpComponent rudp in _rudpComponents)
+            rudp.Dispose();
+        _rudpComponents.Clear();
     }
 
     /// <summary>
     /// Assigns each configured listener its component, refusing to start if
-    /// a component is unknown or ServerApp has no server on that port: a
-    /// silently unbound port is a game that times out with nothing logged.
+    /// ServerApp has no server on that port: a silently unbound port is a
+    /// game that times out with nothing logged. An unknown component is
+    /// logged and its port left unserved.
     /// </summary>
     private bool BindListeners(Dictionary<string, MediusComponent> components)
     {
@@ -123,21 +145,42 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
                     _udpHandlers[listener.Port] = OnNatProbe;
                 else if (components.GetValueOrDefault(listener.Component) is DmeComponent dme)
                     _udpHandlers[listener.Port] = (session, data) => dme.HandleDatagram(session, data.Span);
+                else if (string.Equals(listener.Component, MediusComponentNames.Rudp, StringComparison.OrdinalIgnoreCase) &&
+                         components.Values.OfType<DmeComponent>().FirstOrDefault() is { } gameDme)
+                {
+                    RudpComponent rudp = new(_context!, gameDme);
+                    _rudpComponents.Add(rudp);
+                    _udpHandlers[listener.Port] = (session, data) => rudp.HandleDatagram(session, data.Span);
+                }
                 else
                 {
-                    Log.Error("[medius] {Component} on UDP port {Port}: only NAT and the DME are served over UDP", listener.Component, listener.Port);
+                    Log.Error("[medius] {Component} on UDP port {Port}: only NAT, the DME and RUDP are served over UDP", listener.Component, listener.Port);
                     ok = false;
                 }
                 continue;
             }
 
+            if (string.Equals(listener.Component, MediusComponentNames.Web, StringComparison.OrdinalIgnoreCase))
+            {
+                if (_web is null)
+                    Log.Warning("[medius] WEB listener {Port}: no title extension runs a web service; the port is left unserved", listener.Port);
+                else
+                {
+                    _webPorts.Add(listener.Port);
+                    // Plain HTTP never reaches OnTcpBytes: ServerApp routes it itself.
+                    if (ServerController.Servers.FirstOrDefault(s => s.Port == listener.Port && !s.IsUdp)?.Server is IHttpServer http)
+                        http.HeaderAttributeToMethods.Merge(typeof(MediusHttpRoutes));
+                }
+                continue;
+            }
             if (components.TryGetValue(listener.Component, out MediusComponent? component))
                 _tcpComponents[listener.Port] = component;
             else
             {
-                Log.Error("[medius] listener {Port} names component {Component}, which is not known (known: {Known})",
+                // Not fatal: a component can come from another plugin (MAG's game
+                // server), and a missing one should not take the lobby down with it.
+                Log.Error("[medius] listener {Port} names component {Component}, which is not known (known: {Known}); the port is left unserved",
                     listener.Port, listener.Component, string.Join(", ", components.Keys));
-                ok = false;
             }
         }
         if (Config.Listeners.Any(l => string.Equals(l.Component, MediusComponentNames.Dme, StringComparison.OrdinalIgnoreCase)) &&
@@ -153,10 +196,16 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
     {
         if (_context is null || sender is not CoreUnsecureSession session || session.Server is not CoreUnsecureServer server)
             return;
+        if (_web is not null && _webPorts.Contains(server.Port))
+        {
+            _web.Received(session.Id, session.Socket?.RemoteEndPoint as IPEndPoint, e.Data.Span,
+                bytes => session.SendAsync(bytes), () => session.Disconnect());
+            return;
+        }
         if (!_tcpComponents.TryGetValue(server.Port, out MediusComponent? component))
             return;
 
-        ScertConnection connection = _connections.GetOrAdd(session.Id, _ => new ScertConnection(session, component.Name, _context.ServerKey));
+        ScertConnection connection = _connections.GetOrAdd(session.Id, _ => new ScertConnection(session, component.Name, _context.ServerKey, _context.Settings.LogMessages));
         try
         {
             foreach (var message in connection.Receive(e.Data.Span))
@@ -173,6 +222,7 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
 
     private void OnTcpDisconnected(object? sender, SessionGuidEventArgs e)
     {
+        _web?.Disconnected(e.Id);
         if (!_connections.TryRemove(e.Id, out ScertConnection? connection))
             return;
         if (_tcpComponents.TryGetValue(connection.LocalPort, out MediusComponent? component))
@@ -199,10 +249,14 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
     /// it arrived from (IPv4, then port big-endian), so a client behind NAT
     /// learns its public endpoint. A probe ending 0xD4 is a keep-alive.
     /// </summary>
-    private static void OnNatProbe(CoreUdpSession session, ReadOnlyMemory<byte> data)
+    private void OnNatProbe(CoreUdpSession session, ReadOnlyMemory<byte> data)
     {
         ReadOnlySpan<byte> probe = data.Span;
-        if (probe.Length != 4 || probe[3] == 0xD4 || session.EndPoint is not IPEndPoint remote)
+        bool answer = probe.Length == 4 && probe[3] != 0xD4 && session.EndPoint is IPEndPoint;
+        if (_context?.Settings.LogMessages == true)
+            Log.Debug("[medius/NAT] {Remote} <- {Length}B {Data}{Note}", session.EndPoint, probe.Length, Convert.ToHexString(probe),
+                answer ? "" : " (not answered)");
+        if (!answer || session.EndPoint is not IPEndPoint remote)
             return;
 
         byte[] reply = new byte[6];

@@ -56,15 +56,44 @@ public sealed class MediusGame
         Attributes = request.Attributes;
     }
 
+    internal MediusGame(int id, MediusTitle title, MediusClient host, MediusCreateGameRequest2 request)
+        : this(id, title, host, request.ApplicationID, request.MaxPlayers)
+    {
+        Name = request.GameName ?? "";
+        Password = request.GamePassword ?? "";
+        MinPlayers = request.MinPlayers;
+        GenericFields = [.. request.GenericFields.Take(8), .. new int[Math.Max(0, 8 - request.GenericFields.Length)]];
+        HostType = request.GameHostType;
+    }
+
+    /// <summary>
+    /// A world the matchmaker made for a match: nobody created it, so it has
+    /// no host until the game picks one among the players on the DME.
+    /// </summary>
+    internal MediusGame(int id, MediusTitle title, MediusMatchPool pool, MediusClient firstPlayer, string? name = null)
+        : this(id, title, null, firstPlayer.AppId, pool.MaxPlayers, firstPlayer.Channel)
+    {
+        Name = name ?? title.Matchmaking.GameNameFor(pool, id);
+        MinPlayers = pool.MinPlayers;
+        HostType = pool.HostType;
+        IsMatchmade = true;
+    }
+
     private MediusGame(int id, MediusTitle title, MediusClient host, int appId, int maxPlayers)
+        : this(id, title, host, appId == 0 ? host.AppId : appId, maxPlayers, host.Channel)
+    {
+    }
+
+    private MediusGame(int id, MediusTitle title, MediusClient? host, int appId, int maxPlayers, MediusChannel? channel)
     {
         Id = id;
         Title = title;
         Host = host;
-        AppId = appId == 0 ? host.AppId : appId;
-        MaxPlayers = Math.Clamp(maxPlayers, 1, MaxSlots);
-        _slots = new DmePlayer?[MaxPlayers];
-        Channel = host.Channel;
+        AppId = appId;
+        FirstPlayerIndex = title.GameServer.HostSeat ? 1 : 0;
+        MaxPlayers = Math.Clamp(maxPlayers, 1, MaxSlots - FirstPlayerIndex);
+        _slots = new DmePlayer?[MaxPlayers + FirstPlayerIndex];
+        Channel = channel;
     }
 
     public int Id { get; }
@@ -88,6 +117,16 @@ public sealed class MediusGame
     public int[] GenericFields { get; private set; } = new int[8];
     public byte[] Stats { get; private set; } = new byte[Constants.GAMESTATS_MAXLEN];
     public MediusGameHostType HostType { get; }
+    /// <summary>Made by the matchmaker rather than a player's MediusCreateGame.</summary>
+    public bool IsMatchmade { get; }
+    /// <summary>The matchmaker may still add players (until MediusMatchCloseLateJoin).</summary>
+    public bool AcceptsLateJoin { get; internal set; } = true;
+    /// <summary>The matchmaking pool (superset, pool key) the matchmaker fills it from; null when it fills none.</summary>
+    public (uint Superset, string Key)? MatchPool { get; internal set; }
+    /// <summary>The settings the matchmaker made it with (its pool, with the variant picked for it applied).</summary>
+    public MediusMatchPool? MatchSettings { get; internal set; }
+    /// <summary>Players the matchmaker has sent here, per team.</summary>
+    internal int[] MatchTeamSizes { get; set; } = [];
     public MediusWorldAttributesType Attributes { get; }
     public MediusWorldStatus Status { get; private set; } = MediusWorldStatus.WorldPendingCreation;
 
@@ -101,6 +140,15 @@ public sealed class MediusGame
 
     /// <summary>Shown in game lists: the host has reported it open.</summary>
     public bool IsListed => Status is MediusWorldStatus.WorldStaging or MediusWorldStatus.WorldActive;
+
+    /// <summary>1 when the game server holds index 0 itself (<see cref="MediusGameServerSettings.HostSeat"/>), else 0.</summary>
+    public int FirstPlayerIndex { get; }
+
+    /// <summary>The ScertId of the game server's own seat at index 0 [live PSRewired].</summary>
+    public const ushort HostSeatScertId = 1;
+
+    /// <summary>Seats in use: the players' and the game server's own.</summary>
+    public int SeatCount => Players.Length + FirstPlayerIndex;
 
     public DmePlayer[] Players
     {
@@ -128,7 +176,7 @@ public sealed class MediusGame
         {
             if (_slots.FirstOrDefault(p => p?.Client == client) is { } existing)
                 return existing;
-            int index = Array.IndexOf(_slots, null);
+            int index = Array.IndexOf(_slots, null, FirstPlayerIndex);
             if (index < 0)
                 return null;
             return _slots[index] = new DmePlayer(client, this, index);
@@ -161,7 +209,7 @@ public sealed class MediusGame
     {
         Name = report.GameName ?? Name;
         MinPlayers = report.MinPlayers;
-        MaxPlayers = Math.Clamp(report.MaxPlayers, 1, _slots.Length);
+        MaxPlayers = Math.Clamp(report.MaxPlayers, 1, _slots.Length - FirstPlayerIndex);
         GameLevel = report.GameLevel;
         PlayerSkillLevel = report.PlayerSkillLevel;
         RulesSet = report.RulesSet;
@@ -176,7 +224,7 @@ public sealed class MediusGame
     {
         Name = report.GameName ?? Name;
         MinPlayers = report.MinPlayers;
-        MaxPlayers = Math.Clamp(report.MaxPlayers, 1, _slots.Length);
+        MaxPlayers = Math.Clamp(report.MaxPlayers, 1, _slots.Length - FirstPlayerIndex);
         GameLevel = report.GameLevel;
         PlayerSkillLevel = report.PlayerSkillLevel;
         RulesSet = report.RulesSet;
@@ -218,6 +266,10 @@ public sealed class DmePlayer
     /// <summary>Handed out in the MLS join response; the client presents it to the DME.</summary>
     public string AccessKey { get; }
 
+    /// <summary>The id an RUdp connection made with <see cref="AccessKey"/> carries in its hello.</summary>
+    public byte[] RudpHelloId => _rudpHelloId ??= Transport.RudpCrypto.HelloId(AccessKey);
+    private byte[]? _rudpHelloId;
+
     /// <summary>Identifies the player's RT connection; the client repeats it in its aux UDP connect.</summary>
     public ushort ScertId { get; }
 
@@ -241,7 +293,8 @@ public sealed class DmePlayer
     /// <summary>The account stats blob the player last reported for this game (MediusPlayerReport).</summary>
     public byte[] Stats { get; internal set; } = new byte[Constants.ACCOUNTSTATS_MAXLEN];
 
-    public bool Receives(RT_RECV_FLAG flag) => Connection is { MediusVersion: <= 108 } || RecvFlag.HasFlag(flag);
+    public bool Receives(RT_RECV_FLAG flag) => Connection is { MediusVersion: <= 108 } || RecvFlag.HasFlag(flag) ||
+        RecvFlag.HasFlag(RT_RECV_FLAG.RECV_ALL_20);
 
     /// <summary>Sends over aux UDP when asked and connected, otherwise over TCP.</summary>
     public void Send(BaseScertMessage message, bool udp = false)

@@ -45,7 +45,11 @@ public sealed partial class MlsComponent(MediusContext context) : MediusComponen
     {
         if (connection.Client is not { } client)
         {
-            Unhandled(connection, message);
+            // Resistance 2 ends its session twice; the second finds it already gone.
+            if (message is MediusSessionEndRequest ended)
+                connection.SendApp(new MediusSessionEndResponse { MessageID = ended.MessageID, StatusCode = MediusCallbackStatus.MediusSuccess });
+            else
+                Unhandled(connection, message);
             return;
         }
         MediusTitle title = client.Title;
@@ -125,6 +129,10 @@ public sealed partial class MlsComponent(MediusContext context) : MediusComponen
                 });
                 break;
 
+            case MediusBinaryMessage1 binary:
+                SendBinary(client, binary);
+                break;
+
             case MediusPlayerInfoRequest request:
                 SendPlayerInfo(connection, title, request);
                 break;
@@ -136,19 +144,54 @@ public sealed partial class MlsComponent(MediusContext context) : MediusComponen
                 break;
 
             case MediusSessionEndRequest request:
-                Context.Lobby.EndSession(client);
+                Context.Lobby.EndSession(client, keepGameSeat: true);
                 connection.Client = null;
                 connection.SendApp(new MediusSessionEndResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusSuccess });
                 break;
 
             default:
-                if (!HandleGame(connection, client, message) && !LobbyCommon.TryHandle(Context, connection, message))
+                if (!HandleGame(connection, client, message) && !HandleMatchmaking(connection, client, message) &&
+                    !HandleBuddies(connection, client, message) && !HandleClans(connection, client, message) &&
+                    !LobbyCommon.TryHandle(Context, connection, message))
                     Unhandled(connection, message);
                 break;
         }
     }
 
-    internal override void Disconnected(ScertConnection connection)
+    /// <summary>
+    /// Delivers a binary message to its target account, or to everyone in the
+    /// sender's channel (or the whole title) for broadcasts. A target nobody is
+    /// logged in as is logged, with the message, for the title's docs.
+    /// </summary>
+    private void SendBinary(MediusClient sender, MediusBinaryMessage1 binary)
+    {
+        IEnumerable<MediusClient> targets = binary.MessageType switch
+        {
+            MediusBinaryMessageType.TargetBinaryMsg =>
+                Context.Lobby.Clients(sender.Title).Where(c => c.IsLoggedIn && c.AccountId == binary.TargetAccountID),
+            MediusBinaryMessageType.BroadcastBinaryMsg =>
+                Context.Lobby.Clients(sender.Title).Where(c => c != sender && c.Channel is not null && c.Channel == sender.Channel),
+            _ => Context.Lobby.Clients(sender.Title).Where(c => c != sender && c.IsLoggedIn),
+        };
+        int delivered = 0;
+        foreach (MediusClient target in targets.Where(t => t.Connection is not null).ToList())
+        {
+            target.Connection!.SendApp(new MediusBinaryFwdMessage1
+            {
+                MessageID = binary.MessageID,
+                MessageType = binary.MessageType,
+                OriginatorAccountID = sender.AccountId,
+                Message = binary.Message,
+                OriginatorFirst = sender.Title.RtLayout.BinaryFwdOriginatorFirst,
+            });
+            delivered++;
+        }
+        if (delivered == 0)
+            Log.Warning("{Tag} {Client}: binary message {Type} for account {Target} reached nobody ({Length} bytes): {Data}",
+                Tag, sender, binary.MessageType, binary.TargetAccountID, binary.Message.Length, Convert.ToHexString(binary.Message));
+    }
+
+    protected internal override void Disconnected(ScertConnection connection)
     {
         if (connection.Client is not { } client || client.Connection != connection)
             return;

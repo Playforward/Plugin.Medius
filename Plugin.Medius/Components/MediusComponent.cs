@@ -46,6 +46,12 @@ public abstract class MediusComponent(MediusContext context)
 
         switch (message)
         {
+            // A transport that encrypts by itself has no key exchange: the hello is just
+            // the version back (RUdp: 70 00 00 00 to a version-112 hello [live PSRewired]).
+            case RT_MSG_CLIENT_HELLO when !connection.Transport.RtEncryption:
+                connection.Send(new RT_MSG_SERVER_HELLO { ArgsOnly = true, ARG1 = (ushort)connection.MediusVersion, ARG2 = 0 });
+                break;
+
             case RT_MSG_CLIENT_HELLO:
                 connection.Send(new RT_MSG_SERVER_HELLO
                 {
@@ -65,16 +71,7 @@ public abstract class MediusComponent(MediusContext context)
                     connection.Disconnect();
                     break;
                 }
-                if (connection.MediusVersion > 108)
-                {
-                    connection.Send(new RT_MSG_SERVER_CONNECT_REQUIRE());
-                }
-                else
-                {
-                    SendCryptKeyGame(connection);
-                    SendAccept(connection);
-                    connection.Send(new RT_MSG_SERVER_CONNECT_COMPLETE { ARG1 = 0x0001 });
-                }
+                ConnectAccepted(connection);
                 break;
 
             case RT_MSG_CLIENT_CONNECT_READY_REQUIRE:
@@ -100,6 +97,10 @@ public abstract class MediusComponent(MediusContext context)
 
             case RT_MSG_CLIENT_DISCONNECT:
             case RT_MSG_CLIENT_DISCONNECT_WITH_REASON:
+                // Over a datagram transport nothing else tells the client the server heard
+                // it: PSRewired answers DISCONNECT_WITH_REASON with CLIENT_DISCONNECT [live].
+                if (!connection.Transport.RtEncryption && message is RT_MSG_CLIENT_DISCONNECT_WITH_REASON)
+                    connection.Send(new RT_MSG_CLIENT_DISCONNECT());
                 connection.Disconnect();
                 break;
 
@@ -135,6 +136,24 @@ public abstract class MediusComponent(MediusContext context)
         return true;
     }
 
+    /// <summary>
+    /// The connect was taken: version 109+ is asked to confirm (CONNECT_REQUIRE), 108
+    /// gets the key, the accept and the completion at once.
+    /// </summary>
+    protected virtual void ConnectAccepted(ScertConnection connection)
+    {
+        if (connection.MediusVersion > 108)
+        {
+            connection.Send(new RT_MSG_SERVER_CONNECT_REQUIRE());
+        }
+        else
+        {
+            SendCryptKeyGame(connection);
+            SendAccept(connection);
+            connection.Send(new RT_MSG_SERVER_CONNECT_COMPLETE { ARG1 = 0x0001 });
+        }
+    }
+
     /// <summary>The client is ready (RT_MSG_CLIENT_CONNECT_READY_TCP); a lobby component completes the connection here.</summary>
     protected virtual void ConnectReady(ScertConnection connection, RT_MSG_CLIENT_CONNECT_READY_TCP ready)
     {
@@ -149,7 +168,7 @@ public abstract class MediusComponent(MediusContext context)
     /// <summary>RT messages beyond the connect sequence; return false to log them as unhandled.</summary>
     protected virtual bool HandleOther(ScertConnection connection, BaseScertMessage message) => false;
 
-    internal virtual void Disconnected(ScertConnection connection) { }
+    protected internal virtual void Disconnected(ScertConnection connection) { }
 
     protected void Unhandled(ScertConnection connection, BaseMediusMessage message)
     {

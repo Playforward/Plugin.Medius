@@ -105,65 +105,48 @@ namespace Plugin.Medius.RT.Models
 
         #region Dynamic Instantiation
 
-        private static Dictionary<MediusDmeMessageIds, Type> _dmeMessageClassById = null;
-        private static Dictionary<MediusMGCLMessageIds, Type> _mgclMessageClassById = null;
-        private static Dictionary<MediusLobbyMessageIds, Type> _lobbyMessageClassById = null;
-        private static Dictionary<MediusLobbyExtMessageIds, Type> _lobbyExtMessageClassById = null;
-        private static int _messageClassByIdLockValue = 0;
-        private static object _messageClassByIdLockObject = (object)_messageClassByIdLockValue;
-
+        /// <summary>
+        /// Models by (class, type). Usually one; two when SCE-RT versions gave a
+        /// type to different messages in each direction (Killzone 2's 3.03 sends
+        /// lobby-ext 0x87 as a join request, later libraries answer with it), so
+        /// <see cref="Instantiate"/> picks by who sent it.
+        /// </summary>
+        private static Dictionary<(NetMessageTypes, byte), List<Type>> _messageClassById = null;
+        private static readonly object _messageClassByIdLock = new();
 
         private static void Initialize()
         {
-            lock (_messageClassByIdLockObject)
+            lock (_messageClassByIdLock)
             {
-                if (_dmeMessageClassById != null)
+                if (_messageClassById != null)
                     return;
 
-                _dmeMessageClassById = new Dictionary<MediusDmeMessageIds, Type>();
-                _mgclMessageClassById = new Dictionary<MediusMGCLMessageIds, Type>();
-                _lobbyMessageClassById = new Dictionary<MediusLobbyMessageIds, Type>();
-                _lobbyExtMessageClassById = new Dictionary<MediusLobbyExtMessageIds, Type>();
-
-                // Populate
+                var byId = new Dictionary<(NetMessageTypes, byte), List<Type>>();
                 var assembly = System.Reflection.Assembly.GetAssembly(typeof(BaseMediusMessage));
-                var types = assembly.GetTypes();
-
-                foreach (Type classType in types)
+                foreach (Type classType in assembly.GetTypes())
                 {
-                    // Objects by Id
                     var attrs = (MediusMessageAttribute[])classType.GetCustomAttributes(typeof(MediusMessageAttribute), true);
-                    if (attrs != null && attrs.Length > 0)
-                    {
-                        switch (attrs[0].MessageClass)
-                        {
-                            case NetMessageTypes.MessageClassDME:
-                                {
-                                    _dmeMessageClassById.Add((MediusDmeMessageIds)attrs[0].MessageType, classType);
-                                    break;
-                                }
-                            case NetMessageTypes.MessageClassLobbyReport:
-                                {
-                                    _mgclMessageClassById.Add((MediusMGCLMessageIds)attrs[0].MessageType, classType);
-                                    break;
-                                }
-                            case NetMessageTypes.MessageClassLobby:
-                                {
-                                    _lobbyMessageClassById.Add((MediusLobbyMessageIds)attrs[0].MessageType, classType);
-                                    break;
-                                }
-                            case NetMessageTypes.MessageClassLobbyExt:
-                                {
-                                    _lobbyExtMessageClassById.Add((MediusLobbyExtMessageIds)attrs[0].MessageType, classType);
-                                    break;
-                                }
-                        }
-                    }
+                    if (attrs == null || attrs.Length == 0)
+                        continue;
+                    var key = (attrs[0].MessageClass, attrs[0].MessageType);
+                    if (!byId.TryGetValue(key, out var list))
+                        byId[key] = list = new List<Type>();
+                    list.Add(classType);
                 }
+                _messageClassById = byId;
             }
         }
 
-        public static BaseMediusMessage Instantiate(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
+        /// <summary>
+        /// Whether a model can be sent that way: requests come from clients,
+        /// responses from servers, anything else either way.
+        /// </summary>
+        private static bool Fits(Type classType, bool fromClient) =>
+            fromClient ? !typeof(IMediusResponse).IsAssignableFrom(classType) || typeof(IMediusRequest).IsAssignableFrom(classType)
+                       : !typeof(IMediusRequest).IsAssignableFrom(classType) || typeof(IMediusResponse).IsAssignableFrom(classType);
+
+        /// <summary>Reads a Medius message; <paramref name="fromClient"/> says which side sent it, to pick between models sharing a type.</summary>
+        public static BaseMediusMessage Instantiate(Plugin.Medius.RT.Shared.Stream.MessageReader reader, bool? fromClient = null)
         {
             BaseMediusMessage msg;
             Type classType = null;
@@ -174,33 +157,8 @@ namespace Plugin.Medius.RT.Models
             NetMessageTypes msgClass = reader.Read<NetMessageTypes>();
             var msgType = reader.ReadByte();
 
-            switch (msgClass)
-            {
-                case NetMessageTypes.MessageClassDME:
-                    {
-                        if (!_dmeMessageClassById.TryGetValue((MediusDmeMessageIds)msgType, out classType))
-                            classType = null;
-                        break;
-                    }
-                case NetMessageTypes.MessageClassLobbyReport:
-                    {
-                        if (!_mgclMessageClassById.TryGetValue((MediusMGCLMessageIds)msgType, out classType))
-                            classType = null;
-                        break;
-                    }
-                case NetMessageTypes.MessageClassLobby:
-                    {
-                        if (!_lobbyMessageClassById.TryGetValue((MediusLobbyMessageIds)msgType, out classType))
-                            classType = null;
-                        break;
-                    }
-                case NetMessageTypes.MessageClassLobbyExt:
-                    {
-                        if (!_lobbyExtMessageClassById.TryGetValue((MediusLobbyExtMessageIds)msgType, out classType))
-                            classType = null;
-                        break;
-                    }
-            }
+            if (_messageClassById.TryGetValue((msgClass, msgType), out var candidates))
+                classType = (fromClient is { } side ? candidates.Find(t => Fits(t, side)) : null) ?? candidates[0];
 
             // Instantiate
             if (classType == null)

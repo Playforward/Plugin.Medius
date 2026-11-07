@@ -1,0 +1,1591 @@
+{
+ "source": "tools/re/msgtypes.py scan of each build's mage_g.elf and EBOOT.elf (message constructors, RTTI)",
+ "versions": [
+  {
+   "build": "ABmagprod370048",
+   "protocol": 1740,
+   "protocolGlobal": "0x15ad1d0",
+   "gameDispatcher": "0x1be88c",
+   "kernel": {
+    "ClientClaimReservation": 4,
+    "ClientGameInfo": 5,
+    "ClientReady": 6,
+    "ClientEnterGame": 7,
+    "FieldUpdate": 8,
+    "CorrectionAck": 9,
+    "NetTimeRequest": 11,
+    "NetTimeResponse": 12,
+    "PluginId": 17
+   },
+   "executables": {
+    "mage_g.elf": {
+     "build": "ABmagprod370048",
+     "protocol": 1740,
+     "protocolGlobal": "0x15ad1d0",
+     "messageBaseCtor": "0x150270"
+    },
+    "EBOOT.elf": {
+     "build": "ABmagprod370048",
+     "protocol": 1740,
+     "protocolGlobal": "0x32b9b0",
+     "messageBaseCtor": "0x87d80"
+    }
+   },
+   "classes": {
+    "NetAccountLoginRequest": {
+     "type": 46,
+     "ctor": "0x1c31e0",
+     "elf": "mage_g.elf"
+    },
+    "NetAccountLoginResponse": {
+     "type": 47,
+     "ctor": "0x1c911c",
+     "elf": "mage_g.elf"
+    },
+    "NetAccountLogoutRequest": {
+     "type": 48,
+     "ctor": "0x1c30a8",
+     "elf": "mage_g.elf"
+    },
+    "NetAccountLogoutResponse": {
+     "type": 49,
+     "ctor": "0x1c7948",
+     "elf": "mage_g.elf"
+    },
+    "NetCancelJoinRequest": {
+     "type": 21,
+     "ctor": "0x1d6838",
+     "elf": "mage_g.elf"
+    },
+    "NetJoinGameRequest": {
+     "type": 18,
+     "ctor": "0x1e8cf0",
+     "elf": "mage_g.elf"
+    },
+    "NetJoinGameResponse": {
+     "type": 19,
+     "ctor": "0x1e8dc0",
+     "elf": "mage_g.elf"
+    },
+    "NetMAPSHelloMessage": {
+     "type": 54,
+     "ctor": "0x1c6b80",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageHello": {
+     "type": 1,
+     "ctor": "0x1f1d2c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageJoinGameConfirm": {
+     "type": 57,
+     "ctor": "0x1c4158",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageJoinGameUpdate": {
+     "type": 20,
+     "ctor": "0x1f2018",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKeepAlive": {
+     "type": 3,
+     "ctor": "0x1e596c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventDecline": {
+     "type": 34,
+     "ctor": "0x1e5f78",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventJoin": {
+     "type": 31,
+     "ctor": "0x1e72b4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventLeave": {
+     "type": 32,
+     "ctor": "0x1e6038",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventUpdate": {
+     "type": 33,
+     "ctor": "0x1e5fc0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyInvite": {
+     "type": 26,
+     "ctor": "0x1e70ec",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyInviteResponse": {
+     "type": 27,
+     "ctor": "0x1e7194",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyLeave": {
+     "type": 28,
+     "ctor": "0x1e6078",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyOpenInvite": {
+     "type": 37,
+     "ctor": "0x1e7044",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyRejoinRequest": {
+     "type": 38,
+     "ctor": "0x1e7144",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyRejoinResponse": {
+     "type": 39,
+     "ctor": "0x1e71ec",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePatchRequest": {
+     "type": 501,
+     "ctor": "0x1536c0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePatchResponse": {
+     "type": 502,
+     "ctor": "0x152f70",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerKicked": {
+     "type": 44,
+     "ctor": "0x1e83ec",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageProtocolInfo": {
+     "type": 2,
+     "ctor": "0x1e5b9c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageVoiceIndexAcctMap": {
+     "type": 42,
+     "ctor": "0x1e8274",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageVoiceSetGroup": {
+     "type": 43,
+     "ctor": "0x1e80b0",
+     "elf": "mage_g.elf"
+    },
+    "NetNPAuthenticateRequest": {
+     "type": 52,
+     "ctor": "0x1c6034",
+     "elf": "mage_g.elf"
+    },
+    "NetNPAuthenticateResponse": {
+     "type": 53,
+     "ctor": "0x1c5870",
+     "elf": "mage_g.elf"
+    },
+    "NetUniverseListRequest": {
+     "type": 55,
+     "ctor": "0x1c5870",
+     "elf": "mage_g.elf"
+    },
+    "NetUniverseListResponse": {
+     "type": 56,
+     "ctor": "0x1ca788",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterDataResponse": {
+     "type": 569,
+     "via": "NetMessageCharacterDataResponse",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterGameResults": {
+     "type": 2006,
+     "via": "NetMessageCharacterGameResults",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterListResponse": {
+     "type": 567,
+     "via": "NetMessageCharacterListResponse",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterReSpecResponse": {
+     "type": 604,
+     "ctor": "0x8c36b4",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCreateCharacterRequest": {
+     "type": 570,
+     "via": "NetMessageCreateCharacterRequest",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageFactionReSpecRequest": {
+     "type": 602,
+     "ctor": "0x8c3668",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageGameReservationRequest": {
+     "type": 586,
+     "ctor": "0xe1cbec",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageGameReservationResponse": {
+     "type": 589,
+     "ctor": "0xe1cd04",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageShadowWarBonuses": {
+     "type": 599,
+     "ctor": "0x8c3ed8",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageSkillReSpecRequest": {
+     "type": 596,
+     "ctor": "0x8c46fc",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageSkillReSpecResponse": {
+     "type": 597,
+     "ctor": "0x8c4738",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageVeteranReSpecRequest": {
+     "type": 603,
+     "ctor": "0x8c361c",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageVoiceCategory": {
+     "type": 601,
+     "ctor": "0x8c4a4c",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageWeaponStats": {
+     "type": 600,
+     "ctor": "0xe1f448",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageAddDmgVolume": {
+     "type": 550,
+     "ctor": "0x453d74",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageAddDynamicSupplyPoint": {
+     "type": 551,
+     "ctor": "0x454044",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageAutoTest": {
+     "type": 524,
+     "ctor": "0x453a10",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCancelReservation": {
+     "type": 23,
+     "ctor": "0x154ff0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCancelRespawn": {
+     "type": 531,
+     "ctor": "0x4539d0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCancelRespawnResult": {
+     "type": 532,
+     "ctor": "0x453990",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlatoon": {
+     "type": 583,
+     "ctor": "0x8c4b9c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerNominations": {
+     "type": 579,
+     "ctor": "0x8c4d30",
+     "ambiguous": true,
+     "types": [
+      45,
+      579
+     ],
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerNominationsResult": {
+     "type": 580,
+     "ctor": "0x8c4cec",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerSquad": {
+     "type": 514,
+     "ctor": "0x453948",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerSquadResult": {
+     "type": 515,
+     "ctor": "0x453900",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterDataRequest": {
+     "type": 568,
+     "ctor": "0x4550e8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterDataResponse": {
+     "type": 569,
+     "ctor": "0x455df0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterGameAwards": {
+     "type": 581,
+     "ctor": "0x8c50f4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterGameResults": {
+     "type": 2006,
+     "ctor": "0x453bd4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterGameResultsComplete": {
+     "type": 2007,
+     "ctor": "0x4538b8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterListRequest": {
+     "type": 566,
+     "ctor": "0x455d3c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterListResponse": {
+     "type": 567,
+     "ctor": "0x456018",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterMedalAwards": {
+     "type": 582,
+     "ctor": "0x8c52e0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterRecord": {
+     "type": 591,
+     "ctor": "0x8c53ac",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterSpawnSelection": {
+     "type": 537,
+     "ctor": "0x453878",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterStats": {
+     "type": 516,
+     "ctor": "0x4621e0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterStatsComplete": {
+     "type": 517,
+     "ctor": "0x4620fc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClientReport": {
+     "type": 504,
+     "ctor": "0x4caf88",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCommandAbility": {
+     "type": 584,
+     "ctor": "0x8c56dc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageConfirmRespawn": {
+     "type": 529,
+     "ctor": "0x453838",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageConfirmRespawnResult": {
+     "type": 530,
+     "ctor": "0x4537f8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCreateCharacterRequest": {
+     "type": 570,
+     "ctor": "0x455f68",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCreateCharacterResponse": {
+     "type": 571,
+     "ctor": "0x455eb4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeath": {
+     "type": 511,
+     "ctor": "0x453798",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeleteCharacterRequest": {
+     "type": 572,
+     "ctor": "0x4565f4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeleteCharacterResponse": {
+     "type": 573,
+     "ctor": "0x456534",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDetonateMine": {
+     "type": 548,
+     "ctor": "0x453750",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDisMountSeat": {
+     "type": 535,
+     "ctor": "0x4534cc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageEndOfGame": {
+     "type": 510,
+     "ctor": "0x454168",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageErrorNotification": {
+     "type": 506,
+     "ctor": "0xdf68e8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageFeatureGuard": {
+     "type": 505,
+     "ctor": "0x7980e0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageFireGrenade": {
+     "type": 528,
+     "ctor": "0x453fd4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageGameMvp": {
+     "type": 598,
+     "ctor": "0x8c6c88",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageGameResults": {
+     "type": 590,
+     "ctor": "0xe2173c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageHeal": {
+     "type": 539,
+     "ctor": "0x4536e0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageHit": {
+     "type": 527,
+     "ctor": "0x453f7c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageInvulnerability": {
+     "type": 507,
+     "ctor": "0x453698",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKickVote": {
+     "type": 562,
+     "ctor": "0x4c616c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKickVoteInitiate": {
+     "type": 559,
+     "ctor": "0x4c7c1c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKickVoteRescind": {
+     "type": 563,
+     "ctor": "0x4c7d4c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKillSelf": {
+     "type": 533,
+     "ctor": "0x453658",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutDeleteRequest": {
+     "type": 545,
+     "ctor": "0x4535d4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutDeleteResponse": {
+     "type": 546,
+     "ctor": "0x453594",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutUpdateRequest": {
+     "type": 543,
+     "ctor": "0x4541b0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutUpdateResponse": {
+     "type": 544,
+     "ctor": "0x453614",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageMineInteraction": {
+     "type": 549,
+     "ctor": "0x45354c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageMountSeat": {
+     "type": 534,
+     "ctor": "0x45350c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageNewsEulaRequest": {
+     "type": 574,
+     "ctor": "0x4561dc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageNewsEulaResponse": {
+     "type": 575,
+     "ctor": "0x4560d4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageObjectiveMessage": {
+     "type": 1002,
+     "ctor": "0x4545b0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyReservation": {
+     "type": 35,
+     "ctor": "0x1e60bc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyStatusUpdate": {
+     "type": 36,
+     "ctor": "0x1e7094",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePingReq": {
+     "type": 520,
+     "ctor": "0x454658",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePingResp": {
+     "type": 521,
+     "ctor": "0x454600",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerBlinded": {
+     "type": 512,
+     "ctor": "0x453cfc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerGameInfoRequest": {
+     "type": 555,
+     "ctor": "0x4530e0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerGameInfoResponse": {
+     "type": 556,
+     "ctor": "0x455c98",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerInHeavyAmmoPack": {
+     "type": 554,
+     "ctor": "0x453468",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerOnlineRequest": {
+     "type": 557,
+     "ctor": "0x453050",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerOnlineResponse": {
+     "type": 558,
+     "ctor": "0x452fb0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePluginRegister": {
+     "type": 2002,
+     "ctor": "0xdf6c90",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePurchaseSkillRequest": {
+     "type": 592,
+     "ctor": "0x8c7020",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePurchaseSkillResponse": {
+     "type": 593,
+     "ctor": "0x8c7064",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageRepair": {
+     "type": 541,
+     "ctor": "0x453428",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageResupply": {
+     "type": 523,
+     "ctor": "0x4533d8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageResuscitate": {
+     "type": 540,
+     "ctor": "0x453398",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageRocketLockState": {
+     "type": 553,
+     "ctor": "0x453358",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageScoreChange": {
+     "type": 519,
+     "ctor": "0x454110",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageScrambleTurret": {
+     "type": 552,
+     "ctor": "0x453318",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSelectLoadout": {
+     "type": 594,
+     "ctor": "0x8c734c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageServerStatusRequest": {
+     "type": 587,
+     "ctor": "0x8c7a14",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageServerStatusResponse": {
+     "type": 588,
+     "ctor": "0x8c7540",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadMessage": {
+     "type": 1502,
+     "ctor": "0x453290",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadSpawnSelection": {
+     "type": 536,
+     "ctor": "0x4532d8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadTaggedObject": {
+     "type": 518,
+     "ctor": "0x453248",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadWaypoint": {
+     "type": 538,
+     "ctor": "0x453f2c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageStrategicAbility": {
+     "type": 585,
+     "ctor": "0x8c905c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageTrainingTip": {
+     "type": 595,
+     "ctor": "0x8ca1b0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageUserNote": {
+     "type": 547,
+     "ctor": "0x453208",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageVehicle": {
+     "type": 525,
+     "ctor": "0x4531b0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageWeaponScavenge": {
+     "type": 542,
+     "ctor": "0x453170",
+     "elf": "mage_g.elf"
+    },
+    "NetTrainingCompletedRequest": {
+     "type": 45,
+     "ctor": "0x8b324",
+     "elf": "mage_g.elf"
+    }
+   }
+  },
+  {
+   "build": "ABmagprod493603",
+   "protocol": 1793,
+   "protocolGlobal": "0x11ebae0",
+   "gameDispatcher": "0x153184",
+   "kernel": {
+    "ClientClaimReservation": 4,
+    "ClientGameInfo": 5,
+    "ClientReady": 6,
+    "ClientEnterGame": 7,
+    "FieldUpdate": 8,
+    "CorrectionAck": 9,
+    "NetTimeRequest": 11,
+    "NetTimeResponse": 12,
+    "PluginId": 17
+   },
+   "executables": {
+    "mage_g.elf": {
+     "build": "ABmagprod493603",
+     "protocol": 1793,
+     "protocolGlobal": "0x11ebae0",
+     "messageBaseCtor": "0x10b3b0"
+    },
+    "EBOOT.elf": {
+     "build": "ABmagprod493603",
+     "protocol": 1793,
+     "protocolGlobal": "0x2c1930",
+     "messageBaseCtor": "0x5a148"
+    }
+   },
+   "classes": {
+    "NetAccountLoginRequest": {
+     "type": 48,
+     "ctor": "0x158cb4",
+     "elf": "mage_g.elf"
+    },
+    "NetAccountLoginResponse": {
+     "type": 49,
+     "ctor": "0x158a34",
+     "elf": "mage_g.elf"
+    },
+    "NetAccountLogoutRequest": {
+     "type": 50,
+     "ctor": "0x157f20",
+     "elf": "mage_g.elf"
+    },
+    "NetAccountLogoutResponse": {
+     "type": 51,
+     "ctor": "0x157dc0",
+     "elf": "mage_g.elf"
+    },
+    "NetCancelJoinRequest": {
+     "type": 21,
+     "ctor": "0x1613a4",
+     "elf": "mage_g.elf"
+    },
+    "NetJoinGameRequest": {
+     "type": 18,
+     "ctor": "0x168658",
+     "elf": "mage_g.elf"
+    },
+    "NetJoinGameResponse": {
+     "type": 19,
+     "ctor": "0x167db0",
+     "elf": "mage_g.elf"
+    },
+    "NetMAPSHelloMessage": {
+     "type": 56,
+     "ctor": "0x158058",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClientReservationResponse": {
+     "type": 5,
+     "ctor": "0x16aae0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageHello": {
+     "type": 1,
+     "ctor": "0x16ac6c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageJoinGameConfirm": {
+     "type": 59,
+     "ctor": "0x156f78",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageJoinGameUpdate": {
+     "type": 20,
+     "ctor": "0x16af18",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKeepAlive": {
+     "type": 3,
+     "ctor": "0x167570",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventDecline": {
+     "type": 32,
+     "ctor": "0x10bc20",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventJoin": {
+     "type": 29,
+     "ctor": "0x10e7e0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventLeave": {
+     "type": 30,
+     "ctor": "0x10bc68",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyEventUpdate": {
+     "type": 31,
+     "ctor": "0x10cf38",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyInvite": {
+     "type": 24,
+     "ctor": "0x10bce8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyInviteResponse": {
+     "type": 25,
+     "ctor": "0x10d1c0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyLeave": {
+     "type": 26,
+     "ctor": "0x10bca8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyOpenInvite": {
+     "type": 35,
+     "ctor": "0x10d040",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyRejoinRequest": {
+     "type": 38,
+     "ctor": "0x10d170",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyRejoinResponse": {
+     "type": 39,
+     "ctor": "0x10e718",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyRemoveMember": {
+     "type": 515,
+     "ctor": "0x10ede0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyUpdateGameType": {
+     "type": 36,
+     "ctor": "0x10cfd0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyUpdateMember": {
+     "type": 37,
+     "ctor": "0x10eb10",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePatchRequest": {
+     "type": 501,
+     "ctor": "0x10fc28",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePatchSettings": {
+     "type": 502,
+     "ctor": "0x10f50c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePatchURL": {
+     "type": 503,
+     "ctor": "0x10fa28",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerKicked": {
+     "type": 44,
+     "ctor": "0x167c80",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageProtocolInfo": {
+     "type": 2,
+     "ctor": "0x167760",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageVoiceIndexAcctMap": {
+     "type": 42,
+     "ctor": "0x167984",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageVoiceSetGroup": {
+     "type": 43,
+     "ctor": "0x167a38",
+     "elf": "mage_g.elf"
+    },
+    "NetNPAuthenticateRequest": {
+     "type": 54,
+     "ctor": "0x1577dc",
+     "elf": "mage_g.elf"
+    },
+    "NetNPAuthenticateResponse": {
+     "type": 55,
+     "ctor": "0x159228",
+     "elf": "mage_g.elf"
+    },
+    "NetUniverseListRequest": {
+     "type": 57,
+     "ctor": "0x159228",
+     "elf": "mage_g.elf"
+    },
+    "NetUniverseListResponse": {
+     "type": 58,
+     "ctor": "0x159724",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageAssignWalletRequest": {
+     "type": 635,
+     "ctor": "0x71094c",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageAssignWalletResponse": {
+     "type": 636,
+     "ctor": "0x710f5c",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterDataResponse": {
+     "type": 589,
+     "via": "NetMessageCharacterDataResponse",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterGameResults": {
+     "type": 2006,
+     "via": "NetMessageCharacterGameResults",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterListResponse": {
+     "type": 587,
+     "via": "NetMessageCharacterListResponse",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCharacterReSpecResponse": {
+     "type": 628,
+     "ctor": "0x70fdbc",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageCreateCharacterRequest": {
+     "type": 590,
+     "via": "NetMessageCreateCharacterRequest",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageEconomyPurchaseRequest": {
+     "type": 629,
+     "ctor": "0x710a08",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageEconomyPurchaseResponse": {
+     "type": 630,
+     "ctor": "0x710e4c",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageEconomyRefundRequest": {
+     "type": 631,
+     "ctor": "0x7109c4",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageEconomyRefundResponse": {
+     "type": 632,
+     "ctor": "0x710aa4",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageFactionReSpecRequest": {
+     "type": 626,
+     "ctor": "0x70fd70",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageGameReservationRequest": {
+     "type": 610,
+     "ctor": "0xb5b620",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageGameReservationResponse": {
+     "type": 613,
+     "ctor": "0xb5aca8",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageRetrieveWalletRequest": {
+     "type": 633,
+     "ctor": "0x710988",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageRetrieveWalletResponse": {
+     "type": 634,
+     "ctor": "0x710a4c",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageShadowWarBonuses": {
+     "type": 623,
+     "ctor": "0x711250",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageSkillReSpecRequest": {
+     "type": 620,
+     "ctor": "0x711a90",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageSkillReSpecResponse": {
+     "type": 621,
+     "ctor": "0x711acc",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageVeteranReSpecRequest": {
+     "type": 627,
+     "ctor": "0x70fd24",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageVoiceCategory": {
+     "type": 625,
+     "ctor": "0x711ee8",
+     "elf": "mage_g.elf"
+    },
+    "MagNetMessageWeaponStats": {
+     "type": 624,
+     "ctor": "0xb5b944",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageAddDeployableObject": {
+     "type": 571,
+     "ctor": "0x3d65dc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageAddDynamicSupplyPoint": {
+     "type": 570,
+     "ctor": "0x3d6514",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageAutoTest": {
+     "type": 542,
+     "ctor": "0x3d4970",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageBalanceSettings": {
+     "type": 61,
+     "ctor": "0xb4a588",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCancelReservation": {
+     "type": 23,
+     "ctor": "0x1115c8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCancelRespawn": {
+     "type": 549,
+     "ctor": "0x3d4930",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCancelRespawnResult": {
+     "type": 550,
+     "ctor": "0x3d48f0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlatoon": {
+     "type": 607,
+     "ctor": "0x711ff8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerNominations": {
+     "type": 603,
+     "ctor": "0x71214c",
+     "ambiguous": true,
+     "types": [
+      45,
+      603
+     ],
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerNominationsResult": {
+     "type": 604,
+     "ctor": "0x712108",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerSquad": {
+     "type": 531,
+     "ctor": "0x3d48a8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageChangePlayerSquadResult": {
+     "type": 532,
+     "ctor": "0x3d4860",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterDataRequest": {
+     "type": 588,
+     "ctor": "0x3d9a9c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterDataResponse": {
+     "type": 589,
+     "ctor": "0x3d9e18",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterGameAwards": {
+     "type": 605,
+     "ctor": "0x7123bc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterGameResults": {
+     "type": 2006,
+     "ctor": "0x3d4acc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterGameResultsComplete": {
+     "type": 2007,
+     "ctor": "0x3d4818",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterListRequest": {
+     "type": 586,
+     "ctor": "0x3d9d68",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterListResponse": {
+     "type": 587,
+     "ctor": "0x3d5278",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterMedalAwards": {
+     "type": 606,
+     "ctor": "0x712568",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterModifier": {
+     "type": 530,
+     "ctor": "0x3d47b8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterRecord": {
+     "type": 615,
+     "ctor": "0x712634",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterSpawnSelection": {
+     "type": 555,
+     "ctor": "0x3d4778",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterStats": {
+     "type": 533,
+     "ctor": "0x3de234",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCharacterStatsComplete": {
+     "type": 534,
+     "ctor": "0x3de128",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClanGameResults": {
+     "type": 2008,
+     "ctor": "0x3d4a6c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClanGameResultsComplete": {
+     "type": 2009,
+     "ctor": "0x3d3d58",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClanPartiesRequest": {
+     "type": 517,
+     "ctor": "0x10ed18",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClanPartiesResponse": {
+     "type": 518,
+     "ctor": "0x10ec38",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClanPartyAddMember": {
+     "type": 514,
+     "ctor": "0x10bd40",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageClockEndGameTime": {
+     "type": 526,
+     "ctor": "0x3d45c0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCommandAbility": {
+     "type": 608,
+     "ctor": "0x712bd4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageConfirmRespawn": {
+     "type": 547,
+     "ctor": "0x3d4738",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageConfirmRespawnResult": {
+     "type": 548,
+     "ctor": "0x3d46f8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCreateCharacterRequest": {
+     "type": 590,
+     "ctor": "0x3d9f90",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCreateCharacterResponse": {
+     "type": 591,
+     "ctor": "0x3d9ee0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCreateClanParty": {
+     "type": 511,
+     "ctor": "0x10ea40",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageCreateClanPartyResponse": {
+     "type": 512,
+     "ctor": "0x10e990",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeath": {
+     "type": 527,
+     "ctor": "0x3d4698",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeleteCharacterRequest": {
+     "type": 592,
+     "ctor": "0x3da72c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeleteCharacterResponse": {
+     "type": 593,
+     "ctor": "0x3d9ca8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeleteClanParty": {
+     "type": 513,
+     "ctor": "0x10e8b0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDeployDrone": {
+     "type": 596,
+     "ctor": "0x3d69c8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDetonateMine": {
+     "type": 568,
+     "ctor": "0x3d464c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageDisMountSeat": {
+     "type": 553,
+     "ctor": "0x3d42c4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageEndOfGame": {
+     "type": 525,
+     "ctor": "0x3d4608",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageErrorNotification": {
+     "type": 507,
+     "ctor": "0xb36b44",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageFeatureGuard": {
+     "type": 506,
+     "ctor": "0x65d1a4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageFireGrenade": {
+     "type": 546,
+     "ctor": "0x3d604c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageGameInfo": {
+     "type": 524,
+     "ctor": "0x3d8bac",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageGameMvp": {
+     "type": 622,
+     "ctor": "0x712f08",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageGameResults": {
+     "type": 614,
+     "ctor": "0xb5c408",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageHeal": {
+     "type": 557,
+     "ctor": "0x3d4554",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageHit": {
+     "type": 545,
+     "ctor": "0x3d5ff4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageInvalidLoadout": {
+     "type": 565,
+     "ctor": "0x3d43cc",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageInvalidLoadoutResponse": {
+     "type": 566,
+     "ctor": "0x3d438c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageInvulnerability": {
+     "type": 508,
+     "ctor": "0x3d450c",
+     "ambiguous": true,
+     "types": [
+      505,
+      508
+     ],
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKickVote": {
+     "type": 582,
+     "ctor": "0x441bf4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKickVoteInitiate": {
+     "type": 579,
+     "ctor": "0x442540",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKickVoteRescind": {
+     "type": 583,
+     "ctor": "0x442f60",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageKillSelf": {
+     "type": 551,
+     "ctor": "0x3d44cc",
+     "ambiguous": true,
+     "types": [
+      46,
+      551
+     ],
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLeaderVote": {
+     "type": 597,
+     "ctor": "0x66dd0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLeaderVoteResult": {
+     "type": 598,
+     "ctor": "0x751dc8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutDeleteRequest": {
+     "type": 563,
+     "ctor": "0x3d444c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutDeleteResponse": {
+     "type": 564,
+     "ctor": "0x3d440c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutUpdateRequest": {
+     "type": 561,
+     "ctor": "0x3d693c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageLoadoutUpdateResponse": {
+     "type": 562,
+     "ctor": "0x3d448c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageMineInteraction": {
+     "type": 569,
+     "ctor": "0x3d4344",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageMountSeat": {
+     "type": 552,
+     "ctor": "0x3d4304",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageNewsEulaRequest": {
+     "type": 594,
+     "ctor": "0x3db7b8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageNewsEulaResponse": {
+     "type": 595,
+     "ctor": "0x3d9b9c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageObjectiveMessage": {
+     "type": 1002,
+     "ctor": "0x3d6f48",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyReservation": {
+     "type": 33,
+     "ctor": "0x10d0f8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePartyStatusUpdate": {
+     "type": 34,
+     "ctor": "0x10d090",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePingReq": {
+     "type": 538,
+     "ctor": "0x3d6ff0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePingResp": {
+     "type": 539,
+     "ctor": "0x3d6f98",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerBlinded": {
+     "type": 528,
+     "ctor": "0x3d649c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerGameInfoRequest": {
+     "type": 575,
+     "ctor": "0x3d3ed0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerGameInfoResponse": {
+     "type": 576,
+     "ctor": "0x3d8fac",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerInHeavyAmmoPack": {
+     "type": 574,
+     "ctor": "0x3d4260",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerOnlineRequest": {
+     "type": 577,
+     "ctor": "0x3d3e40",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePlayerOnlineResponse": {
+     "type": 578,
+     "ctor": "0x3d3da0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePluginRegister": {
+     "type": 2002,
+     "ctor": "0xb36e28",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePurchaseSkillRequest": {
+     "type": 616,
+     "ctor": "0x713218",
+     "elf": "mage_g.elf"
+    },
+    "NetMessagePurchaseSkillResponse": {
+     "type": 617,
+     "ctor": "0x71325c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageQueueControls": {
+     "type": 510,
+     "ctor": "0xb3765c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageRepair": {
+     "type": 559,
+     "ctor": "0x3d5f9c",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageResupply": {
+     "type": 541,
+     "ctor": "0x3d4210",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageResuscitate": {
+     "type": 558,
+     "ctor": "0x3d41d0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageRocketLockState": {
+     "type": 573,
+     "ctor": "0x3d4190",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageScoreChange": {
+     "type": 537,
+     "ctor": "0x3d6654",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageScrambleTurret": {
+     "type": 572,
+     "ctor": "0x3d4150",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSelectLoadout": {
+     "type": 618,
+     "ctor": "0x7136d4",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageServerStatusRequest": {
+     "type": 611,
+     "ctor": "0x713874",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageServerStatusResponse": {
+     "type": 612,
+     "ctor": "0x713d14",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadMessage": {
+     "type": 1502,
+     "ctor": "0x3d40c8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadPlatoonFrago": {
+     "type": 535,
+     "ctor": "0x3d4080",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadSpawnSelection": {
+     "type": 554,
+     "ctor": "0x3d4110",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadTaggedObject": {
+     "type": 535,
+     "ctor": "0x3d4038",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageSquadWaypoint": {
+     "type": 556,
+     "ctor": "0x3d5f54",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageStrategicAbility": {
+     "type": 609,
+     "ctor": "0x714078",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageTrainingTip": {
+     "type": 619,
+     "ctor": "0x714418",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageUnlocks": {
+     "type": 599,
+     "ctor": "0x3d6c08",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageUserNote": {
+     "type": 567,
+     "ctor": "0x3d3ff8",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageVehicle": {
+     "type": 543,
+     "ctor": "0x3d3fa0",
+     "elf": "mage_g.elf"
+    },
+    "NetMessageWeaponScavenge": {
+     "type": 560,
+     "ctor": "0x3d3f60",
+     "elf": "mage_g.elf"
+    },
+    "NetTrainingCompletedRequest": {
+     "type": 45,
+     "ctor": "0x6879c",
+     "elf": "mage_g.elf"
+    }
+   }
+  }
+ ]
+}

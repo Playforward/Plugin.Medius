@@ -27,7 +27,7 @@ namespace Plugin.Medius.RT.Models
 
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
-            Message = BaseMediusMessage.Instantiate(reader);
+            Message = BaseMediusMessage.Instantiate(reader, fromClient: false);
         }
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)

@@ -16,6 +16,12 @@ public sealed class MediusAccount
     public string Stats { get; set; } = "";
     public DateTime CreatedUtc { get; set; } = DateTime.UtcNow;
     public DateTime LastLoginUtc { get; set; }
+    /// <summary>
+    /// The PSN/RPCN account id from the player's NP ticket (ticket param 4), once a
+    /// service that sees the ticket has learnt it; 0 until then. Some games address
+    /// players by it rather than by Medius account id (Resistance 2's stats requests).
+    /// </summary>
+    public ulong NpAccountId { get; set; }
 
     public bool CheckPassword(string? password) =>
         PasswordHash.Length == 0 || PasswordHash == AccountStore.Hash(password ?? "");
@@ -51,6 +57,33 @@ public sealed class AccountStore
     {
         lock (_lock)
             return _accounts.FirstOrDefault(a => a.AccountId == accountId);
+    }
+
+    /// <summary>The title's account with this NP account id (see <see cref="MediusAccount.NpAccountId"/>).</summary>
+    public MediusAccount? FindByNpAccountId(string titleId, ulong npAccountId)
+    {
+        lock (_lock)
+            return npAccountId == 0 ? null : _accounts.FirstOrDefault(a => a.TitleId == titleId && a.NpAccountId == npAccountId);
+    }
+
+    /// <summary>
+    /// The title's account whose NP account id has these low 32 bits, for clients
+    /// that print the id with %d/%u; null when none or more than one match.
+    /// </summary>
+    public MediusAccount? FindByNpAccountIdLow32(string titleId, uint low)
+    {
+        lock (_lock)
+        {
+            List<MediusAccount> found = [.. _accounts.Where(a => a.TitleId == titleId && a.NpAccountId != 0 && (uint)a.NpAccountId == low).Take(2)];
+            return found.Count == 1 ? found[0] : null;
+        }
+    }
+
+    /// <summary>Every account of the title.</summary>
+    public IReadOnlyList<MediusAccount> All(string titleId)
+    {
+        lock (_lock)
+            return [.. _accounts.Where(a => a.TitleId == titleId)];
     }
 
     /// <summary>Creates the account, or returns null when the name is taken for that title.</summary>

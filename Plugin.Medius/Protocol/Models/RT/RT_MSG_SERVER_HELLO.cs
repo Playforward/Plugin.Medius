@@ -16,6 +16,12 @@ namespace Plugin.Medius.RT.Models
         public ushort ARG1 = 0x006E;
         public ushort ARG2 = 0x0001;
 
+        /// <summary>
+        /// Send only ARG1/ARG2 whatever the version: the hello over SCE-RT RUdp, where
+        /// PSRewired answers Resistance 2's version-112 hello with 70 00 00 00 [live].
+        /// </summary>
+        public bool ArgsOnly = false;
+
         //PS3 
         public bool MLS = false;
         public byte EncryptFlagDisable = 0x02;
@@ -37,8 +43,13 @@ namespace Plugin.Medius.RT.Models
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)
         {
+            if (ArgsOnly)
+            {
+                writer.Write(ARG1);
+                writer.Write(ARG2);
+            }
             //If PS3 Medius Version 112/113, Send PS3 MAS Cert for Encryption/Decryption
-            if ((writer.MediusVersion == 112 || writer.MediusVersion == 113) && MLS == false)
+            else if ((writer.MediusVersion == 112 || writer.MediusVersion == 113) && MLS == false)
             {
                 // serialize rsa modulus
                 // this is sent in server hello at offset 0x194

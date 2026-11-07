@@ -35,6 +35,30 @@ internal static class LobbyCommon
                 SendAnnouncements(connection, request.MessageID, title, all: true);
                 return true;
 
+            case MediusAccountGetIDRequest request:
+                MediusAccount? found = title is null ? null : context.Lobby.Accounts.Find(title.Descriptor.TitleId, request.AccountName);
+                if (found is null && title is not null &&
+                    title.ServiceAccounts.Contains(request.AccountName ?? "", StringComparer.OrdinalIgnoreCase))
+                    found = context.Lobby.Accounts.Create(title.Descriptor.TitleId, request.AccountName!, null);
+                connection.SendApp(new MediusAccountGetIDResponse
+                {
+                    MessageID = request.MessageID,
+                    AccountID = found?.AccountId ?? -1,
+                    StatusCode = found is null ? MediusCallbackStatus.MediusAccountNotFound : MediusCallbackStatus.MediusSuccess,
+                });
+                return true;
+
+            case MediusGetTotalUsersRequest request:
+                List<MediusClient> online = title is null ? [] : context.Lobby.Clients(title).Where(c => c.IsLoggedIn).ToList();
+                connection.SendApp(new MediusGetTotalUsersResponse
+                {
+                    MessageID = request.MessageID,
+                    StatusCode = MediusCallbackStatus.MediusSuccess,
+                    TotalInSystem = (uint)online.Count,
+                    TotalInGame = (uint)online.Count(c => c.GameSeat is { Joined: true }),
+                });
+                return true;
+
             case MediusGetServerTimeRequest request:
                 connection.SendApp(new MediusGetServerTimeResponse
                 {
@@ -56,6 +80,10 @@ internal static class LobbyCommon
             case MediusTextFilterRequest request:
                 connection.SendApp(new MediusTextFilterResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusPass, Text = request.Text });
                 return true;
+            case MediusTextFilterRequest1 request:
+                // PSRewired passes text with status 0 (Resistance: Fall of Man clan names) [live].
+                connection.SendApp(new MediusTextFilterResponse1 { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusSuccess, Text = request.Text });
+                return true;
 
             case MediusGetBuddyList_ExtraInfoRequest request:
                 connection.SendApp(new MediusGetBuddyList_ExtraInfoResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusNoResult, EndOfList = true });
@@ -67,6 +95,10 @@ internal static class LobbyCommon
 
             case MediusGetMyClansRequest request:
                 connection.SendApp(new MediusGetMyClansResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusNoResult, EndOfList = true });
+                return true;
+
+            case MediusVersionServerRequest request:
+                connection.SendApp(new MediusVersionServerResponse { MessageID = request.MessageID, VersionServer = title?.VersionServer ?? "" });
                 return true;
 
             case MediusGetLocationsRequest request:

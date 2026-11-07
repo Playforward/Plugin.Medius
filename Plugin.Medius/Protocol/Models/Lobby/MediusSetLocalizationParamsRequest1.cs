@@ -17,6 +17,10 @@ namespace Plugin.Medius.RT.Models
         public string SessionKey; // SESSIONKEY_MAXLEN
         public MediusCharacterEncodingType CharacterEncoding;
         public MediusLanguageType Language;
+        // Two more u32 (codec 0x6629f8 in Resistance: Fall of Man's patch: +0x30, +0x34) [C]; RFOM,
+        // Resistance 2 and Killzone 2 all send 58 bytes, these as 0 and 1 [live]. Meaning unknown.
+        public uint Unk30;
+        public uint Unk34;
 
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
@@ -32,6 +36,8 @@ namespace Plugin.Medius.RT.Models
 
             CharacterEncoding = reader.Read<MediusCharacterEncodingType>();
             Language = reader.Read<MediusLanguageType>();
+            Unk30 = reader.ReadUInt32();
+            Unk34 = reader.ReadUInt32();
         }
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)
@@ -47,6 +53,8 @@ namespace Plugin.Medius.RT.Models
             writer.Write(new byte[2]);
             writer.Write(CharacterEncoding);
             writer.Write(Language);
+            writer.Write(Unk30);
+            writer.Write(Unk34);
         }
 
 
@@ -68,7 +76,9 @@ namespace Plugin.Medius.RT.Models
                 $"MessageID:{MessageID} " +
                 $"SessionKey:{SessionKey} " +
                 $"CharacterEncoding:{CharacterEncoding} " +
-                $"Language:{Language}";
+                $"Language:{Language} " +
+                $"Unk30:{Unk30} " +
+                $"Unk34:{Unk34}";
         }
     }
 }

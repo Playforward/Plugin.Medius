@@ -11,8 +11,10 @@ namespace Plugin.Medius.Tests;
 /// <summary>
 /// Starts the plugin on real ServerShared listeners and walks a PS3 client
 /// through what a game does on "go online": MUIS, MAS login, MLS lobby.
+/// Not sealed: Plugin.MagGameServer's tests derive from it to register their
+/// game server (<see cref="BeforeStart"/>) on the same set-up.
 /// </summary>
-public sealed class LobbyFlowFixture : IDisposable
+public class LobbyFlowFixture : IDisposable
 {
     public const int AppId = 99901;
     public const int MagAppId = 20231;
@@ -29,7 +31,13 @@ public sealed class LobbyFlowFixture : IDisposable
               "Channels": [ { "Name": "Alpha" }, { "Name": "Bravo", "MaxPlayers": 4 } ],
               "Policy": "Be nice.",
               "Announcements": [ "Hello from the test server" ],
-              "News": "No news"
+              "News": "No news",
+              "Matchmaking": {
+                "Supersets": [ { "Id": 1, "Name": "Co-op" }, { "Id": 2, "Name": "Versus", "Description": "two teams" } ],
+                "PoolKey": [ { "Offset": 6, "Size": 2, "Name": "game type" } ],
+                "Default": { "Name": "Match", "MinPlayers": 2, "MaxPlayers": 4, "Teams": 2 },
+                "Pools": [ { "Superset": 1, "Name": "Co-op", "MinPlayers": 1, "MaxPlayers": 4, "Teams": 1, "GameOptions": "0A0B" } ]
+              }
             }
             """);
         MagRoot = Path.Combine(Root, "mag");
@@ -38,6 +46,7 @@ public sealed class LobbyFlowFixture : IDisposable
             {
               "AppIds": [ {{MagAppId}} ],
               "Extension": "mag",
+              "ExtensionSettings": { "Matchmaking": { "MinPlayers": { "GameTypeFactionExercise": 1, "GameType64": 2, "GameType128": 2, "GameType256": 2 } } },
               "Universes": [ { "Id": 7, "Name": "MAG Test", "SvoUrl": "http://127.0.0.1/mag" } ]
             }
             """);
@@ -54,7 +63,9 @@ public sealed class LobbyFlowFixture : IDisposable
         MapsPort = FreeTcpPort();
         DmePort = FreeTcpPort();
         DmeUdpPort = FreeUdpPort();
-        foreach ((string name, int port, bool udp) in new[] { ("MUIS", MuisPort, false), ("MAS", MasPort, false), ("MLS", MlsPort, false), ("NAT", NatPort, true), ("MAPS", MapsPort, false), ("DME", DmePort, false), ("DME-UDP", DmeUdpPort, true) })
+        MagGamePort = FreeTcpPort();
+        RudpPort = FreeUdpPort();
+        foreach ((string name, int port, bool udp) in new[] { ("MUIS", MuisPort, false), ("MAS", MasPort, false), ("MLS", MlsPort, false), ("NAT", NatPort, true), ("MAPS", MapsPort, false), ("DME", DmePort, false), ("DME-UDP", DmeUdpPort, true), ("MAGGAME", MagGamePort, false), ("RUDP", RudpPort, true) })
             ServerController.Start(new ServerModel { Name = $"test-{name}", Port = port, IsUdp = udp });
 
         Plugin = new MediusPlugin
@@ -72,11 +83,17 @@ public sealed class LobbyFlowFixture : IDisposable
                     new() { Component = "MAPS", Port = MapsPort },
                     new() { Component = "DME", Port = DmePort },
                     new() { Component = "DME", Port = DmeUdpPort, Udp = true },
+                    new() { Component = "MAGGAME", Port = MagGamePort },
+                    new() { Component = "RUDP", Port = RudpPort, Udp = true },
                 ],
             },
         };
+        BeforeStart();
         Plugin.Start();
     }
+
+    /// <summary>Runs after the listeners exist and before the Medius plugin starts.</summary>
+    protected virtual void BeforeStart() { }
 
     public string Root { get; }
     public int MuisPort { get; }
@@ -86,10 +103,12 @@ public sealed class LobbyFlowFixture : IDisposable
     public int MapsPort { get; }
     public int DmePort { get; }
     public int DmeUdpPort { get; }
+    public int MagGamePort { get; }
+    public int RudpPort { get; }
     public string MagRoot { get; }
     public MediusPlugin Plugin { get; }
 
-    public void Dispose()
+    public virtual void Dispose()
     {
         Plugin.Stop();
         ServerController.Stop(clear: true);
@@ -140,6 +159,10 @@ public sealed class LobbyFlowTests(LobbyFlowFixture fixture)
         MediusUniverseVariableSvoURLResponse svo = await client.ExpectAppAsync<MediusUniverseVariableSvoURLResponse>();
         Assert.Equal("http://127.0.0.1/svo", svo.URL);
         MediusUniverseVariableInformationResponse info = await client.ExpectAppAsync<MediusUniverseVariableInformationResponse>();
+        // The client compares the two responses' MessageIDs and fails the universe on a mismatch
+        // (RFOM 0x619220) [C].
+        Assert.Equal("1", svo.MessageID.ToString());
+        Assert.Equal(info.MessageID.ToString(), svo.MessageID.ToString());
         Assert.Equal(MediusCallbackStatus.MediusSuccess, info.StatusCode);
         Assert.Equal("Test Universe", info.UniverseName);
         Assert.Equal("127.0.0.1", info.DNS);

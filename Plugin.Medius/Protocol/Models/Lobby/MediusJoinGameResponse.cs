@@ -20,6 +20,11 @@ namespace Plugin.Medius.RT.Models
         public MediusGameHostType GameHostType;
         public NetConnectionInfo ConnectInfo;
 
+        /// <summary>Bytes after ConnectInfo; null = 4 from Medius 112 on (Horizon), else 0.</summary>
+        public int? TrailingPadLength;
+
+        private int TrailingPad(int mediusVersion) => TrailingPadLength ?? (mediusVersion >= 112 ? 4 : 0);
+
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
             // 
@@ -34,8 +39,7 @@ namespace Plugin.Medius.RT.Models
             GameHostType = reader.Read<MediusGameHostType>();
             ConnectInfo = reader.Read<NetConnectionInfo>();
 
-            if (reader.MediusVersion >= 112)
-                reader.ReadBytes(4);
+            reader.ReadBytes(TrailingPad(reader.MediusVersion));
         }
 
         public override void Serialize(Plugin.Medius.RT.Shared.Stream.MessageWriter writer)
@@ -52,8 +56,7 @@ namespace Plugin.Medius.RT.Models
             writer.Write(GameHostType);
             writer.Write(ConnectInfo);
 
-            if (writer.MediusVersion >= 112)
-                writer.Write(new byte[4]);
+            writer.Write(new byte[TrailingPad(writer.MediusVersion)]);
         }
 
 

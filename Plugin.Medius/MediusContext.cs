@@ -30,6 +30,14 @@ public sealed class MediusContext
     public RsaKeyPair ServerKey { get; }
     public IPAddress PublicAddress { get; }
 
+    /// <summary>Buddy and ignore lists, under <see cref="MediusSettings.DataDir"/>.</summary>
+    public BuddyStore Buddies => _buddies ??= new BuddyStore(new AccountDataStore(Settings.DataDir));
+    private BuddyStore? _buddies;
+
+    /// <summary>Clans, under <see cref="MediusSettings.DataDir"/>.</summary>
+    public ClanStore Clans => _clans ??= new ClanStore(new AccountDataStore(Settings.DataDir));
+    private ClanStore? _clans;
+
     public MediusTitle? TitleByAppId(int appId) => _titlesByAppId.GetValueOrDefault(appId);
 
     public IMediusTitleExtension? ExtensionOf(MediusTitle? title) =>
