@@ -472,6 +472,18 @@ public sealed record MagJoinGameConfirm(int TransId, sbyte Flag = 1, byte Result
     }
 }
 
+/// <summary>Request bodies whose layout differs between builds.</summary>
+public static class MapsReaders
+{
+    /// <summary>
+    /// PurchaseSkillRequest's skill id: a u8 in 1.00, a u16 in 2.12 (marshal
+    /// 2.12 0x7133e0: the id at +8, sign-extended, through the u16 writer
+    /// 0xb89874) [C; live: 2.12 sent 0013 for skill 19].
+    /// </summary>
+    public static int PurchaseSkillRequest(ZipperBitReader reader, MagClientVersion version) =>
+        version.Format == MagWireFormat.Retail100 ? reader.ReadU8() : (short)reader.ReadU16();
+}
+
 public static class MapsWriters
 {
     /// <summary>
@@ -660,6 +672,35 @@ public static class MapsWriters
         ZipperBitWriter writer = Start(version.Messages.PurchaseSkillResponse);
         writer.WriteBool(success);
         (character ?? new MagCharacter()).WriteRecord(writer, version);
+        return writer.ToArray();
+    }
+
+    /// <summary>EconomyPurchaseResponse or EconomyRefundResponse: success, and the record only on success (marshal 2.12 0x7108dc).</summary>
+    public static byte[] EconomyResponse(MagClientVersion version, ushort type, bool success, MagCharacter? character)
+    {
+        ZipperBitWriter writer = Start(type);
+        writer.WriteBool(success);
+        if (success)
+            (character ?? new MagCharacter()).WriteRecord(writer, version);
+        return writer.ToArray();
+    }
+
+    /// <summary>The 32-bit words of a wallet (MagClientWallet, written by 2.12 0x3d62dc).</summary>
+    public const int WalletWords = 23;
+
+    /// <summary>
+    /// RetrieveWalletResponse (marshal 2.12 0x7107c8): success, then on
+    /// success the wallet, 23 32-bit words (0x3d62dc). The wallet is the
+    /// PlayStation Store CP bundles (CurrencyPointBlock01/02, 10k and 20k)
+    /// the account holds; which word is which isn't decoded. A server sells
+    /// none, so it sends an empty wallet: success and all zeros.
+    /// </summary>
+    public static byte[] RetrieveWalletResponse(ushort type)
+    {
+        ZipperBitWriter writer = Start(type);
+        writer.WriteBool(true);
+        for (int i = 0; i < WalletWords; i++)
+            writer.WriteU32(0);
         return writer.ToArray();
     }
 

@@ -26,6 +26,13 @@ namespace Plugin.Medius.RT.Models
         public uint TotalRankings;
         public bool EndOfList;
 
+        /// <summary>
+        /// Layout switch, not a field: whether LadderStat, LadderPosition and TotalRankings are on
+        /// the wire (SCE-RT 3.06 dropped them, Killzone 3 codec 0xa34424) [C]. Set from the title's
+        /// <see cref="ScertLayout.ClanExtraInfoLadderFields"/>.
+        /// </summary>
+        public bool LadderFields = true;
+
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
             // 
@@ -41,9 +48,12 @@ namespace Plugin.Medius.RT.Models
             AccountName = reader.ReadString(Constants.ACCOUNTNAME_MAXLEN);
             Stats = reader.ReadBytes(Constants.ACCOUNTSTATS_MAXLEN);
             OnlineState = reader.Read<MediusPlayerOnlineState>();
-            LadderStat = reader.ReadInt32();
-            LadderPosition = reader.ReadUInt32();
-            TotalRankings = reader.ReadUInt32();
+            if (LadderFields)
+            {
+                LadderStat = reader.ReadInt32();
+                LadderPosition = reader.ReadUInt32();
+                TotalRankings = reader.ReadUInt32();
+            }
             EndOfList = reader.ReadBoolean();
             reader.ReadBytes(3);
         }
@@ -63,9 +73,12 @@ namespace Plugin.Medius.RT.Models
             writer.Write(AccountName, Constants.ACCOUNTNAME_MAXLEN);
             writer.Write(Stats, Constants.ACCOUNTSTATS_MAXLEN);
             writer.Write(OnlineState);
-            writer.Write(LadderStat);
-            writer.Write(LadderPosition);
-            writer.Write(TotalRankings);
+            if (LadderFields)
+            {
+                writer.Write(LadderStat);
+                writer.Write(LadderPosition);
+                writer.Write(TotalRankings);
+            }
             writer.Write(EndOfList);
             writer.Write(new byte[3]);
         }

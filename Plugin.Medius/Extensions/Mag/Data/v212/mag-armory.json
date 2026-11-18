@@ -1,0 +1,5236 @@
+{
+ "source": "scripts/armory.zpr, item_list.zpr (2.12 tpps.psarc.sdat)",
+ "refundFactor": 0.5,
+ "perLevelMinimumCashOnRespec": 250,
+ "factions": [
+  {
+   "faction": 2,
+   "characterClass": "CharacterClassTypeMAG",
+   "items": [
+    {
+     "name": "knife_red",
+     "bit": 50,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "yarygin_pya",
+     "bit": 51,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "kriss",
+     "bit": 52,
+     "price": 2000,
+     "level": 19,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "bizon",
+     "bit": 53,
+     "price": 1000,
+     "level": 5,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "toz_195",
+     "bit": 54,
+     "price": 1800,
+     "level": 8,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "ak_74u",
+     "bit": 56,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "daewoo_k2",
+     "bit": 276,
+     "price": 6500,
+     "level": 31,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "an_94",
+     "bit": 57,
+     "price": 5000,
+     "level": 24,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "ak103",
+     "bit": 58,
+     "price": 4000,
+     "level": 17,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "dragunov",
+     "bit": 59,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "dragunov_dlc",
+     "bit": 274,
+     "price": 3000,
+     "level": 12,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "sv_98",
+     "bit": 60,
+     "price": 3500,
+     "level": 14,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "sako_trg22",
+     "bit": 278,
+     "price": 5500,
+     "level": 25,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "ksvk",
+     "bit": 61,
+     "price": 9500,
+     "level": 35,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rpk_74",
+     "bit": 62,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rpk_74_dlc",
+     "bit": 273,
+     "price": 4000,
+     "level": 13,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "pecheneg",
+     "bit": 63,
+     "price": 6000,
+     "level": 21,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "negev",
+     "bit": 275,
+     "price": 8500,
+     "level": 37,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rpg7_dumb",
+     "bit": 66,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rpg7",
+     "bit": 65,
+     "price": 9500,
+     "level": 29,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rocket_sight_rpg",
+     "bit": 67,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "rocket_sight_rpg_dumb",
+     "bit": 68,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights",
+     "bit": 14,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights_rear",
+     "bit": 15,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 0,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights_ak74u",
+     "bit": 88,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_reddot_red",
+     "bit": 89,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_red"
+    },
+    {
+     "name": "scope_reddot_red_shotgun",
+     "bit": 91,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_red"
+    },
+    {
+     "name": "scope_reddot_red_assault",
+     "bit": 92,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_red"
+    },
+    {
+     "name": "scope_reddot_red_mg",
+     "bit": 93,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_red"
+    },
+    {
+     "name": "scope_acog_red",
+     "bit": 94,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_red"
+    },
+    {
+     "name": "scope_acog_red_default",
+     "bit": 95,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_red"
+    },
+    {
+     "name": "scope_lowfixed_red_default",
+     "bit": 97,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_highfixed_red",
+     "bit": 98,
+     "price": 4000,
+     "level": 26,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_highvariable_red",
+     "bit": 99,
+     "price": 5000,
+     "level": 39,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "suppressor_small3",
+     "bit": 102,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small3"
+    },
+    {
+     "name": "suppressor_small3_pdw",
+     "bit": 100,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small3"
+    },
+    {
+     "name": "suppressor_small3_smg",
+     "bit": 101,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small3"
+    },
+    {
+     "name": "large_suppressor3",
+     "bit": 103,
+     "price": 3500,
+     "level": 20,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "large_suppressor3"
+    },
+    {
+     "name": "large_suppressor3_assault",
+     "bit": 104,
+     "price": 3500,
+     "level": 20,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "large_suppressor3"
+    },
+    {
+     "name": "foregrip_3",
+     "bit": 111,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_3"
+    },
+    {
+     "name": "foregrip_3_shotgun",
+     "bit": 114,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_3"
+    },
+    {
+     "name": "foregrip_3_sniper",
+     "bit": 112,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_3"
+    },
+    {
+     "name": "foregrip_3_mg",
+     "bit": 113,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_3"
+    },
+    {
+     "name": "bipod_small_3",
+     "bit": 105,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_3"
+    },
+    {
+     "name": "bipod_small_3_sniper",
+     "bit": 106,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_3"
+    },
+    {
+     "name": "bipod_small_3_sniper_2",
+     "bit": 254,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_3"
+    },
+    {
+     "name": "bipod_small_3_rpk",
+     "bit": 108,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_3"
+    },
+    {
+     "name": "bipod_large_3",
+     "bit": 109,
+     "price": 1200,
+     "level": 22,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_large_3"
+    },
+    {
+     "name": "bipod_large_3_default",
+     "bit": 110,
+     "price": 1200,
+     "level": 22,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_large_3"
+    },
+    {
+     "name": "gp_30",
+     "bit": 71,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "gp_30"
+    },
+    {
+     "name": "gp_30_type03",
+     "bit": 69,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "gp_30"
+    },
+    {
+     "name": "gp_30_ak103",
+     "bit": 70,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "gp_30"
+    },
+    {
+     "name": "gp_30_daewoo_k2",
+     "bit": 279,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "gp_30"
+    },
+    {
+     "name": "grenade_frag_red",
+     "bit": 72,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_smoke_red",
+     "bit": 73,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_gas_red",
+     "bit": 75,
+     "price": 5500,
+     "level": 33,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_flash_red",
+     "bit": 76,
+     "price": 2000,
+     "level": 16,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "claymore_mine_red",
+     "bit": 78,
+     "price": 9000,
+     "level": 44,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "anti_tank_mine_red",
+     "bit": 77,
+     "price": 3000,
+     "level": 18,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "first_aid_pack",
+     "bit": 0,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "medkit",
+     "bit": 1,
+     "price": 500,
+     "level": 3,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "repairkit",
+     "bit": 2,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "motion_tracker",
+     "bit": 5,
+     "price": 12000,
+     "level": 45,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "satellite_jammer",
+     "bit": 6,
+     "price": 14000,
+     "level": 40,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "explosive_detector",
+     "bit": 7,
+     "price": 4000,
+     "level": 30,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "acoustic_locator",
+     "bit": 4,
+     "price": 1400,
+     "level": 6,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "light_armor_red",
+     "bit": 115,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "light_improved_armor_red",
+     "bit": 118,
+     "price": 3500,
+     "level": 17,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "medium_armor_red",
+     "bit": 116,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "medium_improved_armor_red",
+     "bit": 119,
+     "price": 5000,
+     "level": 23,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "heavy_armor_red",
+     "bit": 117,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "heavy_improved_armor_red",
+     "bit": 120,
+     "price": 7500,
+     "level": 28,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l1_black_d03",
+     "bit": 225,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l1_blue_d03",
+     "bit": 235,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l1_black_d01",
+     "bit": 223,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l1_tan_d01",
+     "bit": 228,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d01"
+    },
+    {
+     "name": "red_l1_tan_d02",
+     "bit": 229,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d02"
+    },
+    {
+     "name": "red_l1_tan_d03",
+     "bit": 230,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d03"
+    },
+    {
+     "name": "red_l1_black_d02",
+     "bit": 224,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d02"
+    },
+    {
+     "name": "red_l1_black_d04",
+     "bit": 226,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d04"
+    },
+    {
+     "name": "red_l1_black_d05",
+     "bit": 227,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d05"
+    },
+    {
+     "name": "red_l1_blue_d01",
+     "bit": 233,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d01"
+    },
+    {
+     "name": "red_l1_blue_d02",
+     "bit": 234,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d02"
+    },
+    {
+     "name": "red_l1_blue_d04",
+     "bit": 236,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d04"
+    },
+    {
+     "name": "red_l1_black_d06",
+     "bit": 255,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d06"
+    },
+    {
+     "name": "red_l1_tan_d06",
+     "bit": 256,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d06"
+    },
+    {
+     "name": "red_l1_blue_d06",
+     "bit": 257,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d06"
+    },
+    {
+     "name": "red_l1_tan_d04",
+     "bit": 231,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d04"
+    },
+    {
+     "name": "red_l2_black_d03",
+     "bit": 240,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l2_blue_d03",
+     "bit": 157,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l2_black_d01",
+     "bit": 238,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_l2_tan_d01",
+     "bit": 150,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d01"
+    },
+    {
+     "name": "red_l2_tan_d02",
+     "bit": 151,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d02"
+    },
+    {
+     "name": "red_l2_tan_d03",
+     "bit": 152,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d03"
+    },
+    {
+     "name": "red_l2_black_d02",
+     "bit": 239,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d02"
+    },
+    {
+     "name": "red_l2_black_d04",
+     "bit": 241,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d04"
+    },
+    {
+     "name": "red_l2_black_d05",
+     "bit": 149,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d05"
+    },
+    {
+     "name": "red_l2_blue_d01",
+     "bit": 155,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d01"
+    },
+    {
+     "name": "red_l2_blue_d02",
+     "bit": 156,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d02"
+    },
+    {
+     "name": "red_l2_blue_d04",
+     "bit": 158,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d04"
+    },
+    {
+     "name": "red_l2_black_d06",
+     "bit": 258,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d06"
+    },
+    {
+     "name": "red_l2_tan_d06",
+     "bit": 259,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d06"
+    },
+    {
+     "name": "red_l2_blue_d06",
+     "bit": 260,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d06"
+    },
+    {
+     "name": "red_l2_tan_d04",
+     "bit": 153,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d04"
+    },
+    {
+     "name": "red_m1_black_d03",
+     "bit": 162,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_m1_blue_d03",
+     "bit": 172,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_m1_black_d01",
+     "bit": 160,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_m1_tan_d01",
+     "bit": 165,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d01"
+    },
+    {
+     "name": "red_m1_tan_d02",
+     "bit": 166,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d02"
+    },
+    {
+     "name": "red_m1_tan_d03",
+     "bit": 167,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d03"
+    },
+    {
+     "name": "red_m1_black_d02",
+     "bit": 161,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d02"
+    },
+    {
+     "name": "red_m1_black_d04",
+     "bit": 163,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d04"
+    },
+    {
+     "name": "red_m1_black_d05",
+     "bit": 164,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d05"
+    },
+    {
+     "name": "red_m1_blue_d01",
+     "bit": 170,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d01"
+    },
+    {
+     "name": "red_m1_blue_d04",
+     "bit": 173,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d02"
+    },
+    {
+     "name": "red_m1_blue_d02",
+     "bit": 171,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d04"
+    },
+    {
+     "name": "red_m1_black_d06",
+     "bit": 261,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d06"
+    },
+    {
+     "name": "red_m1_tan_d06",
+     "bit": 262,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d06"
+    },
+    {
+     "name": "red_m1_blue_d06",
+     "bit": 263,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d06"
+    },
+    {
+     "name": "red_m1_tan_d04",
+     "bit": 168,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d04"
+    },
+    {
+     "name": "red_m2_black_d03",
+     "bit": 177,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_m2_blue_d03",
+     "bit": 189,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_m2_black_d01",
+     "bit": 175,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_m2_tan_d01",
+     "bit": 181,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d01"
+    },
+    {
+     "name": "red_m2_tan_d02",
+     "bit": 182,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d02"
+    },
+    {
+     "name": "red_m2_tan_d03",
+     "bit": 183,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d03"
+    },
+    {
+     "name": "red_m2_black_d02",
+     "bit": 176,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d02"
+    },
+    {
+     "name": "red_m2_black_d04",
+     "bit": 178,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d04"
+    },
+    {
+     "name": "red_m2_black_d05",
+     "bit": 179,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d05"
+    },
+    {
+     "name": "red_m2_blue_d01",
+     "bit": 187,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d01"
+    },
+    {
+     "name": "red_m2_blue_d04",
+     "bit": 190,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d02"
+    },
+    {
+     "name": "red_m2_blue_d02",
+     "bit": 188,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d04"
+    },
+    {
+     "name": "red_m2_black_d06",
+     "bit": 264,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d06"
+    },
+    {
+     "name": "red_m2_tan_d06",
+     "bit": 265,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d06"
+    },
+    {
+     "name": "red_m2_blue_d06",
+     "bit": 266,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d06"
+    },
+    {
+     "name": "red_m2_tan_d04",
+     "bit": 184,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d04"
+    },
+    {
+     "name": "red_m2_black_pod01",
+     "bit": 180,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h1_black_d03",
+     "bit": 195,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h1_blue_d03",
+     "bit": 205,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h1_black_d01",
+     "bit": 193,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h1_tan_d01",
+     "bit": 198,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d01"
+    },
+    {
+     "name": "red_h1_tan_d03",
+     "bit": 200,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d02"
+    },
+    {
+     "name": "red_h1_tan_d04",
+     "bit": 201,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d03"
+    },
+    {
+     "name": "red_h1_black_d02",
+     "bit": 194,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d02"
+    },
+    {
+     "name": "red_h1_black_d04",
+     "bit": 196,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d04"
+    },
+    {
+     "name": "red_h1_black_d05",
+     "bit": 197,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d05"
+    },
+    {
+     "name": "red_h1_blue_d01",
+     "bit": 203,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d01"
+    },
+    {
+     "name": "red_h1_blue_d02",
+     "bit": 204,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d02"
+    },
+    {
+     "name": "red_h1_blue_d04",
+     "bit": 206,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d04"
+    },
+    {
+     "name": "red_h1_black_d06",
+     "bit": 267,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d06"
+    },
+    {
+     "name": "red_h1_tan_d06",
+     "bit": 268,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d06"
+    },
+    {
+     "name": "red_h1_blue_d06",
+     "bit": 269,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d06"
+    },
+    {
+     "name": "red_h1_tan_d02",
+     "bit": 199,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d04"
+    },
+    {
+     "name": "red_h2_black_d03",
+     "bit": 210,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h2_blue_d03",
+     "bit": 220,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h2_black_d01",
+     "bit": 208,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "red_h2_tan_d01",
+     "bit": 213,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d01"
+    },
+    {
+     "name": "red_h2_tan_d03",
+     "bit": 215,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d02"
+    },
+    {
+     "name": "red_h2_tan_d04",
+     "bit": 216,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d03"
+    },
+    {
+     "name": "red_h2_black_d02",
+     "bit": 209,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d02"
+    },
+    {
+     "name": "red_h2_black_d04",
+     "bit": 211,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d04"
+    },
+    {
+     "name": "red_h2_black_d05",
+     "bit": 212,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d05"
+    },
+    {
+     "name": "red_h2_blue_d01",
+     "bit": 218,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d01"
+    },
+    {
+     "name": "red_h2_blue_d02",
+     "bit": 219,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d02"
+    },
+    {
+     "name": "red_h2_blue_d04",
+     "bit": 221,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d04"
+    },
+    {
+     "name": "red_h2_black_d06",
+     "bit": 270,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_black_d06"
+    },
+    {
+     "name": "red_h2_tan_d06",
+     "bit": 271,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d06"
+    },
+    {
+     "name": "red_h2_blue_d06",
+     "bit": 272,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_blue_d06"
+    },
+    {
+     "name": "red_h2_tan_d02",
+     "bit": 214,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "red_l1_tan_d04"
+    },
+    {
+     "name": "red_light_bandana",
+     "bit": 121,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_light_capback",
+     "bit": 122,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_light_bandanab",
+     "bit": 128,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_light_capbackb",
+     "bit": 126,
+     "price": 1900,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_light_bandanac",
+     "bit": 129,
+     "price": 2400,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_light_capbackc",
+     "bit": 127,
+     "price": 2800,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_soft_helmet",
+     "bit": 136,
+     "price": 300,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_hard_helmet2",
+     "bit": 143,
+     "price": 750,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_soft_helmetb",
+     "bit": 137,
+     "price": 1250,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_hard_helmet2b",
+     "bit": 144,
+     "price": 1700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_soft_helmetc",
+     "bit": 138,
+     "price": 2200,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_hard_helmet2c",
+     "bit": 145,
+     "price": 2700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_soft_helmetd",
+     "bit": 139,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_medium_hard_helmet2",
+     "bit": 133,
+     "price": 150,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_hard_helmet3",
+     "bit": 146,
+     "price": 600,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_medium_hard_helmet2b",
+     "bit": 134,
+     "price": 1100,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_hard_helmet3b",
+     "bit": 147,
+     "price": 1600,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_medium_hard_helmet2c",
+     "bit": 135,
+     "price": 2050,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_heavy_hard_helmet3c",
+     "bit": 148,
+     "price": 2500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "red_goggles_1",
+     "bit": 251,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "red_hockeymask_4",
+     "bit": 245,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "red_hockeymask_5",
+     "bit": 246,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "red_hockeymask_6",
+     "bit": 247,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "red_hockeymask_7",
+     "bit": 248,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "red_hockeymask_3",
+     "bit": 244,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "red_hockeymask_8",
+     "bit": 249,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    }
+   ]
+  },
+  {
+   "faction": 1,
+   "characterClass": "CharacterClassTypeMAG",
+   "items": [
+    {
+     "name": "knife_black",
+     "bit": 50,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "fn57",
+     "bit": 51,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mp7",
+     "bit": 52,
+     "price": 2000,
+     "level": 19,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "p90",
+     "bit": 53,
+     "price": 1000,
+     "level": 5,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "benelli_nova",
+     "bit": 54,
+     "price": 1800,
+     "level": 8,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "steyr_aug_a3",
+     "bit": 55,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "fal_osw",
+     "bit": 261,
+     "price": 6500,
+     "level": 31,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "f2000",
+     "bit": 56,
+     "price": 5000,
+     "level": 24,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "sig_sapr",
+     "bit": 57,
+     "price": 4000,
+     "level": 17,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "msg_90",
+     "bit": 58,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "msg_90_dlc",
+     "bit": 257,
+     "price": 3000,
+     "level": 12,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mini_hecate",
+     "bit": 59,
+     "price": 3500,
+     "level": 14,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "precision_dsr1",
+     "bit": 263,
+     "price": 5500,
+     "level": 25,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "as50",
+     "bit": 60,
+     "price": 9500,
+     "level": 35,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "ultimax_100",
+     "bit": 61,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "ultimax_100_dlc",
+     "bit": 256,
+     "price": 4000,
+     "level": 13,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mg45",
+     "bit": 62,
+     "price": 6000,
+     "level": 21,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "m21e",
+     "bit": 260,
+     "price": 8500,
+     "level": 37,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "panzerfaust_3_dumb",
+     "bit": 64,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "panzerfaust_3",
+     "bit": 63,
+     "price": 9500,
+     "level": 29,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rocket_sight_panzer",
+     "bit": 65,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "rocket_sight_panzer_dumb",
+     "bit": 66,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights",
+     "bit": 14,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights_rear",
+     "bit": 15,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights_p90",
+     "bit": 85,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_reddot_black",
+     "bit": 86,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_black"
+    },
+    {
+     "name": "scope_reddot_black_shotgun",
+     "bit": 88,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_black"
+    },
+    {
+     "name": "scope_reddot_black_assault",
+     "bit": 89,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_black"
+    },
+    {
+     "name": "scope_reddot_black_mg",
+     "bit": 90,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_black"
+    },
+    {
+     "name": "scope_acog_black",
+     "bit": 91,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_black"
+    },
+    {
+     "name": "scope_acog_black_default",
+     "bit": 92,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_black"
+    },
+    {
+     "name": "steyr_aug_scope",
+     "bit": 93,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_black"
+    },
+    {
+     "name": "f2000_default",
+     "bit": 94,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_lowfixed_black_default",
+     "bit": 96,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_highfixed_black",
+     "bit": 97,
+     "price": 4000,
+     "level": 26,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_highvariable_black",
+     "bit": 98,
+     "price": 5000,
+     "level": 39,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "suppressor_small2",
+     "bit": 99,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small2"
+    },
+    {
+     "name": "suppressor_small2_pdw",
+     "bit": 100,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small2"
+    },
+    {
+     "name": "suppressor_small2_smg",
+     "bit": 101,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small2"
+    },
+    {
+     "name": "large_suppressor2",
+     "bit": 102,
+     "price": 3500,
+     "level": 20,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "large_suppressor2"
+    },
+    {
+     "name": "large_suppressor2_assault",
+     "bit": 103,
+     "price": 3500,
+     "level": 20,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "large_suppressor2"
+    },
+    {
+     "name": "foregrip_2",
+     "bit": 109,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_2"
+    },
+    {
+     "name": "foregrip_2_shotgun",
+     "bit": 113,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_2"
+    },
+    {
+     "name": "foregrip_2_sniper",
+     "bit": 111,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_2"
+    },
+    {
+     "name": "foregrip_2_mg",
+     "bit": 112,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_2"
+    },
+    {
+     "name": "foregrip_f2000",
+     "bit": 110,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_2"
+    },
+    {
+     "name": "bipod_small_2",
+     "bit": 104,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_2"
+    },
+    {
+     "name": "bipod_small_2_sniper",
+     "bit": 105,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_2"
+    },
+    {
+     "name": "bipod_small_2_sniper_2",
+     "bit": 236,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_2"
+    },
+    {
+     "name": "bipod_small_2_mg",
+     "bit": 106,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_2"
+    },
+    {
+     "name": "bipod_large_2",
+     "bit": 107,
+     "price": 1200,
+     "level": 22,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_large_2"
+    },
+    {
+     "name": "bipod_large_2_default",
+     "bit": 108,
+     "price": 1200,
+     "level": 22,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_large_2"
+    },
+    {
+     "name": "m320",
+     "bit": 67,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m320"
+    },
+    {
+     "name": "m320_sig",
+     "bit": 69,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m320"
+    },
+    {
+     "name": "f2000gl",
+     "bit": 68,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m320"
+    },
+    {
+     "name": "m320_fal_osw",
+     "bit": 264,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m320"
+    },
+    {
+     "name": "grenade_frag_black",
+     "bit": 70,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_smoke_black",
+     "bit": 71,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_gas_black",
+     "bit": 73,
+     "price": 5500,
+     "level": 33,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_flash_black",
+     "bit": 74,
+     "price": 2000,
+     "level": 16,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "claymore_mine_black",
+     "bit": 76,
+     "price": 9000,
+     "level": 44,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "anti_tank_mine_black",
+     "bit": 75,
+     "price": 3000,
+     "level": 18,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "first_aid_pack",
+     "bit": 0,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "medkit",
+     "bit": 1,
+     "price": 500,
+     "level": 3,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "repairkit",
+     "bit": 2,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "motion_tracker",
+     "bit": 5,
+     "price": 12000,
+     "level": 45,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "satellite_jammer",
+     "bit": 6,
+     "price": 14000,
+     "level": 40,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "explosive_detector",
+     "bit": 7,
+     "price": 4000,
+     "level": 30,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "acoustic_locator",
+     "bit": 4,
+     "price": 1400,
+     "level": 6,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "light_armor_black",
+     "bit": 114,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "light_improved_armor_black",
+     "bit": 117,
+     "price": 3500,
+     "level": 17,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "medium_armor_black",
+     "bit": 115,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "medium_improved_armor_black",
+     "bit": 118,
+     "price": 5000,
+     "level": 23,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "heavy_armor_black",
+     "bit": 116,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "heavy_improved_armor_black",
+     "bit": 119,
+     "price": 7500,
+     "level": 28,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light1_clothing1c",
+     "bit": 147,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light1_clothing2c",
+     "bit": 152,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light1_clothing1a",
+     "bit": 145,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light1_clothing2a",
+     "bit": 150,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2a"
+    },
+    {
+     "name": "black_light1_clothing2b",
+     "bit": 151,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2b"
+    },
+    {
+     "name": "black_light1_clothing2d",
+     "bit": 153,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2d"
+    },
+    {
+     "name": "black_light1_clothing1b",
+     "bit": 146,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1b"
+    },
+    {
+     "name": "black_light1_clothing1d",
+     "bit": 148,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1d"
+    },
+    {
+     "name": "black_light1_clothing1f",
+     "bit": 241,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1f"
+    },
+    {
+     "name": "black_light1_clothing3a",
+     "bit": 155,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3a"
+    },
+    {
+     "name": "black_light1_clothing3b",
+     "bit": 156,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3b"
+    },
+    {
+     "name": "black_light1_clothing3d",
+     "bit": 158,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3d"
+    },
+    {
+     "name": "black_light1_clothing1e",
+     "bit": 149,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1e"
+    },
+    {
+     "name": "black_light1_clothing2e",
+     "bit": 154,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2e"
+    },
+    {
+     "name": "black_light1_clothing3e",
+     "bit": 159,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3e"
+    },
+    {
+     "name": "black_light1_clothing2f",
+     "bit": 242,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2f"
+    },
+    {
+     "name": "black_light2_clothing1c",
+     "bit": 162,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light2_clothing2c",
+     "bit": 167,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light2_clothing1a",
+     "bit": 160,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_light2_clothing2a",
+     "bit": 165,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2a"
+    },
+    {
+     "name": "black_light2_clothing2b",
+     "bit": 166,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2b"
+    },
+    {
+     "name": "black_light2_clothing2d",
+     "bit": 168,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2d"
+    },
+    {
+     "name": "black_light2_clothing1b",
+     "bit": 161,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1b"
+    },
+    {
+     "name": "black_light2_clothing1d",
+     "bit": 163,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1d"
+    },
+    {
+     "name": "black_light2_clothing1f",
+     "bit": 244,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1f"
+    },
+    {
+     "name": "black_light2_clothing3a",
+     "bit": 170,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3a"
+    },
+    {
+     "name": "black_light2_clothing3b",
+     "bit": 171,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3b"
+    },
+    {
+     "name": "black_light2_clothing3d",
+     "bit": 173,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3d"
+    },
+    {
+     "name": "black_light2_clothing1e",
+     "bit": 164,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1e"
+    },
+    {
+     "name": "black_light2_clothing2e",
+     "bit": 169,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2e"
+    },
+    {
+     "name": "black_light2_clothing3e",
+     "bit": 174,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3e"
+    },
+    {
+     "name": "black_light2_clothing2f",
+     "bit": 245,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2f"
+    },
+    {
+     "name": "black_med1_clothing1c",
+     "bit": 177,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_med1_clothing2c",
+     "bit": 182,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_med1_clothing1a",
+     "bit": 175,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_med1_clothing2a",
+     "bit": 180,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2a"
+    },
+    {
+     "name": "black_med1_clothing2b",
+     "bit": 181,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2b"
+    },
+    {
+     "name": "black_med1_clothing2d",
+     "bit": 183,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2d"
+    },
+    {
+     "name": "black_med1_clothing1b",
+     "bit": 176,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1b"
+    },
+    {
+     "name": "black_med1_clothing1d",
+     "bit": 178,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1d"
+    },
+    {
+     "name": "black_med1_clothing1f",
+     "bit": 238,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1f"
+    },
+    {
+     "name": "black_med1_clothing3a",
+     "bit": 185,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3a"
+    },
+    {
+     "name": "black_med1_clothing3b",
+     "bit": 186,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3b"
+    },
+    {
+     "name": "black_med1_clothing3d",
+     "bit": 188,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3d"
+    },
+    {
+     "name": "black_med1_clothing1e",
+     "bit": 179,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1e"
+    },
+    {
+     "name": "black_med1_clothing2e",
+     "bit": 184,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2e"
+    },
+    {
+     "name": "black_med1_clothing3e",
+     "bit": 189,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3e"
+    },
+    {
+     "name": "black_med1_clothing2f",
+     "bit": 239,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2f"
+    },
+    {
+     "name": "black_med2_clothing1c",
+     "bit": 192,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_med2_clothing2c",
+     "bit": 197,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_med2_clothing1a",
+     "bit": 190,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_med2_clothing2a",
+     "bit": 195,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2a"
+    },
+    {
+     "name": "black_med2_clothing2b",
+     "bit": 196,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2b"
+    },
+    {
+     "name": "black_med2_clothing2d",
+     "bit": 198,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2d"
+    },
+    {
+     "name": "black_med2_clothing1b",
+     "bit": 191,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1b"
+    },
+    {
+     "name": "black_med2_clothing1d",
+     "bit": 193,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1d"
+    },
+    {
+     "name": "black_med2_clothing1f",
+     "bit": 247,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1f"
+    },
+    {
+     "name": "black_med2_clothing3a",
+     "bit": 200,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3a"
+    },
+    {
+     "name": "black_med2_clothing3b",
+     "bit": 201,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3b"
+    },
+    {
+     "name": "black_med2_clothing3d",
+     "bit": 203,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3d"
+    },
+    {
+     "name": "black_med2_clothing1e",
+     "bit": 194,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1e"
+    },
+    {
+     "name": "black_med2_clothing2e",
+     "bit": 199,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2e"
+    },
+    {
+     "name": "black_med2_clothing3e",
+     "bit": 204,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3e"
+    },
+    {
+     "name": "black_med2_clothing2f",
+     "bit": 248,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2f"
+    },
+    {
+     "name": "black_med2_preorder1a",
+     "bit": 235,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy1_clothing1c",
+     "bit": 207,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy1_clothing2c",
+     "bit": 212,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy1_clothing1a",
+     "bit": 205,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy1_clothing2a",
+     "bit": 210,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2a"
+    },
+    {
+     "name": "black_heavy1_clothing2b",
+     "bit": 211,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2b"
+    },
+    {
+     "name": "black_heavy1_clothing2d",
+     "bit": 213,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2d"
+    },
+    {
+     "name": "black_heavy1_clothing1b",
+     "bit": 206,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1b"
+    },
+    {
+     "name": "black_heavy1_clothing1d",
+     "bit": 208,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1d"
+    },
+    {
+     "name": "black_heavy1_clothing1f",
+     "bit": 250,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1f"
+    },
+    {
+     "name": "black_heavy1_clothing3a",
+     "bit": 215,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3a"
+    },
+    {
+     "name": "black_heavy1_clothing3b",
+     "bit": 216,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3b"
+    },
+    {
+     "name": "black_heavy1_clothing3d",
+     "bit": 218,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3d"
+    },
+    {
+     "name": "black_heavy1_clothing1e",
+     "bit": 209,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1e"
+    },
+    {
+     "name": "black_heavy1_clothing2e",
+     "bit": 214,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2e"
+    },
+    {
+     "name": "black_heavy1_clothing3e",
+     "bit": 219,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3e"
+    },
+    {
+     "name": "black_heavy1_clothing2f",
+     "bit": 251,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2f"
+    },
+    {
+     "name": "black_heavy2_clothing1c",
+     "bit": 222,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy2_clothing2c",
+     "bit": 227,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy2_clothing1a",
+     "bit": 220,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy2_clothing2a",
+     "bit": 225,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2a"
+    },
+    {
+     "name": "black_heavy2_clothing2b",
+     "bit": 226,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2b"
+    },
+    {
+     "name": "black_heavy2_clothing2d",
+     "bit": 228,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2d"
+    },
+    {
+     "name": "black_heavy2_clothing1b",
+     "bit": 221,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1b"
+    },
+    {
+     "name": "black_heavy2_clothing1d",
+     "bit": 223,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1d"
+    },
+    {
+     "name": "black_heavy2_clothing1f",
+     "bit": 253,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1f"
+    },
+    {
+     "name": "black_heavy2_clothing3a",
+     "bit": 230,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3a"
+    },
+    {
+     "name": "black_heavy2_clothing3b",
+     "bit": 231,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3b"
+    },
+    {
+     "name": "black_heavy2_clothing3d",
+     "bit": 233,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3d"
+    },
+    {
+     "name": "black_heavy2_clothing1e",
+     "bit": 224,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing1e"
+    },
+    {
+     "name": "black_heavy2_clothing2e",
+     "bit": 229,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2e"
+    },
+    {
+     "name": "black_heavy2_clothing3e",
+     "bit": 234,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing3e"
+    },
+    {
+     "name": "black_heavy2_clothing2f",
+     "bit": 254,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "black_light1_clothing2f"
+    },
+    {
+     "name": "black_baseballcap_1",
+     "bit": 120,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_beret_1",
+     "bit": 123,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_baseballcap_1b",
+     "bit": 121,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_beret_1b",
+     "bit": 124,
+     "price": 1900,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_baseballcap_1c",
+     "bit": 122,
+     "price": 2400,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_beret_1c",
+     "bit": 125,
+     "price": 2800,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_1",
+     "bit": 126,
+     "price": 300,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_3",
+     "bit": 132,
+     "price": 750,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_1b",
+     "bit": 127,
+     "price": 1250,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_3b",
+     "bit": 133,
+     "price": 1700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_1c",
+     "bit": 128,
+     "price": 2200,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_3c",
+     "bit": 134,
+     "price": 2700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_medium_helmet_1p",
+     "bit": 237,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy_helmet_1",
+     "bit": 135,
+     "price": 150,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy_helmet_2",
+     "bit": 138,
+     "price": 600,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy_helmet_1b",
+     "bit": 136,
+     "price": 1100,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy_helmet_2b",
+     "bit": 139,
+     "price": 1600,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy_helmet_1c",
+     "bit": 137,
+     "price": 2050,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_heavy_helmet_2c",
+     "bit": 140,
+     "price": 2500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "black_headset_2",
+     "bit": 143,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "black_glasses_1",
+     "bit": 144,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "black_headset_1",
+     "bit": 142,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    }
+   ]
+  },
+  {
+   "faction": 0,
+   "characterClass": "CharacterClassTypeMAG",
+   "items": [
+    {
+     "name": "knife_green",
+     "bit": 53,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "M9",
+     "bit": 50,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "steyr_tmp",
+     "bit": 51,
+     "price": 2000,
+     "level": 19,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mp5n",
+     "bit": 52,
+     "price": 1000,
+     "level": 5,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mossberg590",
+     "bit": 54,
+     "price": 1800,
+     "level": 8,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "m4a1",
+     "bit": 55,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "remington_acr",
+     "bit": 274,
+     "price": 6500,
+     "level": 31,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "scar_l",
+     "bit": 56,
+     "price": 5000,
+     "level": 24,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "scar_h",
+     "bit": 57,
+     "price": 4000,
+     "level": 17,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mk14_mod0",
+     "bit": 58,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mk14_mod0_dlc",
+     "bit": 270,
+     "price": 3000,
+     "level": 12,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "l96a1",
+     "bit": 59,
+     "price": 3500,
+     "level": 14,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "remington_msr",
+     "bit": 276,
+     "price": 5500,
+     "level": 25,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "cheytac",
+     "bit": 60,
+     "price": 9500,
+     "level": 35,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mk46_mod0",
+     "bit": 61,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mk46_mod0_dlc",
+     "bit": 269,
+     "price": 4000,
+     "level": 13,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "mk43_mod1",
+     "bit": 62,
+     "price": 6000,
+     "level": 21,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "m240b",
+     "bit": 273,
+     "price": 8500,
+     "level": 37,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "smaw_dumb",
+     "bit": 64,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "smaw",
+     "bit": 65,
+     "price": 9500,
+     "level": 29,
+     "skillId": "",
+     "economyType": 1,
+     "groupParent": ""
+    },
+    {
+     "name": "rocket_sight",
+     "bit": 67,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "rocket_sight_dumb",
+     "bit": 66,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights",
+     "bit": 14,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_ironsights_rear",
+     "bit": 15,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_reddot_green",
+     "bit": 86,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_green"
+    },
+    {
+     "name": "scope_reddot_green_shotgun",
+     "bit": 88,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_green"
+    },
+    {
+     "name": "scope_reddot_green_assault",
+     "bit": 89,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_green"
+    },
+    {
+     "name": "scope_reddot_green_mg",
+     "bit": 90,
+     "price": 1500,
+     "level": 9,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_reddot_green"
+    },
+    {
+     "name": "scope_acog_green",
+     "bit": 91,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_green"
+    },
+    {
+     "name": "scope_acog_green_default",
+     "bit": 92,
+     "price": 2000,
+     "level": 15,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "scope_acog_green"
+    },
+    {
+     "name": "scope_lowfixed_green_default",
+     "bit": 94,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_highfixed_green",
+     "bit": 95,
+     "price": 4000,
+     "level": 26,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "scope_highvariable_green",
+     "bit": 96,
+     "price": 5000,
+     "level": 39,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": ""
+    },
+    {
+     "name": "suppressor_small1",
+     "bit": 99,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small1"
+    },
+    {
+     "name": "suppressor_small1_pdw",
+     "bit": 100,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small1"
+    },
+    {
+     "name": "suppressor_small1_smg",
+     "bit": 101,
+     "price": 1500,
+     "level": 11,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "suppressor_small1"
+    },
+    {
+     "name": "large_suppressor1",
+     "bit": 97,
+     "price": 3500,
+     "level": 20,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "large_suppressor1"
+    },
+    {
+     "name": "large_suppressor1_assault",
+     "bit": 98,
+     "price": 3500,
+     "level": 20,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "large_suppressor1"
+    },
+    {
+     "name": "foregrip_1",
+     "bit": 107,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_1"
+    },
+    {
+     "name": "foregrip_1_shotgun",
+     "bit": 109,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_1"
+    },
+    {
+     "name": "foregrip_1_sniper",
+     "bit": 110,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_1"
+    },
+    {
+     "name": "foregrip_1_mg",
+     "bit": 108,
+     "price": 1800,
+     "level": 10,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "foregrip_1"
+    },
+    {
+     "name": "bipod_small_1",
+     "bit": 102,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_1"
+    },
+    {
+     "name": "bipod_small_1_sniper",
+     "bit": 103,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_1"
+    },
+    {
+     "name": "bipod_small_1_sniper_2",
+     "bit": 241,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_1"
+    },
+    {
+     "name": "bipod_small_1_mg",
+     "bit": 104,
+     "price": 1000,
+     "level": 7,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_small_1"
+    },
+    {
+     "name": "bipod_large_1",
+     "bit": 105,
+     "price": 1200,
+     "level": 22,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_large_1"
+    },
+    {
+     "name": "bipod_large_1_default",
+     "bit": 106,
+     "price": 1200,
+     "level": 22,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "bipod_large_1"
+    },
+    {
+     "name": "m203",
+     "bit": 68,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m203"
+    },
+    {
+     "name": "m203_scarl",
+     "bit": 69,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m203"
+    },
+    {
+     "name": "m203_scarh",
+     "bit": 70,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m203"
+    },
+    {
+     "name": "m203_remington_acr",
+     "bit": 277,
+     "price": 10000,
+     "level": 42,
+     "skillId": "",
+     "economyType": 2,
+     "groupParent": "m203"
+    },
+    {
+     "name": "grenade_frag_green",
+     "bit": 71,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_smoke_green",
+     "bit": 72,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_gas_green",
+     "bit": 74,
+     "price": 5500,
+     "level": 33,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "grenade_flash_green",
+     "bit": 75,
+     "price": 2000,
+     "level": 16,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "claymore_mine_green",
+     "bit": 76,
+     "price": 9000,
+     "level": 44,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "anti_tank_mine_green",
+     "bit": 77,
+     "price": 3000,
+     "level": 18,
+     "skillId": "",
+     "economyType": 5,
+     "groupParent": ""
+    },
+    {
+     "name": "first_aid_pack",
+     "bit": 0,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "medkit",
+     "bit": 1,
+     "price": 500,
+     "level": 3,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "repairkit",
+     "bit": 2,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "motion_tracker",
+     "bit": 5,
+     "price": 12000,
+     "level": 45,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "satellite_jammer",
+     "bit": 6,
+     "price": 14000,
+     "level": 40,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "explosive_detector",
+     "bit": 7,
+     "price": 4000,
+     "level": 30,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "acoustic_locator",
+     "bit": 4,
+     "price": 1400,
+     "level": 6,
+     "skillId": "",
+     "economyType": 6,
+     "groupParent": ""
+    },
+    {
+     "name": "light_armor_green",
+     "bit": 111,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "light_improved_armor_green",
+     "bit": 114,
+     "price": 3500,
+     "level": 17,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "medium_armor_green",
+     "bit": 112,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "medium_improved_armor_green",
+     "bit": 115,
+     "price": 5000,
+     "level": 23,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "heavy_armor_green",
+     "bit": 113,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "heavy_improved_armor_green",
+     "bit": 116,
+     "price": 7500,
+     "level": 28,
+     "skillId": "",
+     "economyType": 7,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light1_clothing2d",
+     "bit": 125,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light1_clothing3c",
+     "bit": 129,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light1_clothing1a",
+     "bit": 117,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light1_clothing2a",
+     "bit": 122,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2a"
+    },
+    {
+     "name": "green_light1_clothing2b",
+     "bit": 123,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2b"
+    },
+    {
+     "name": "green_light1_clothing2c",
+     "bit": 124,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2c"
+    },
+    {
+     "name": "green_light1_clothing2g",
+     "bit": 247,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2g"
+    },
+    {
+     "name": "green_light1_clothing3a",
+     "bit": 127,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3a"
+    },
+    {
+     "name": "green_light1_clothing3b",
+     "bit": 128,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3b"
+    },
+    {
+     "name": "green_light1_clothing1b",
+     "bit": 118,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1b"
+    },
+    {
+     "name": "green_light1_clothing1d",
+     "bit": 120,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1d"
+    },
+    {
+     "name": "green_light1_clothing2f",
+     "bit": 246,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2f"
+    },
+    {
+     "name": "green_light1_clothing3d",
+     "bit": 130,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3d"
+    },
+    {
+     "name": "green_light1_clothing3e",
+     "bit": 131,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3e"
+    },
+    {
+     "name": "green_light1_clothing3f",
+     "bit": 248,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3f"
+    },
+    {
+     "name": "green_light1_clothing1f",
+     "bit": 245,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1f"
+    },
+    {
+     "name": "green_light2_clothing2d",
+     "bit": 140,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light2_clothing3c",
+     "bit": 144,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light2_clothing1a",
+     "bit": 132,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light2_clothing2a",
+     "bit": 137,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2a"
+    },
+    {
+     "name": "green_light2_clothing2b",
+     "bit": 138,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2b"
+    },
+    {
+     "name": "green_light2_clothing2c",
+     "bit": 139,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2c"
+    },
+    {
+     "name": "green_light2_clothing2g",
+     "bit": 259,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2g"
+    },
+    {
+     "name": "green_light2_clothing3a",
+     "bit": 142,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3a"
+    },
+    {
+     "name": "green_light2_clothing3b",
+     "bit": 143,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3b"
+    },
+    {
+     "name": "green_light2_clothing1b",
+     "bit": 133,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1b"
+    },
+    {
+     "name": "green_light2_clothing1d",
+     "bit": 135,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1d"
+    },
+    {
+     "name": "green_light2_clothing2f",
+     "bit": 258,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2f"
+    },
+    {
+     "name": "green_light2_clothing3d",
+     "bit": 145,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3d"
+    },
+    {
+     "name": "green_light2_clothing3e",
+     "bit": 146,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3e"
+    },
+    {
+     "name": "green_light2_clothing3f",
+     "bit": 260,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3f"
+    },
+    {
+     "name": "green_light2_clothing1f",
+     "bit": 257,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1f"
+    },
+    {
+     "name": "green_med1_clothing2d",
+     "bit": 155,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_med1_clothing3c",
+     "bit": 159,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_med1_clothing1a",
+     "bit": 147,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_med1_clothing2a",
+     "bit": 152,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2a"
+    },
+    {
+     "name": "green_med1_clothing2b",
+     "bit": 153,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2b"
+    },
+    {
+     "name": "green_med1_clothing2c",
+     "bit": 154,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2c"
+    },
+    {
+     "name": "green_med1_clothing2g",
+     "bit": 251,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2g"
+    },
+    {
+     "name": "green_med1_clothing3a",
+     "bit": 157,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3a"
+    },
+    {
+     "name": "green_med1_clothing3b",
+     "bit": 158,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3b"
+    },
+    {
+     "name": "green_med1_clothing1b",
+     "bit": 148,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1b"
+    },
+    {
+     "name": "green_med1_clothing1d",
+     "bit": 150,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1d"
+    },
+    {
+     "name": "green_med1_clothing2f",
+     "bit": 250,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2f"
+    },
+    {
+     "name": "green_med1_clothing3d",
+     "bit": 160,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3d"
+    },
+    {
+     "name": "green_med1_clothing3e",
+     "bit": 161,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3e"
+    },
+    {
+     "name": "green_med1_clothing3f",
+     "bit": 252,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3f"
+    },
+    {
+     "name": "green_med1_clothing1f",
+     "bit": 249,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1f"
+    },
+    {
+     "name": "green_med2_clothing2d",
+     "bit": 170,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_med2_clothing3c",
+     "bit": 174,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_med2_clothing1a",
+     "bit": 162,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_med2_clothing2a",
+     "bit": 167,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2a"
+    },
+    {
+     "name": "green_med2_clothing2b",
+     "bit": 168,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2b"
+    },
+    {
+     "name": "green_med2_clothing2c",
+     "bit": 169,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2c"
+    },
+    {
+     "name": "green_med2_clothing2g",
+     "bit": 263,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2g"
+    },
+    {
+     "name": "green_med2_clothing3a",
+     "bit": 172,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3a"
+    },
+    {
+     "name": "green_med2_clothing3b",
+     "bit": 173,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3b"
+    },
+    {
+     "name": "green_med2_clothing1b",
+     "bit": 163,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1b"
+    },
+    {
+     "name": "green_med2_clothing1d",
+     "bit": 165,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1d"
+    },
+    {
+     "name": "green_med2_clothing2f",
+     "bit": 262,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2f"
+    },
+    {
+     "name": "green_med2_clothing3d",
+     "bit": 175,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3d"
+    },
+    {
+     "name": "green_med2_clothing3e",
+     "bit": 176,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3e"
+    },
+    {
+     "name": "green_med2_clothing3f",
+     "bit": 264,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3f"
+    },
+    {
+     "name": "green_med2_clothing1f",
+     "bit": 261,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1f"
+    },
+    {
+     "name": "green_med2_clothing2e",
+     "bit": 171,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy1_clothing2d",
+     "bit": 185,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy1_clothing3c",
+     "bit": 189,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy1_clothing1a",
+     "bit": 177,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy1_clothing2a",
+     "bit": 182,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2a"
+    },
+    {
+     "name": "green_heavy1_clothing2b",
+     "bit": 183,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2b"
+    },
+    {
+     "name": "green_heavy1_clothing2c",
+     "bit": 184,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2c"
+    },
+    {
+     "name": "green_heavy1_clothing2g",
+     "bit": 255,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2g"
+    },
+    {
+     "name": "green_heavy1_clothing3a",
+     "bit": 187,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3a"
+    },
+    {
+     "name": "green_heavy1_clothing3b",
+     "bit": 188,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3b"
+    },
+    {
+     "name": "green_heavy1_clothing1b",
+     "bit": 178,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1b"
+    },
+    {
+     "name": "green_heavy1_clothing1d",
+     "bit": 180,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1d"
+    },
+    {
+     "name": "green_heavy1_clothing2f",
+     "bit": 254,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2f"
+    },
+    {
+     "name": "green_heavy1_clothing3d",
+     "bit": 190,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3d"
+    },
+    {
+     "name": "green_heavy1_clothing3e",
+     "bit": 191,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3e"
+    },
+    {
+     "name": "green_heavy1_clothing3f",
+     "bit": 256,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3f"
+    },
+    {
+     "name": "green_heavy1_clothing1f",
+     "bit": 253,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1f"
+    },
+    {
+     "name": "green_heavy2_clothing2d",
+     "bit": 200,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy2_clothing3c",
+     "bit": 204,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy2_clothing1a",
+     "bit": 192,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy2_clothing2a",
+     "bit": 197,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2a"
+    },
+    {
+     "name": "green_heavy2_clothing2b",
+     "bit": 198,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2b"
+    },
+    {
+     "name": "green_heavy2_clothing2c",
+     "bit": 199,
+     "price": 50,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2c"
+    },
+    {
+     "name": "green_heavy2_clothing2g",
+     "bit": 267,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2g"
+    },
+    {
+     "name": "green_heavy2_clothing3a",
+     "bit": 202,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3a"
+    },
+    {
+     "name": "green_heavy2_clothing3b",
+     "bit": 203,
+     "price": 700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3b"
+    },
+    {
+     "name": "green_heavy2_clothing1b",
+     "bit": 193,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1b"
+    },
+    {
+     "name": "green_heavy2_clothing1d",
+     "bit": 195,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1d"
+    },
+    {
+     "name": "green_heavy2_clothing2f",
+     "bit": 266,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing2f"
+    },
+    {
+     "name": "green_heavy2_clothing3d",
+     "bit": 205,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3d"
+    },
+    {
+     "name": "green_heavy2_clothing3e",
+     "bit": 206,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3e"
+    },
+    {
+     "name": "green_heavy2_clothing3f",
+     "bit": 243,
+     "price": 2000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing3f"
+    },
+    {
+     "name": "green_heavy2_clothing1f",
+     "bit": 265,
+     "price": 3000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 10,
+     "groupParent": "green_light1_clothing1f"
+    },
+    {
+     "name": "green_light_ranger_cap",
+     "bit": 208,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light_beanie",
+     "bit": 209,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light_ranger_cap_2",
+     "bit": 231,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light_beanie_2",
+     "bit": 233,
+     "price": 1900,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light_ranger_cap_3",
+     "bit": 232,
+     "price": 2400,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_light_beanie_3",
+     "bit": 234,
+     "price": 2800,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy_soft_helmet",
+     "bit": 217,
+     "price": 300,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_medium_hard_helmet",
+     "bit": 210,
+     "price": 750,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy_soft_helmet_2",
+     "bit": 218,
+     "price": 1250,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_medium_hard_helmet_1_2",
+     "bit": 211,
+     "price": 1700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_heavy_soft_helmet_3",
+     "bit": 219,
+     "price": 2200,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_medium_hard_helmet_1_3",
+     "bit": 212,
+     "price": 2700,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_medium_hard_helmet_2_4",
+     "bit": 216,
+     "price": 0,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_combat_helmet_1",
+     "bit": 223,
+     "price": 150,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_riot_helmet_1",
+     "bit": 226,
+     "price": 600,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_combat_helmet_2",
+     "bit": 224,
+     "price": 1100,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_riot_helmet_2",
+     "bit": 227,
+     "price": 1600,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_combat_helmet_3",
+     "bit": 225,
+     "price": 2050,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_riot_helmet_3",
+     "bit": 228,
+     "price": 2500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 8,
+     "groupParent": ""
+    },
+    {
+     "name": "green_sunglasses",
+     "bit": 238,
+     "price": 500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "green_goggles",
+     "bit": 240,
+     "price": 1000,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    },
+    {
+     "name": "green_sunglasses_2",
+     "bit": 239,
+     "price": 1500,
+     "level": 0,
+     "skillId": "",
+     "economyType": 9,
+     "groupParent": ""
+    }
+   ]
+  }
+ ]
+}

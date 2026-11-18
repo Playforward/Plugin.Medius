@@ -63,6 +63,7 @@ public sealed partial class MlsComponent
                         // Unread by Killzone 2 (0x4b9c98); PS Rewired sends 2 [live], here
                         // the world's status [guess].
                         Unknown_BC = (int)(Context.Lobby.Game(title, request.MediusWorldID)?.Status ?? MediusWorldStatus.WorldClosed),
+                        ConnectInfoPadLength = title.RtLayout.JoinGameTrailingPadLength ?? 0,
                     });
                 return true;
 

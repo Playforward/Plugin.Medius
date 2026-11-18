@@ -35,6 +35,7 @@ public sealed partial class MlsComponent(MediusContext context) : MediusComponen
         client.Connection?.Disconnect();
         client.Connection = connection;
         client.MediusVersion = connection.MediusVersion;
+        Context.Lobby.Matchmaker.CancelFindGame(client);
         connection.Client = client;
         MediusChannel channel = Context.Lobby.Channel(client.Title, (int)connect.TargetWorldId) ?? Context.Lobby.DefaultChannel(client.Title);
         JoinChannel(client, channel);
@@ -218,24 +219,27 @@ public sealed partial class MlsComponent(MediusContext context) : MediusComponen
         {
             MessageID = request.MessageID,
             StatusCode = MediusCallbackStatus.MediusSuccess,
-            ConnectInfo = new NetConnectionInfo
-            {
-                Type = NetConnectionType.NetConnectionTypeClientServerTCP,
-                AccessKey = client.AccessToken,
-                SessionKey = client.SessionKey,
-                WorldID = channel.Id,
-                ServerKey = LobbyCommon.PublicKeyOf(Context.ServerKey),
-                AddressList = new NetAddressList
-                {
-                    AddressList =
-                    [
-                        new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Mls), AddressType = NetAddressType.NetAddressTypeExternal },
-                        new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Nat), AddressType = NetAddressType.NetAddressTypeNATService },
-                    ],
-                },
-            },
+            ConnectInfo = LobbyConnectInfo(client, channel.Id),
         });
     }
+
+    /// <summary>How the client reaches this listener with its session: a lobby channel, or the match server.</summary>
+    private NetConnectionInfo LobbyConnectInfo(MediusClient client, int worldId) => new()
+    {
+        Type = NetConnectionType.NetConnectionTypeClientServerTCP,
+        AccessKey = client.AccessToken,
+        SessionKey = client.SessionKey,
+        WorldID = worldId,
+        ServerKey = LobbyCommon.PublicKeyOf(Context.ServerKey),
+        AddressList = new NetAddressList
+        {
+            AddressList =
+            [
+                new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Mls), AddressType = NetAddressType.NetAddressTypeExternal },
+                new NetAddress { Address = Context.PublicAddress.ToString(), Port = (uint)Context.Settings.PortOf(MediusComponentNames.Nat), AddressType = NetAddressType.NetAddressTypeNATService },
+            ],
+        },
+    };
 
     private static bool JoinChannel(MediusClient client, MediusChannel channel)
     {

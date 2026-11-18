@@ -143,6 +143,15 @@ public sealed class MagMessageIds
     [MagMessage("MagNetMessageFactionReSpecRequest")] public ushort FactionReSpecRequest { get; private set; }
     [MagMessage("MagNetMessageVeteranReSpecRequest")] public ushort VeteranReSpecRequest { get; private set; }
     [MagMessage("MagNetMessageCharacterReSpecResponse")] public ushort CharacterReSpecResponse { get; private set; }
+    // The Supply Depot (2.00 on). Purchase and refund requests carry the item handle, a u16
+    // (marshal 2.12 0x710cb4); their responses a success bit and, on success, the record (0x7108dc).
+    [MagMessage("MagNetMessageEconomyPurchaseRequest")] public ushort? EconomyPurchaseRequest { get; private set; }
+    [MagMessage("MagNetMessageEconomyPurchaseResponse")] public ushort? EconomyPurchaseResponse { get; private set; }
+    [MagMessage("MagNetMessageEconomyRefundRequest")] public ushort? EconomyRefundRequest { get; private set; }
+    [MagMessage("MagNetMessageEconomyRefundResponse")] public ushort? EconomyRefundResponse { get; private set; }
+    /// <summary>The PlayStation Store CP bundles the account holds (envelope only); sent each time the barracks opens.</summary>
+    [MagMessage("MagNetMessageRetrieveWalletRequest")] public ushort? RetrieveWalletRequest { get; private set; }
+    [MagMessage("MagNetMessageRetrieveWalletResponse")] public ushort? RetrieveWalletResponse { get; private set; }
     /// <summary>NetTrainingCompletedRequest (envelope only, transID 0): sent on entering the lobby.</summary>
     [MagMessage("NetTrainingCompletedRequest")] public ushort TrainingCompletedRequest { get; private set; }
 
@@ -178,6 +187,8 @@ public sealed class MagMessageIds
     [MagMessage("NetMessageCharacterStats")] public ushort CharacterStats { get; private set; }
     /// <summary>No body: the scoreboard is final (the post game's ScoreboardIsFinalized, which gates its exit).</summary>
     [MagMessage("NetMessageCharacterStatsComplete")] public ushort CharacterStatsComplete { get; private set; }
+    /// <summary>A player's ribbons won this game: u32 (0 from the server), then the 128-bit set (1.00 0x245, 2.12 0x25d; marshal 2.12 0x712334).</summary>
+    [MagMessage("NetMessageCharacterGameAwards")] public ushort CharacterGameAwards { get; private set; }
     /// <summary>A team's points changed: the new total and why (the clock's bleed, an objective, a death).</summary>
     [MagMessage("NetMessageScoreChange")] public ushort ScoreChange { get; private set; }
     /// <summary>The game is over: who won, how, and when the end-of-game countdown runs out.</summary>

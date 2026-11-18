@@ -40,6 +40,29 @@ public sealed record ScertLayout
     /// EndOfList (SCE-RT 3.98 and 3.02 serializers pass the same field twice).
     /// </summary>
     public bool SupersetStatusCodeRepeated { get; init; }
+
+    /// <summary>
+    /// Whether MediusMatchListSupersetsResponse carries its strings in fixed fields (name 50,
+    /// description 256, extra info 256, right after SupersetID) instead of an unnamed u32 and
+    /// three lengths before the text (SCE-RT 3.06).
+    /// </summary>
+    public bool SupersetFixedStrings { get; init; }
+
+    /// <summary>Bytes of MediusGetAnnouncementsResponse.Announcement.</summary>
+    public int AnnouncementLength { get; init; } = Constants.ANNOUNCEMENT_MAXLEN;
+
+    /// <summary>
+    /// Whether MediusGetClanMemberList_ExtraInfoResponse has LadderStat, LadderPosition and
+    /// TotalRankings between OnlineState and EndOfList (SCE-RT 3.06 has none of them).
+    /// </summary>
+    public bool ClanExtraInfoLadderFields { get; init; } = true;
+
+    /// <summary>
+    /// Whether MatchParty, MatchFoundResponse and its game info use the SCE-RT 3.06 layouts
+    /// (MatchParty with more fields, MatchFoundResponse without MessageID, a game-world
+    /// game info without a roster).
+    /// </summary>
+    public bool MatchMessages306 { get; init; }
 }
 
 /// <summary>A named set of <see cref="ScertLayout"/> defaults for one SCE-RT library line.</summary>
@@ -158,8 +181,45 @@ public sealed class ScertLibraryProfile
         SupersetStatusCodeRepeated = true,
     });
 
+    /// <summary>
+    /// SCE-RT 3.06 (PS3, 2011). Evidence is from Killzone 3 1.14 (3.06.201103140900), static
+    /// only: its registration table (register function 0x9ffe14) against Killzone 2 1.29's
+    /// (0x700868); see RE-Work/kz3/NOTES.md. 3.03's layouts except where noted.
+    /// </summary>
+    public static ScertLibraryProfile Rt306 { get; } = new("3.06", "SCE-RT 3.06 (PS3 2011)", new ScertLayout
+    {
+        // Universe codec 0xa361fc: `li r5,0x100` for ExtendedInfo at +0x2bc, EndOfList u8 at
+        // +0x43c, nothing after it, as 3.03 [C].
+        UniverseExtendedInfoLength = 256,
+        UniversePadAfterEndOfList = false,
+        // Lobby 0x24 codec 0xa290d0 writes a u32 at +0xbc after ConnectInfo; the handler's
+        // struct grew from 3.03's 0xbc to 0xc0 [C]. Lobby-ext 0x8e (JoinGame2Response, codec
+        // 0xa29294) gains the same u32 before its last one [C].
+        JoinGameTrailingPadLength = 4,
+        // Reader 0xa03130 reads 0x14 bytes (`li r5,0x14`, the twin of Killzone 2's 0x6f6478) [C].
+        DmeServerVersionLength = 20,
+        // SvoURL handler 0xa2e394 reads into a 0x95-byte struct, as 3.03's 0x72ca58 [C]; the
+        // 128-byte field is 3.03's [guess].
+        SvoUrlFieldLength = 128,
+        // BinaryFwdMessage1 codec 0xa2a0b0: MessageID, u32, u32, u32, data, as 3.03 [C]; the
+        // originator-first order is PSRewired's R2 [guess].
+        BinaryFwdOriginatorFirst = true,
+        // Lobby-ext 0x5e codec 0xa29008: MessageID, StatusCode, EndOfList u8, u32 +0x20, then
+        // fixed strings of 0x32 (+0x24), 0x100 (+0x56) and 0x100 (+0x156); struct 0x40 -> 0x258 [C].
+        SupersetFixedStrings = true,
+        // Lobby 0x4d codec 0xa34950: `li r5,0xfa0` for the text at +0x20 (3.03: 0x3e8) [C].
+        AnnouncementLength = 4000,
+        // Lobby 0xdb codec 0xa34424: OnlineState is followed by EndOfList and 3 pad bytes;
+        // 3.03's three u32 at +0x1cc..+0x1d4 are gone (struct 0x1dc -> 0x1d0) [C].
+        ClanExtraInfoLadderFields = false,
+        // Lobby-ext 0x88 codec 0xa288e4 (MatchParty), 0x8a codec 0xa29d78 (MatchFoundResponse,
+        // no MessageID) and game info 0xa295f8 (a game world, no roster) [C]; 3.03's MatchParty
+        // read of a 3.06 body gave superset 0 and no players [live 2026-11-08].
+        MatchMessages306 = true,
+    });
+
     /// <summary>Every profile a title can name with <see cref="MediusTitle.RtVersion"/>.</summary>
-    public static IReadOnlyList<ScertLibraryProfile> Known { get; } = [Rt303, Rt398, Rt302];
+    public static IReadOnlyList<ScertLibraryProfile> Known { get; } = [Rt303, Rt398, Rt302, Rt306];
 
     /// <summary>
     /// The profile for an SCE-RT ReleaseVersion string, matched on its

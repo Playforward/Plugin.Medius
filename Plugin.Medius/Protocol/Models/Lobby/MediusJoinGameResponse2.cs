@@ -25,6 +25,13 @@ namespace Plugin.Medius.RT.Models
         public NetConnectionInfo ConnectInfo;
         public int Unknown_BC;
 
+        /// <summary>
+        /// Layout switch, not a field: bytes between ConnectInfo and <see cref="Unknown_BC"/>
+        /// (0; SCE-RT 3.06 has a u32 there, Killzone 3 codec 0xa29294) [C]. Set from the title's
+        /// <see cref="ScertLayout.JoinGameTrailingPadLength"/>.
+        /// </summary>
+        public int ConnectInfoPadLength;
+
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
             base.Deserialize(reader);
@@ -33,6 +40,7 @@ namespace Plugin.Medius.RT.Models
             StatusCode = reader.Read<MediusCallbackStatus>();
             GameHostType = reader.Read<MediusGameHostType>();
             ConnectInfo = reader.Read<NetConnectionInfo>();
+            reader.ReadBytes(ConnectInfoPadLength);
             Unknown_BC = reader.ReadInt32();
         }
 
@@ -44,6 +52,7 @@ namespace Plugin.Medius.RT.Models
             writer.Write(StatusCode);
             writer.Write(GameHostType);
             writer.Write(ConnectInfo ?? new NetConnectionInfo());
+            writer.Write(new byte[ConnectInfoPadLength]);
             writer.Write(Unknown_BC);
         }
 

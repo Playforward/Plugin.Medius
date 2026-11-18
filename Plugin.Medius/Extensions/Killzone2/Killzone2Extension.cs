@@ -211,9 +211,12 @@ public partial class Killzone2Extension : IMediusTitleExtension, IMediusWebServi
         return new MediusWebResponse
         {
             ContentType = contentType ?? (string.IsNullOrEmpty(page.ContentType) ? PageTypes[0].ContentType : page.ContentType),
-            Body = Encoding.UTF8.GetBytes(FillPage(FillQuery(FillValues(File.ReadAllText(file), page.Values), request), AccountOf(request))),
+            Body = Encoding.UTF8.GetBytes(FinishPage(FillPage(FillQuery(FillValues(File.ReadAllText(file), page.Values), request), AccountOf(request)), request, page)),
         };
     }
+
+    /// <summary>A title's last changes to a template page.</summary>
+    protected virtual string FinishPage(string text, MediusWebRequest request, Killzone2PageSettings page) => text;
 
     /// <summary>Fills <c>{Query.Name}</c> with the request's query value (empty when absent), as text.</summary>
     public static string FillQuery(string text, MediusWebRequest request) =>
@@ -410,7 +413,10 @@ public partial class Killzone2Extension : IMediusTitleExtension, IMediusWebServi
     public static string GamePlayerElement(int id) => $"<GamePlayer><status><id>{id}</id></status></GamePlayer>";
 
     /// <summary>A game-service answer: the element in an XML document, as the login's.</summary>
-    private MediusWebResponse GameDocument(string element) => LoginAnswer(element);
+    protected MediusWebResponse GameDocument(string element) => LoginAnswer(element);
+
+    /// <summary>The id a game-service answer carries when the request worked.</summary>
+    protected int GameRequestSuccessId => _settings.Svo.Games.GamePlayerSuccessId;
 
     /// <summary>
     /// A page or data document from the title's page directory: a request for
@@ -554,24 +560,14 @@ public partial class Killzone2Extension : IMediusTitleExtension, IMediusWebServi
     }
 
     /// <summary>The first NP ticket in the body (the sig part of the form, wherever the encoding put it).</summary>
-    private static NpTicket? FindTicket(byte[] body)
-    {
-        for (int i = 0; i + 8 <= body.Length; i++)
-        {
-            if (body[i] != 0x21 && body[i] != 0x31 && body[i] != 0x41)
-                continue;
-            if (NpTicket.Parse(body.AsSpan(i)) is { OnlineId.Length: > 0 } ticket)
-                return ticket;
-        }
-        return null;
-    }
+    private static NpTicket? FindTicket(byte[] body) => NpTicket.Find(body);
 
     /// <summary>
     /// The path a named URI is requested at. A hostless value such as
     /// <c>https:ticket/login</c> is requested under the page's directory with the
     /// value appended as it is; its relative part alone is accepted too.
     /// </summary>
-    private bool IsPathOf(string name, string requestPath)
+    protected bool IsPathOf(string name, string requestPath)
     {
         if (_settings.Svo.Uris.FirstOrDefault(u => u.Name == name) is not { } uri)
             return false;

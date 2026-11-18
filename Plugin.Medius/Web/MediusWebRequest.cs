@@ -97,7 +97,24 @@ public interface IMediusWebService
 
     /// <summary>The answer, or null when the service has nothing at that path (404).</summary>
     MediusWebResponse? HandleWeb(MediusWebRequest request);
+
+    /// <summary>
+    /// When this service's client verifies the TLS server certificate's name,
+    /// the identity the shared WEB certificate must carry; null when any
+    /// certificate is accepted (the default). The listener serves a single
+    /// certificate (SSL 3.0 has no SNI), so it is built to the first non-null
+    /// identity any web service declares.
+    /// </summary>
+    WebTlsIdentity? WebTlsIdentity => null;
 }
+
+/// <summary>
+/// The subject and issuer distinguished names a name-checking TLS client expects
+/// its server certificate to present — for a console SVO stack that matches the
+/// certificate against a name embedded in the game rather than verifying its
+/// signature. DNs are "C=US,O=...,CN=..." strings, attributes most-significant first.
+/// </summary>
+public sealed record WebTlsIdentity(string SubjectDn, string IssuerDn);
 
 /// <summary>
 /// Reassembles HTTP/1.1 requests from a byte stream: request line, headers,

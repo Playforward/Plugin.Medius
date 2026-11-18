@@ -37,6 +37,8 @@
     <EmbeddedResource Include="Extensions\Mag\Data\v212\mag-char-stat-info.json" LogicalName="Plugin.Medius.Extensions.Mag.Data.v212.mag-char-stat-info.json" />
     <EmbeddedResource Include="Extensions\Mag\Data\v100\mag-shadow-war.json" LogicalName="Plugin.Medius.Extensions.Mag.Data.v100.mag-shadow-war.json" />
     <EmbeddedResource Include="Extensions\Mag\Data\v212\mag-shadow-war.json" LogicalName="Plugin.Medius.Extensions.Mag.Data.v212.mag-shadow-war.json" />
+    <!-- v212 only: tools/re/armory.py over patch 2.12's armory.zpr and item_list.zpr (1.00 has no Supply Depot). -->
+    <EmbeddedResource Include="Extensions\Mag\Data\v212\mag-armory.json" LogicalName="Plugin.Medius.Extensions.Mag.Data.v212.mag-armory.json" />
     <EmbeddedResource Include="Extensions\Mag\Data\mag-message-types.json" LogicalName="Plugin.Medius.Extensions.Mag.Data.mag-message-types.json" />
   </ItemGroup>
 

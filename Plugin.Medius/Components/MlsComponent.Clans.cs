@@ -146,6 +146,7 @@ public sealed partial class MlsComponent
             {
                 MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusNoResult, AccountName = "",
                 Stats = new byte[Constants.ACCOUNTSTATS_MAXLEN], OnlineState = Offline(), EndOfList = true,
+                LadderFields = client.Title.RtLayout.ClanExtraInfoLadderFields,
             });
         for (int i = 0; i < members.Count; i++)
         {
@@ -164,6 +165,7 @@ public sealed partial class MlsComponent
                 LadderPosition = (uint)(i + 1),
                 TotalRankings = (uint)members.Count,
                 EndOfList = i == members.Count - 1,
+                LadderFields = client.Title.RtLayout.ClanExtraInfoLadderFields,
             });
         }
     }

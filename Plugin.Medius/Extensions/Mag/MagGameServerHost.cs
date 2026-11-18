@@ -70,8 +70,11 @@ public sealed record MagGameServerContext(MediusContext Medius, MagSettings Sett
 /// GameType64), how it ended for them (an ExperienceGameResult name, null if
 /// they left before the end) and the game's stats by CharacterStatType name
 /// without the kCharStat prefix (EnemiesKilled, BattleExperience, ...).
+/// Ribbons are the indexes of the ribbons the game won (character_awards.zpr),
+/// and RibbonCash the CP they give.
 /// </summary>
-public sealed record MagGameRecord(int AccountId, string GameType, string? Result, IReadOnlyDictionary<string, long> Stats);
+public sealed record MagGameRecord(int AccountId, string GameType, string? Result, IReadOnlyDictionary<string, long> Stats,
+    IReadOnlyList<int>? Ribbons = null, uint RibbonCash = 0);
 
 /// <summary>
 /// Where a game server plugin plugs into the MAG lobby. The battle server

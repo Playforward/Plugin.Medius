@@ -92,7 +92,12 @@ public sealed class WebComponent(IReadOnlyList<IMediusWebService> services, Lega
     public void Disconnected(Guid connectionId)
     {
         if (_connections.TryRemove(connectionId, out WebConnection? connection) && connection.Tls is { HandshakeComplete: false })
-            Log.Debug("[medius/web] {Remote}: closed before the TLS handshake finished", connection.Remote);
+        {
+            string why = connection.Tls is Ssl3Session { LastAlert: { } alert }
+                ? $" (client sent SSL alert level {alert.Level} description {alert.Description})"
+                : " (no SSL alert — the client just closed the socket)";
+            Log.Debug("[medius/web] {Remote}: closed before the TLS handshake finished{Why}", connection.Remote, why);
+        }
     }
 
     /// <summary>Answers one request: the service whose host it is (or that claims its path), else 404.</summary>

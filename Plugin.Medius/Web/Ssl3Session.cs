@@ -1,6 +1,7 @@
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Encodings;
 using Org.BouncyCastle.Crypto.Engines;
+using Serilog;
 using System.Buffers.Binary;
 using System.Security.Cryptography;
 
@@ -162,6 +163,7 @@ public sealed class Ssl3Session : IWebTlsSession
                 case ClientKeyExchange:
                     Expect(State.KeyExchange);
                     _handshakeMessages.Write(whole);
+                    Log.Debug("[medius/web ssl3] received ClientKeyExchange ({Bytes} B): the client accepted our ServerHello and certificate", body.Length);
                     KeyExchange(body);
                     _state = State.ChangeCipherSpec;
                     break;
@@ -177,6 +179,7 @@ public sealed class Ssl3Session : IWebTlsSession
                     _write = new CipherState(_suite, _master, _clientRandom, _serverRandom, client: false);
                     WriteHandshake(Finished, serverFinished);
                     _state = State.Open;
+                    Log.Debug("[medius/web ssl3] client Finished verified; handshake complete ({Negotiated})", Negotiated);
                     break;
                 }
                 default: throw new InvalidDataException($"SSL handshake message {type} in state {_state}");
@@ -212,6 +215,8 @@ public sealed class Ssl3Session : IWebTlsSession
         WriteHandshake(CertificateMessage, certificates);
         WriteHandshake(ServerHelloDone, []);
         _state = State.KeyExchange;
+        Log.Debug("[medius/web ssl3] ClientHello: offered {Offered}, chose 0x{Suite:X4}; sent ServerHello + Certificate ({CertBytes} B, {KeyBits}-bit RSA) + ServerHelloDone",
+            string.Join(",", offered.Select(s => $"0x{s:X4}")), _suite, der.Length, _credentials.PrivateKey.Modulus.BitLength);
     }
 
     /// <summary>
@@ -232,8 +237,9 @@ public sealed class Ssl3Session : IWebTlsSession
             if (preMaster.Length != 48)
                 throw new InvalidCipherTextException("pre-master is not 48 bytes");
         }
-        catch (InvalidCipherTextException)
+        catch (InvalidCipherTextException exception)
         {
+            Log.Debug("[medius/web ssl3] pre-master did not decrypt ({Message}); the client Finished will fail to verify", exception.Message);
             preMaster = RandomNumberGenerator.GetBytes(48);
         }
         _master = Derive(preMaster, _clientRandom, _serverRandom, 48);

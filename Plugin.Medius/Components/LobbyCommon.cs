@@ -28,6 +28,10 @@ internal static class LobbyCommon
                 }));
                 return true;
 
+            case MediusPostLoginQueryRequest request:
+                connection.SendApp(new MediusPostLoginQueryResponse { MessageID = request.MessageID, StatusCode = MediusCallbackStatus.MediusSuccess });
+                return true;
+
             case MediusGetAnnouncementsRequest request:
                 SendAnnouncements(connection, request.MessageID, title, all: false);
                 return true;
@@ -128,9 +132,10 @@ internal static class LobbyCommon
         List<string> announcements = title?.Announcements ?? [];
         if (!all && announcements.Count > 1)
             announcements = announcements.Take(1).ToList();
+        int length = (title?.RtLayout ?? ScertLibraryProfile.Default.Layout).AnnouncementLength;
         if (announcements.Count == 0)
         {
-            connection.SendApp(new MediusGetAnnouncementsResponse { MessageID = messageId, StatusCode = MediusCallbackStatus.MediusNoResult, EndOfList = true });
+            connection.SendApp(new MediusGetAnnouncementsResponse { MessageID = messageId, StatusCode = MediusCallbackStatus.MediusNoResult, EndOfList = true, AnnouncementLength = length });
             return;
         }
         for (int i = 0; i < announcements.Count; i++)
@@ -140,8 +145,9 @@ internal static class LobbyCommon
                 MessageID = messageId,
                 StatusCode = MediusCallbackStatus.MediusSuccess,
                 AnnouncementID = i + 1,
-                Announcement = Truncate(announcements[i], Constants.ANNOUNCEMENT_MAXLEN - 1),
+                Announcement = Truncate(announcements[i], length - 1),
                 EndOfList = i == announcements.Count - 1,
+                AnnouncementLength = length,
             });
         }
     }

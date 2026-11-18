@@ -19,6 +19,23 @@ public sealed record NpTicket(ulong AccountId, string OnlineId)
     private const ushort TypeString = 0x0004;
     private const ushort TypeBody = 0x3000;
 
+    /// <summary>
+    /// The first ticket with an online id anywhere in <paramref name="data"/> (an HTTP body that
+    /// carries one, alone or after other fields), or null. A ticket starts with its version's
+    /// high byte: 0x21, 0x31 or 0x41.
+    /// </summary>
+    public static NpTicket? Find(ReadOnlySpan<byte> data)
+    {
+        for (int i = 0; i + 8 <= data.Length; i++)
+        {
+            if (data[i] != 0x21 && data[i] != 0x31 && data[i] != 0x41)
+                continue;
+            if (Parse(data[i..]) is { OnlineId.Length: > 0 } ticket)
+                return ticket;
+        }
+        return null;
+    }
+
     /// <summary>The ticket at the start of <paramref name="raw"/>, or null when it does not parse.</summary>
     public static NpTicket? Parse(ReadOnlySpan<byte> raw)
     {

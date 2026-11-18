@@ -934,6 +934,9 @@ namespace Plugin.Medius.RT.Common
         // Its quick match (registered at 0x64fd04/0x64fd20; codecs 0x65697c/0x656e4c) [C]. Names [guess].
         MatchFindGame = 0x78,
         MatchFindGameResponse = 0x60,
+        // Its way back from the match server to the MLS (registered at 0x64fe1c/0x64fe38) [C].
+        JoinLeastPopulatedChannel = 0x71,
+        JoinLeastPopulatedChannelResponse = 0x72,
         GenericChatMessage1 = 0x73,
         GenericChatFwdMessage1 = 0x74,
         MediusTextFilter1 = 0x75,
@@ -953,6 +956,14 @@ namespace Plugin.Medius.RT.Common
         MatchParty = 0x88,
         MatchPartyResponse = 0x89,
         MatchFoundResponse = 0x8A,
+        // SCE-RT 3.06 (Killzone 3 1.14 registration table, register fn 0x9ffe14) [C]. Names [guess].
+        // 0x96 is sent by the client's matchmaking task when it is of kind 2 (0x165878; kinds 0 and 1 send
+        // MatchParty and the clan match); 0x97 is a raw 0x1c struct (handler 0xa2d688) like MatchPartyResponse.
+        MatchUpdate = 0x96,
+        MatchUpdateResponse = 0x97,
+        // Sent once after the MLS connect (0x15e694 state 10); 0x42 is a raw 0x20 struct (handler 0xa2d34c).
+        PostLoginQuery = 0x41,
+        PostLoginQueryResponse = 0x42,
 
         // Variable-length binary messages of the SCE-RT 3.03 client (Resistance 2
         // registration table 0x8005c8: 0x5B sent, 0x5C delivered) [C].

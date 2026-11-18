@@ -78,8 +78,145 @@ public sealed class MagCharacter
     /// </summary>
     public ushort[] Unknown22A { get; set; } = new ushort[6];
 
-    /// <summary>2.12's record tail: five u32 at +0x238..+0x248 (see <see cref="Unknown22A"/>).</summary>
+    /// <summary>
+    /// 2.12's record tail: five u32 at +0x238..+0x248. The client's
+    /// CharacterInfo getter (2.12 0x8ec74, jump table cases) reads
+    /// kCharInfoEconomyCash (29) as +0x23c + +0x240, kCharInfoDeferredCash
+    /// (33) as +0x244 and kCharInfoDeferredXP (32) as +0x248 [C]: see
+    /// <see cref="PurchasedCash"/>, <see cref="AwardedCash"/>,
+    /// <see cref="DeferredCash"/>, <see cref="DeferredExperience"/>. +0x238 is unknown.
+    /// </summary>
     public uint[] Unknown238 { get; set; } = new uint[5];
+
+    /// <summary>
+    /// The CP bought on the PlayStation Store (+0x23c; the lobby emulator's
+    /// record +0x214), spent after <see cref="AwardedCash"/> (0x6ff370) [C].
+    /// Which of the pair is bought and which earned is a [guess] from the
+    /// order of the test character settings (AdditionalPurchasedCash, then
+    /// AdditionalAwardedCash) and from refunds going to the other one.
+    /// </summary>
+    [JsonIgnore]
+    public uint PurchasedCash { get => TailWord(1); set => SetTailWord(1, value); }
+
+    /// <summary>The CP earned in play (+0x240; emulator +0x218): spent first, and what a refund credits (0x6ff370, 0x6ff594) [C].</summary>
+    [JsonIgnore]
+    public uint AwardedCash { get => TailWord(2); set => SetTailWord(2, value); }
+
+    /// <summary>kCharInfoDeferredCash (+0x244); what sets it isn't known.</summary>
+    [JsonIgnore]
+    public uint DeferredCash { get => TailWord(3); set => SetTailWord(3, value); }
+
+    /// <summary>kCharInfoDeferredXP (+0x248); what sets it isn't known.</summary>
+    [JsonIgnore]
+    public uint DeferredExperience { get => TailWord(4); set => SetTailWord(4, value); }
+
+    /// <summary>kCharInfoEconomyCash: the CP the Supply Depot shows and spends, both kinds together.</summary>
+    [JsonIgnore]
+    public uint Cash => (uint)Math.Min((ulong)PurchasedCash + AwardedCash, uint.MaxValue);
+
+    private uint TailWord(int index) => Fit(Unknown238, 5)[index];
+
+    private void SetTailWord(int index, uint value)
+    {
+        Unknown238 = Fit(Unknown238, 5);
+        Unknown238[index] = value;
+    }
+
+    /// <summary>Adds CP earned in play to <see cref="AwardedCash"/>.</summary>
+    public void AwardCash(uint cash) => AwardedCash = (uint)Math.Min((ulong)AwardedCash + cash, uint.MaxValue);
+
+    /// <summary>
+    /// Spends <paramref name="price"/> CP (0x6ff370): nothing if both kinds
+    /// together fall short; otherwise from <see cref="AwardedCash"/> first and
+    /// the rest from <see cref="PurchasedCash"/> [C].
+    /// </summary>
+    public bool SpendCash(uint price)
+    {
+        if (Cash < price)
+            return false;
+        uint fromAwarded = Math.Min(AwardedCash, price);
+        AwardedCash -= fromAwarded;
+        PurchasedCash -= price - fromAwarded;
+        return true;
+    }
+
+    /// <summary>Whether the soldier owns availableItems bit <paramref name="bit"/>.</summary>
+    public bool HasItem(int bit) => bit >= 0 && bit < ItemWords * 32 && (Fit(AvailableItems, ItemWords)[bit >> 5] & (1u << (bit & 31))) != 0;
+
+    private void SetItem(int bit, bool owned)
+    {
+        if (bit < 0 || bit >= ItemWords * 32)
+            return;
+        AvailableItems = Fit(AvailableItems, ItemWords);
+        if (owned)
+            AvailableItems[bit >> 5] |= 1u << (bit & 31);
+        else
+            AvailableItems[bit >> 5] &= ~(1u << (bit & 31));
+    }
+
+    /// <summary>
+    /// EconomyPurchaseRequest, as the lobby emulator answers it (2.12
+    /// 0x745ac8) [C]: the item must be in the soldier's PMC's armory list with
+    /// a price above 0, not owned yet, and affordable from both kinds of CP.
+    /// Buying sets its bit (and its group's, <see cref="MagArmory.GroupOf"/>)
+    /// and spends the price. The emulator also checks the item against the
+    /// account's entitlements when a DLC product lists it; that isn't done
+    /// here. It doesn't check the level: the Supply Depot does.
+    /// </summary>
+    public bool TryPurchaseItem(ushort handle, MagArmory armory, out string reason)
+    {
+        MagArmoryItem? item = armory.Find(Faction, handle);
+        if (item is null)
+            reason = $"item {handle:X4} isn't in faction {Faction}'s armory";
+        else if (item.Price == 0)
+            reason = $"{item.Name} isn't for sale";
+        else if (HasItem(item.Bit))
+            reason = $"{item.Name} already owned";
+        else if (!SpendCash(item.Price))
+            reason = $"{item.Name} costs {item.Price} CP, has {Cash}";
+        else
+        {
+            SetItem(item.Bit, true);
+            foreach (MagArmoryItem member in armory.GroupOf(Faction, item))
+                SetItem(member.Bit, true);
+            reason = $"bought {item.Name} for {item.Price} CP, {Cash} left";
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// EconomyRefundRequest, as the lobby emulator answers it (2.12 0x7458bc)
+    /// [C]: an owned item with a price above 0 is taken back (its bit, and its
+    /// group's), taken out of the loadouts (0x70112c; here its slots are
+    /// emptied [guess: the client's fix-up may put a default item there]), and
+    /// price × <see cref="MagArmory.RefundFactor"/> goes to <see cref="AwardedCash"/> (0x6ff594).
+    /// </summary>
+    public bool TryRefundItem(ushort handle, MagArmory armory, out string reason)
+    {
+        MagArmoryItem? item = armory.Find(Faction, handle);
+        if (item is null)
+            reason = $"item {handle:X4} isn't in faction {Faction}'s armory";
+        else if (item.Price == 0)
+            reason = $"{item.Name} can't be refunded";
+        else if (!HasItem(item.Bit))
+            reason = $"{item.Name} isn't owned";
+        else
+        {
+            List<int> bits = [item.Bit, .. armory.GroupOf(Faction, item).Select(i => i.Bit)];
+            foreach (int bit in bits)
+                SetItem(bit, false);
+            foreach (MagLoadout loadout in Loadouts)
+                for (int slot = 0; slot < loadout.Items.Length; slot++)
+                    if (loadout.Items[slot] != MagLoadout.Empty && bits.Contains(MagArmory.BitOf(loadout.Items[slot])))
+                        loadout.Items[slot] = MagLoadout.Empty;
+            uint refund = (uint)(armory.RefundFactor * item.Price);
+            AwardCash(refund);
+            reason = $"refunded {item.Name} for {refund} CP, {Cash} now";
+            return true;
+        }
+        return false;
+    }
 
     /// <summary>
     /// The bool 2.12's CreateCharacterRequest adds after the NpId (marshal
@@ -414,6 +551,21 @@ public sealed class MagCharacter
     /// (TotalExperience is <see cref="Experience"/>, ratios) aren't kept.
     /// </summary>
     public Dictionary<string, Dictionary<string, long>> CareerStats { get; set; } = [];
+
+    /// <summary>
+    /// How many times the soldier has won each ribbon, by ribbon index
+    /// (character_awards.zpr's Ribbons). Kept for the barracks' awards page
+    /// (AwardsBlobRibbonCount, from the SVO's binary stats download), which
+    /// isn't served yet.
+    /// </summary>
+    public Dictionary<int, int> Ribbons { get; set; } = [];
+
+    /// <summary>Counts one win of each ribbon in <paramref name="ribbons"/>.</summary>
+    public void AddRibbons(IEnumerable<int> ribbons)
+    {
+        foreach (int ribbon in ribbons)
+            Ribbons[ribbon] = Ribbons.GetValueOrDefault(ribbon) + 1;
+    }
 
     /// <summary>Adds one game's stats to the career of its game type, each as <paramref name="stats"/>' table says.</summary>
     public void RecordGame(string gameType, IReadOnlyDictionary<string, long> game, MagStatTable stats)

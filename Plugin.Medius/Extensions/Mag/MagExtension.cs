@@ -42,6 +42,17 @@ public sealed class MagExtension : IMediusTitleExtension, Web.IMediusWebService
     /// <summary>No host of its own: the launcher's patch URLs and the SVO URL name the server's address, and the web listener asks every service for those.</summary>
     public IReadOnlyCollection<string> WebHosts => [];
 
+    /// <summary>
+    /// Over "https" the 2.12 SVO client does SSL 3.0 and checks the server
+    /// certificate's name against the leaf embedded in the game; present a
+    /// certificate carrying that identity (see <see cref="MagSettings.SvoCertSubject"/>).
+    /// Null when the SVO is plain "http" (no TLS), leaving the shared cert untouched.
+    /// </summary>
+    public Web.WebTlsIdentity? WebTlsIdentity =>
+        string.Equals(_settings.SvoScheme, "https", StringComparison.OrdinalIgnoreCase)
+            ? new Web.WebTlsIdentity(_settings.SvoCertSubject, _settings.SvoCertIssuer)
+            : null;
+
     /// <summary>The launcher's patch files (<see cref="MagPatches"/>) and the SVO pages (<see cref="MagSvo"/>).</summary>
     public Web.MediusWebResponse? HandleWeb(Web.MediusWebRequest request)
     {
@@ -193,9 +204,41 @@ public sealed class MagSettings
     /// <summary>
     /// The URL path of MAG's SVO service on the web listener (stats and the
     /// SVO login, <see cref="MagSvo"/>); a universe without an SvoUrl of its
-    /// own is given http://&lt;public address&gt;:&lt;WEB port&gt; and this.
+    /// own is given <see cref="SvoScheme"/>://&lt;public address&gt;:&lt;WEB port&gt;,
+    /// this and a closing '/'.
     /// </summary>
     public string SvoPath { get; set; } = "/mag/svo";
+
+    /// <summary>
+    /// The scheme of that SVO URL. The 2.12 client's SVO submits refuse a URL
+    /// that doesn't begin with "https:" (0x84b9b4 and 0x84bd84 compare its
+    /// first six characters with the string at 0x1277ba8 and fail with status
+    /// 1, before any connection) [C], and a real "https" URL then does SSL 3.0
+    /// and verifies the server cert against the SCERT Root Authority embedded
+    /// in the game, which a community server can't satisfy. So the default is
+    /// "http", which needs the "SVO: accept plain-HTTP stats URL" game patch
+    /// (RE-Work/mag/patches/mag-svo-http.yml) to get past that check; without
+    /// the patch the barracks career/ribbon pages stay blank either way.
+    /// </summary>
+    public string SvoScheme { get; set; } = "http";
+
+    /// <summary>
+    /// Subject distinguished name of the TLS certificate the 2.12 SVO client expects
+    /// when <see cref="SvoScheme"/> is "https" — the leaf certificate embedded in the
+    /// game (US retail "MAG 20231", read from the 2.12 <c>mage_g</c> at 0x11daae8).
+    /// The client appears to match the certificate by name, not signature, so a
+    /// self-signed certificate carrying this identity is accepted. Overridable per
+    /// title for other regions (e.g. CN=MAG SCEE 22721). Attributes most-significant first.
+    /// </summary>
+    public string SvoCertSubject { get; set; } =
+        "C=USA,ST=CA,L=San Diego,O=SCEA,OU=Zipper,CN=MAG 20231";
+
+    /// <summary>
+    /// Issuer distinguished name for that certificate — the SCERT Root Authority named
+    /// in the game's embedded CA (0x11e2528). Paired with <see cref="SvoCertSubject"/>.
+    /// </summary>
+    public string SvoCertIssuer { get; set; } =
+        "C=US,ST=CA,L=San Diego,O=SONY Computer Entertainment America Inc.,OU=SCERT Group,CN=SCERT Root Authority";
 
     /// <summary>
     /// The base URL the launcher is sent for the patches; empty for
@@ -246,11 +289,75 @@ public sealed class MagSettings
     /// <summary>The level a veteran respec requires when there is no skill table (with one: its maximum, 60 in 1.00 and 70 in 2.12).</summary>
     public byte MaxLevel { get; set; } = 60;
 
+    /// <summary>
+    /// CP earned per point of battle experience, in builds with a Supply
+    /// Depot (2.00 on). Retail worked it out in its lobby, which wasn't
+    /// shipped. Patch 2.10's notes give "1.5 CP for every 1 XP"; armory.zpr
+    /// keeps the same factor commented out (cash_xp_award_factor = 1.5). 2.11
+    /// counted bonus experience too (the experience passed in already has
+    /// it) and made the rate fall with level, by a curve that isn't known.
+    /// </summary>
+    public float CashPerExperience { get; set; } = 1.5f;
+
     /// <summary>How the game server forms games from its queues.</summary>
     public MagMatchmakingSettings Matchmaking { get; set; } = new();
 
+    /// <summary>Computer-controlled players that fill out a game (Plugin.MagGameServer, with the BotBrain service).</summary>
+    public MagBotSettings Bots { get; set; } = new();
+
     /// <summary>How won games move the Shadow War (<see cref="MagShadowWar"/>).</summary>
     public MagShadowWarSettings ShadowWar { get; set; } = new();
+}
+
+/// <summary>
+/// Bots: players driven by the BotBrain service (a separate process the game
+/// server connects to), which the game server seats in a game beside the
+/// people in it. Off by default.
+/// </summary>
+public sealed class MagBotSettings
+{
+    public bool Enabled { get; set; }
+
+    /// <summary>How many players, people and bots together, each team is filled up to once someone is in the game.</summary>
+    public int FillPerTeam { get; set; } = 8;
+
+    /// <summary>
+    /// Fill each team to the game type's full size instead (32 a side in
+    /// Suppression). Either way a bot gives its seat up as soon as a person
+    /// is placed on its team, and the team is topped up again ten seconds
+    /// after someone leaves.
+    /// </summary>
+    public bool FillToTeamSize { get; set; }
+
+    /// <summary>
+    /// Where the BotBrain service listens. Empty runs the brain inside the
+    /// game server's own process (still over the same protocol, on loopback),
+    /// which needs nothing else started.
+    /// </summary>
+    public string BrainHost { get; set; } = "";
+    public int BrainPort { get; set; } = 24800;
+
+    /// <summary>
+    /// The folder of map packages (<c>&lt;level&gt;-&lt;hash&gt;.bbmap</c>, made by
+    /// BotBrain's map tool from the level's collision). The game server and
+    /// the brain both read them: a level with no package gets no bots.
+    /// </summary>
+    public string MapDirectory { get; set; } = "maps";
+
+    /// <summary>
+    /// A folder to record each game with bots into (<c>*.bbrec</c>), for
+    /// BotBrain's replay viewer. Empty records nothing. Only used when the
+    /// brain runs in this process; a separate brain has its own setting.
+    /// </summary>
+    public string RecordDirectory { get; set; } = "";
+
+    /// <summary>
+    /// Whether a bot's weapon is replicated as a player's client does (the
+    /// item in hand and its ammunition count, which is what makes the others
+    /// see and hear it fire). Off leaves bots holding nothing and shooting
+    /// silently; a switch in case a client takes these values badly.
+    /// </summary>
+    public bool ShowWeapons { get; set; } = true;
 }
 
 /// <summary>

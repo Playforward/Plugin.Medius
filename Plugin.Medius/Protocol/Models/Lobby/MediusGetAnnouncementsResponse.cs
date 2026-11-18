@@ -18,8 +18,15 @@ namespace Plugin.Medius.RT.Models
 
         public MediusCallbackStatus StatusCode;
         public int AnnouncementID;
-        public string Announcement; // ANNOUNCEMENT_MAXLEN
+        public string Announcement; // AnnouncementLength
         public bool EndOfList;
+
+        /// <summary>
+        /// Layout switch, not a field: bytes of <see cref="Announcement"/> on the wire (1000;
+        /// 4000 in SCE-RT 3.06, Killzone 3 codec 0xa34950) [C]. Set from the title's
+        /// <see cref="ScertLayout.AnnouncementLength"/>.
+        /// </summary>
+        public int AnnouncementLength = Constants.ANNOUNCEMENT_MAXLEN;
 
         public override void Deserialize(Plugin.Medius.RT.Shared.Stream.MessageReader reader)
         {
@@ -33,7 +40,7 @@ namespace Plugin.Medius.RT.Models
             reader.ReadBytes(3);
             StatusCode = reader.Read<MediusCallbackStatus>();
             AnnouncementID = reader.ReadInt32();
-            Announcement = reader.ReadString(Constants.ANNOUNCEMENT_MAXLEN);
+            Announcement = reader.ReadString(AnnouncementLength);
             EndOfList = reader.ReadBoolean();
             reader.ReadBytes(3);
         }
@@ -50,7 +57,7 @@ namespace Plugin.Medius.RT.Models
             writer.Write(new byte[3]);
             writer.Write(StatusCode);
             writer.Write(AnnouncementID);
-            writer.Write(Announcement, Constants.ANNOUNCEMENT_MAXLEN);
+            writer.Write(Announcement, AnnouncementLength);
             writer.Write(EndOfList);
             writer.Write(new byte[3]);
         }

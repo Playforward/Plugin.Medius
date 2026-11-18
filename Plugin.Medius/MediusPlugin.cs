@@ -80,8 +80,17 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
         List<IMediusWebService> webServices = [.. extensions.Values.Distinct().OfType<IMediusWebService>()];
         if (webServices.Count > 0 && Config.PortOf(MediusComponentNames.Web) != 0)
         {
+            // The SCE-RT titles on this listener (Killzone 2, MAG) run rt_ssl 3.0x, whose
+            // leaf certs are 512-bit RSA; a bigger server key overflows its fixed cert buffer
+            // and it drops the SSL 3.0 handshake with no alert. Match the hardware's key size.
+            // A service whose client checks the certificate name (MAG's 2.12 SVO) declares the
+            // identity it expects; the single shared cert is built to the first one declared.
+            WebTlsIdentity? identity = webServices
+                .Select(service => service.WebTlsIdentity)
+                .FirstOrDefault(id => id is not null);
             LegacyTlsCredentials credentials = LegacyTlsCredentials.LoadOrCreate(Path.Combine(Config.DataDir, "web"),
-                webServices.SelectMany(s => s.WebHosts).FirstOrDefault() ?? "medius");
+                webServices.SelectMany(s => s.WebHosts).FirstOrDefault() ?? "medius", keyBits: 512,
+                subjectDn: identity?.SubjectDn, issuerDn: identity?.IssuerDn);
             _web = new WebComponent(webServices, credentials);
             MediusHttpRoutes.Web = _web;
         }
@@ -279,6 +288,9 @@ public sealed class MediusPlugin : ServerPlugin<MediusSettings>
                 if (_tcpComponents.TryGetValue(connection.LocalPort, out MediusComponent? component))
                     component.SendEcho(connection);
             }
+
+            foreach (MlsComponent mls in _tcpComponents.Values.OfType<MlsComponent>().Distinct())
+                mls.ExpireFindGames();
 
             int swept = _context.Lobby.Sweep(TimeSpan.FromMinutes(10));
             if (swept > 0)

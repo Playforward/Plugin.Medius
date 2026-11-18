@@ -35,6 +35,8 @@ public sealed class ResistanceFallOfManTitleTests
         Assert.Equal("resistance", title.Extension);
         Assert.Equal(8, title.Matchmaking.Supersets.Count);
         Assert.Equal([0, 0, 1, 0], System.Text.Encoding.UTF8.GetBytes(title.Matchmaking.Supersets[0].ExtraInfo));
+        // Every superset's ranked pool starts its options with the game type the client expects (dm 1 .. Assault 8).
+        Assert.Equal(["01", "02", "04", "03", "05", "06", "07", "08"], title.Matchmaking.Supersets.Select(s => title.Matchmaking.PoolFor(s.Id, "").GameOptions));
         MediusUniverse universe = Assert.Single(title.Universes);
         Assert.StartsWith("8.7.1.1 http://{PublicHost}", universe.ExtendedInfo);
         Assert.Equal(1, universe.Status);

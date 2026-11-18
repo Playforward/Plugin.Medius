@@ -271,6 +271,9 @@ namespace Plugin.Medius.RT.Models
             // Resistance: Fall of Man's QoS broadcasts keep their QoS byte in the clear; whole-message decryption
             // fails on them (DATA 00F258F6, 00CC2BE7...) [live 2026-11-01]; payload-only is the [guess].
             RT_MSG_TYPE.RT_MSG_CLIENT_APP_BROADCAST_QOS => 1,
+            // Their single and list sisters, like the plain ones after that byte [guess; on TCP the whole message decrypts].
+            RT_MSG_TYPE.RT_MSG_CLIENT_APP_SINGLE_QOS => 3,
+            RT_MSG_TYPE.RT_MSG_CLIENT_APP_LIST_QOS when buffer.Length > 1 => 2 + buffer[1],
             _ => 0,
         };
 

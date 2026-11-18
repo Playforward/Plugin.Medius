@@ -1,3 +1,4 @@
+using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Generators;
@@ -29,7 +30,8 @@ public sealed class LegacyTlsCredentials
     public required X509Certificate Certificate { get; init; }
     public required RsaPrivateCrtKeyParameters PrivateKey { get; init; }
 
-    public static LegacyTlsCredentials LoadOrCreate(string directory, string commonName, int keyBits = 2048)
+    public static LegacyTlsCredentials LoadOrCreate(string directory, string commonName, int keyBits = 2048,
+        string? subjectDn = null, string? issuerDn = null)
     {
         string keyPath = Path.Combine(directory, "tls-key.pem");
         string certPath = Path.Combine(directory, "tls-cert.pem");
@@ -44,10 +46,17 @@ public sealed class LegacyTlsCredentials
                 RsaPrivateCrtKeyParameters single => single,
                 _ => throw new InvalidDataException($"{keyPath} does not hold an RSA private key"),
             };
-            return new() { Certificate = (X509Certificate)new PemReader(certText).ReadObject(), PrivateKey = privateKey };
+            X509Certificate cached = (X509Certificate)new PemReader(certText).ReadObject();
+            // Reuse the cached certificate only if its identity still matches what the
+            // caller wants; a title whose client checks the certificate's name can now
+            // ask for a specific subject, so regenerate when that no longer holds.
+            bool identityMatches = subjectDn is null
+                || cached.SubjectDN.Equivalent(ParseDn(subjectDn));
+            if (identityMatches)
+                return new() { Certificate = cached, PrivateKey = privateKey };
         }
 
-        LegacyTlsCredentials created = Create(commonName, keyBits);
+        LegacyTlsCredentials created = Create(commonName, keyBits, subjectDn, issuerDn);
         Directory.CreateDirectory(directory);
         using (StreamWriter keyOut = File.CreateText(keyPath))
             new PemWriter(keyOut).WriteObject(created.PrivateKey);
@@ -56,18 +65,20 @@ public sealed class LegacyTlsCredentials
         return created;
     }
 
-    public static LegacyTlsCredentials Create(string commonName, int keyBits = 2048)
+    public static LegacyTlsCredentials Create(string commonName, int keyBits = 2048,
+        string? subjectDn = null, string? issuerDn = null)
     {
         SecureRandom random = new();
         RsaKeyPairGenerator generator = new();
         generator.Init(new RsaKeyGenerationParameters(BigInteger.ValueOf(65537), random, keyBits, 80));
         AsymmetricCipherKeyPair pair = generator.GenerateKeyPair();
 
-        X509Name name = new($"CN={commonName}");
+        X509Name subject = subjectDn is null ? new X509Name($"CN={commonName}") : ParseDn(subjectDn);
+        X509Name issuer = issuerDn is null ? subject : ParseDn(issuerDn);
         X509V3CertificateGenerator certificate = new();
         certificate.SetSerialNumber(BigInteger.ProbablePrime(64, random));
-        certificate.SetIssuerDN(name);
-        certificate.SetSubjectDN(name);
+        certificate.SetIssuerDN(issuer);
+        certificate.SetSubjectDN(subject);
         certificate.SetNotBefore(DateTime.UtcNow.AddDays(-1));
         certificate.SetNotAfter(DateTime.UtcNow.AddYears(20));
         certificate.SetPublicKey(pair.Public);
@@ -76,6 +87,38 @@ public sealed class LegacyTlsCredentials
             Certificate = certificate.Generate(new Asn1SignatureFactory("SHA1WITHRSA", pair.Private, random)),
             PrivateKey = (RsaPrivateCrtKeyParameters)pair.Private,
         };
+    }
+
+    /// <summary>Builds an X.500 name from a "C=US,O=...,CN=..." string, keeping the
+    /// attributes in the order written so the encoded name is what a name-checking
+    /// client expects. Values may contain spaces but not commas.</summary>
+    private static X509Name ParseDn(string dn)
+    {
+        List<DerObjectIdentifier> oids = [];
+        List<string> values = [];
+        foreach (string part in dn.Split(','))
+        {
+            int eq = part.IndexOf('=');
+            if (eq < 0)
+                continue;
+            string attribute = part[..eq].Trim();
+            string value = part[(eq + 1)..].Trim();
+            DerObjectIdentifier oid = attribute.ToUpperInvariant() switch
+            {
+                "C" => X509Name.C,
+                "ST" => X509Name.ST,
+                "L" => X509Name.L,
+                "O" => X509Name.O,
+                "OU" => X509Name.OU,
+                "CN" => X509Name.CN,
+                "E" or "EMAIL" or "EMAILADDRESS" => X509Name.E,
+                "SERIALNUMBER" => X509Name.SerialNumber,
+                _ => throw new FormatException($"unknown distinguished-name attribute '{attribute}' in '{dn}'"),
+            };
+            oids.Add(oid);
+            values.Add(value);
+        }
+        return new X509Name(oids, values);
     }
 }
 

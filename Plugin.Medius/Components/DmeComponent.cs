@@ -127,15 +127,24 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
     {
         switch (message)
         {
-            // Answered with the Unix time in seconds [live PSRewired].
-            case DMETypePing:
-                connection.SendApp(new DMETypePing { Time = (uint)DateTimeOffset.UtcNow.ToUnixTimeSeconds() });
+            case DMETypePing ping:
+                AnswerPing(connection, ping);
                 break;
             default:
                 Unhandled(connection, message);
                 break;
         }
     }
+
+    /// <summary>
+    /// A DME ping for the server (target 0xffff): answered with the Unix time in seconds and, reliably
+    /// though it came unreliably [live PSRewired, R2], and with the ping's instance, which is the
+    /// client's slot for it (0x6a423c) [C]. Fall of Man sends 60 at a time, over aux UDP, after a player
+    /// stalls: under 60% answered is a strike and 4 strikes end the game with "Network error (00320007)"
+    /// (0x2a1370; limits 0x100b9c58/5c) [C; live 2026-11-06: exactly 240 pings, then the drop].
+    /// </summary>
+    private static void AnswerPing(ScertConnection connection, DMETypePing ping) =>
+        connection.SendApp(new DMETypePing { Time = (uint)DateTimeOffset.UtcNow.ToUnixTimeSeconds(), PingInstance = ping.PingInstance });
 
     /// <summary>
     /// Over RUdp there is no CONNECT_REQUIRE step: the connect is answered with the
@@ -243,6 +252,9 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
                     case RT_MSG_CLIENT_FLUSH_ALL:
                     case RT_MSG_CLIENT_DISCONNECT:
                     case RT_MSG_CLIENT_DISCONNECT_WITH_REASON:
+                        break;
+                    case RT_MSG_CLIENT_APP_TOSERVER { Message: DMETypePing ping }:
+                        AnswerPing(connection, ping);
                         break;
                     default:
                         if (!Relay(seat, message, udp: true))
@@ -406,16 +418,26 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
                 payload = broadcast.Payload;
                 flag = RT_RECV_FLAG.RECV_BROADCAST;
                 break;
-            case RT_MSG_CLIENT_APP_SINGLE single when single.TargetOrSource < source.Game.FirstPlayerIndex:
-                // To the game server's own seat: the match host, not written yet.
-                Log.Debug("[medius/DME] {Seat} -> host seat: {Data}", source, Convert.ToHexString(single.Payload ?? []));
-                return true;
             case RT_MSG_CLIENT_APP_SINGLE single:
-                targets = source.Game.Player(single.TargetOrSource) is { Joined: true } target ? [target] : [];
+                if (!SingleTarget(source, single.TargetOrSource, single.Payload, out targets))
+                    return true;
+                payload = single.Payload;
+                flag = RT_RECV_FLAG.RECV_SINGLE;
+                break;
+            case RT_MSG_CLIENT_APP_SINGLE_QOS single:
+                // Dropping these left a Resistance: Fall of Man joiner without its host's ClientConnects (DME 0x10),
+                // so it believed it was alone and left after 45 seconds [live 2026-11-06].
+                if (!SingleTarget(source, single.Target, single.Payload, out targets))
+                    return true;
                 payload = single.Payload;
                 flag = RT_RECV_FLAG.RECV_SINGLE;
                 break;
             case RT_MSG_CLIENT_APP_LIST list:
+                targets = list.Targets.Select(source.Game.Player).OfType<DmePlayer>().Where(p => p.Joined);
+                payload = list.Payload;
+                flag = RT_RECV_FLAG.RECV_LIST;
+                break;
+            case RT_MSG_CLIENT_APP_LIST_QOS list:
                 targets = list.Targets.Select(source.Game.Player).OfType<DmePlayer>().Where(p => p.Joined);
                 payload = list.Payload;
                 flag = RT_RECV_FLAG.RECV_LIST;
@@ -430,5 +452,18 @@ public sealed class DmeComponent(MediusContext context) : MediusComponent(contex
         foreach (DmePlayer target in targets.Where(t => t.Receives(flag)))
             target.Send(relayed, udp);
         return true;
+    }
+
+    /// <summary>
+    /// The player a single goes to, none when they are not on the DME; false when it is for the game
+    /// server's own seat instead, which is the match host, not written yet.
+    /// </summary>
+    private static bool SingleTarget(DmePlayer source, short target, byte[]? payload, out IEnumerable<DmePlayer> targets)
+    {
+        targets = source.Game.Player(target) is { Joined: true } player ? [player] : [];
+        if (target >= source.Game.FirstPlayerIndex)
+            return true;
+        Log.Debug("[medius/DME] {Seat} -> host seat: {Data}", source, Convert.ToHexString(payload ?? []));
+        return false;
     }
 }

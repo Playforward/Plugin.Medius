@@ -35,6 +35,9 @@ public sealed class MapsComponent(MediusContext context, MagSettings settings, M
 
     private static string CharactersPath(MediusContext context) => Path.Combine(context.Settings.DataDir, "mag-characters.json");
 
+    /// <summary>The build's Supply Depot (<see cref="MagArmory"/>); null for 1.00, which has no CP.</summary>
+    private readonly MagArmory? _armory = MagArmory.Embedded(settings.Version);
+
     /// <summary>The Shadow War, saved to <c>&lt;DataDir&gt;/mag-shadow-war.json</c> after every win.</summary>
     private readonly MagShadowWar _war = new(MagContractBonuses.Embedded(settings.Version), settings.ShadowWar,
         Path.Combine(context.Settings.DataDir, "mag-shadow-war.json"));
@@ -83,10 +86,15 @@ public sealed class MapsComponent(MediusContext context, MagSettings settings, M
         if (experience == 0 || CharacterOf(accountId) is not { } soldier)
             return;
         int levels;
+        uint cash = _armory is null ? 0 : (uint)(experience * settings.CashPerExperience);
         lock (soldier)
+        {
             levels = soldier.AddExperience(experience, rules);
-        Log.Information("[medius/MAPS] {Name} earned {Experience} battle experience: {Total} experience, level {Level}{Gained}",
-            soldier.Name, experience, soldier.Experience, soldier.Level, levels > 0 ? $" (+{levels}, {soldier.SkillPoints} skill points)" : "");
+            soldier.AwardCash(cash);
+        }
+        Log.Information("[medius/MAPS] {Name} earned {Experience} battle experience: {Total} experience, level {Level}{Gained}{Cash}",
+            soldier.Name, experience, soldier.Experience, soldier.Level, levels > 0 ? $" (+{levels}, {soldier.SkillPoints} skill points)" : "",
+            _armory is null ? "" : $"; {cash} CP, {soldier.Cash} CP in all");
         SaveCharacters();
         if (lobby is not null)
             Reply(lobby, MapsWriters.CharacterRecord(version, soldier));
@@ -146,10 +154,16 @@ public sealed class MapsComponent(MediusContext context, MagSettings settings, M
     {
         if (CharacterOf(record.AccountId) is not { } soldier)
             return;
+        uint ribbonCash = _armory is null ? 0 : record.RibbonCash;
         lock (soldier)
+        {
             soldier.RecordGame(record.GameType, record.Stats, MagStatTable.Embedded(version));
-        Log.Information("[medius/MAPS] {Name}'s {GameType} game ({Result}) added to their career: {Stats}",
-            soldier.Name, record.GameType, record.Result ?? "left early", string.Join(", ", record.Stats.Where(s => s.Value != 0).Select(s => $"{s.Key} {s.Value}")));
+            soldier.AddRibbons(record.Ribbons ?? []);
+            soldier.AwardCash(ribbonCash);
+        }
+        Log.Information("[medius/MAPS] {Name}'s {GameType} game ({Result}) added to their career: {Stats}{Ribbons}",
+            soldier.Name, record.GameType, record.Result ?? "left early", string.Join(", ", record.Stats.Where(s => s.Value != 0).Select(s => $"{s.Key} {s.Value}")),
+            record.Ribbons is { Count: > 0 } ribbons ? $"; ribbons {string.Join(",", ribbons)} (+{ribbonCash} CP, {soldier.Cash} CP in all)" : "");
         SaveCharacters();
     }
 
@@ -336,7 +350,7 @@ public sealed class MapsComponent(MediusContext context, MagSettings settings, M
                 break;
 
             case var _ when type == ids.PurchaseSkillRequest:
-                byte skill = reader.ReadU8();
+                int skill = MapsReaders.PurchaseSkillRequest(reader, version);
                 MagCharacter? buyer = CharacterOf(connection);
                 string purchaseFailure = "no character";
                 bool purchased = buyer is not null && buyer.TryPurchaseSkill(skill, rules, out purchaseFailure);
@@ -345,6 +359,25 @@ public sealed class MapsComponent(MediusContext context, MagSettings settings, M
                 Log.Information("{Tag} {Connection}: purchase skill {Skill}: {Result}", Tag, connection, skill,
                     purchased ? $"bought, {buyer!.SkillPoints} points left" : purchaseFailure);
                 Reply(connection, MapsWriters.PurchaseSkillResponse(version, purchased, buyer));
+                break;
+
+            case var _ when type == ids.EconomyPurchaseRequest || type == ids.EconomyRefundRequest:
+                bool purchase = type == ids.EconomyPurchaseRequest;
+                ushort handle = reader.ReadU16();
+                MagCharacter? shopper = CharacterOf(connection);
+                string economyResult = _armory is null ? "this build has no Supply Depot" : "no character";
+                bool done = false;
+                if (shopper is not null && _armory is not null)
+                    lock (shopper)
+                        done = purchase ? shopper.TryPurchaseItem(handle, _armory, out economyResult) : shopper.TryRefundItem(handle, _armory, out economyResult);
+                if (done)
+                    SaveCharacters();
+                Log.Information("{Tag} {Connection}: {Action} item {Handle:X4}: {Result}", Tag, connection, purchase ? "purchase" : "refund", handle, economyResult);
+                Reply(connection, MapsWriters.EconomyResponse(version, (purchase ? ids.EconomyPurchaseResponse : ids.EconomyRefundResponse)!.Value, done, shopper));
+                break;
+
+            case var _ when type == ids.RetrieveWalletRequest:
+                Reply(connection, MapsWriters.RetrieveWalletResponse(ids.RetrieveWalletResponse!.Value));
                 break;
 
             case var _ when type == ids.SkillReSpecRequest:
@@ -563,8 +596,9 @@ public sealed class MapsComponent(MediusContext context, MagSettings settings, M
         string host = Context.PublicAddress.ToString();
         int masPort = Context.Settings.PortOf(MediusComponentNames.Mas);
         int webPort = Context.Settings.PortOf(MediusComponentNames.Web);
-        // the SVO (stats) on the web listener, for a universe that names none
-        string svoUrl = webPort != 0 ? $"http://{host}:{webPort}{settings.SvoPath}" : "";
+        // the SVO (stats) on the web listener, for a universe that names none; the client
+        // puts it straight in front of each page ("account/SP_Login_Submit_MAG.do"), so it ends in '/'
+        string svoUrl = webPort != 0 ? $"{settings.SvoScheme}://{host}:{webPort}{settings.SvoPath.TrimEnd('/')}/" : "";
         for (int i = 0; i < universes.Count; i++)
         {
             MediusUniverse universe = universes[i];

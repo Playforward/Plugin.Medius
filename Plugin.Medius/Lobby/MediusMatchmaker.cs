@@ -55,6 +55,44 @@ public sealed class MediusMatchmakingSettings
     /// </summary>
     public bool RosterPerParty { get; set; }
 
+    /// <summary>
+    /// How long a MediusMatchFindGame request waits for a match before it is answered MediusNoResult.
+    /// Fall of Man gives up on a request after 45 seconds and treats that as a failure, while a
+    /// NoResult sends it round again (three requests, then it stops) [C 0x32d170, 0x32debc].
+    /// </summary>
+    public int FindGameWaitSeconds { get; set; } = 35;
+
+    /// <summary>
+    /// The MatchPartyResponse status for a queued party. Killzone 3 wants 11: its MatchParty
+    /// callback (0x165f9c) moves to "waiting for a match" on 11 only, and takes any other
+    /// status, MediusSuccess included, as error 7000+status, after which it ignores the
+    /// MatchFound [C].
+    /// </summary>
+    public int PartyQueuedStatus { get; set; } = (int)MediusCallbackStatus.MediusSuccess;
+
+    /// <summary>
+    /// The party attribute bytes a 3.06 MatchFoundResponse repeats in its leading 16 bytes, in
+    /// order (zero padded). Killzone 3's callback (0x16608c) takes the match only when byte 0
+    /// is the request counter it put first in the attributes and bytes 1-4 its request key
+    /// (attributes 6-9); bytes 5-8 it keeps (+0x5c) [C]. Empty: zeros.
+    /// </summary>
+    public List<MediusAttributeRange> FoundKey { get; set; } = [];
+
+    /// <summary>The 16 leading bytes of a 3.06 MatchFoundResponse for a party with <paramref name="attributes"/>.</summary>
+    public byte[] FoundKeyOf(byte[] attributes)
+    {
+        byte[] key = new byte[16];
+        int at = 0;
+        foreach (MediusAttributeRange r in FoundKey)
+        {
+            int size = Math.Min(r.Size, key.Length - at);
+            if (r.Offset >= 0 && r.Offset + size <= attributes.Length)
+                attributes.AsSpan(r.Offset, size).CopyTo(key.AsSpan(at));
+            at += size;
+        }
+        return key;
+    }
+
     /// <summary>The pool key of a request: its attribute bytes named by <see cref="PoolKey"/>, in hex.</summary>
     public string KeyOf(byte[] attributes) => string.Concat(PoolKey.Select(r =>
         r.Offset + r.Size <= attributes.Length ? Convert.ToHexString(attributes, r.Offset, r.Size) : new string('-', 2 * r.Size)));
@@ -171,10 +209,27 @@ public sealed class MediusBlobPart
     /// <summary>Ends the text with a NUL byte (the game reads it as a C string).</summary>
     public bool NulTerminated { get; set; }
 
+    /// <summary>
+    /// Offset of a u8-length-prefixed string in the match's first party's request attributes;
+    /// the string's bytes are copied (without the length). Killzone 3 carries its party's game
+    /// settings there as base64, which its match result's options repeat [C 0x7f470c]. -1: unused.
+    /// </summary>
+    public int AttributeString { get; set; } = -1;
+
     public byte[] Build(MediusMatch match)
     {
         if (Hex.Length > 0)
             return Convert.FromHexString(Hex.Replace(" ", ""));
+        if (AttributeString >= 0)
+        {
+            byte[] attributes = match.Parties.Count > 0 ? match.Parties[0].Party.Attributes : [];
+            byte[] value = AttributeString < attributes.Length
+                ? attributes.AsSpan(AttributeString + 1, Math.Min(attributes[AttributeString], attributes.Length - AttributeString - 1)).ToArray()
+                : [];
+            if (value.Length == 0)
+                Log.Warning("[medius] match {Game}: no length-prefixed string at attribute offset {Offset} ({Length} bytes)", match.Game, AttributeString, attributes.Length);
+            return NulTerminated ? [.. value, 0] : value;
+        }
         if (Field.Length > 0)
         {
             long value = Field switch
@@ -197,11 +252,13 @@ public sealed class MediusBlobPart
         string joined = string.Join(LineEnding, Lines);
         foreach ((string key, string value) in match?.Pool is { } pool ? Placeholders(pool) : [])
             joined = joined.Replace("{" + key + "}", value);
+        if (match?.Game is { } game)
+            joined = joined.Replace("{GameName}", game.Name);
         byte[] text = System.Text.Encoding.UTF8.GetBytes(joined);
         return NulTerminated ? [.. text, 0] : text;
     }
 
-    /// <summary>What <c>{Key}</c> in <see cref="Lines"/> stands for: the pool's Name, MaxPlayers and Teams, then its Values.</summary>
+    /// <summary>What <c>{Key}</c> in <see cref="Lines"/> stands for: the pool's Name, MaxPlayers and Teams, then its Values; <c>{GameName}</c> is the matched world's name.</summary>
     private static IEnumerable<(string, string)> Placeholders(MediusMatchPool pool) =>
         new[] { ("Name", pool.Name), ("MaxPlayers", pool.MaxPlayers.ToString()), ("Teams", pool.Teams.ToString()) }
             .Concat(pool.Values.Select(p => (p.Key, p.Value)));
@@ -209,7 +266,7 @@ public sealed class MediusBlobPart
 
 /// <summary>A party waiting in a pool: the request that queued it and who it is for.</summary>
 public sealed record MediusMatchEntry(MediusClient Requester, MessageId MessageID, uint SupersetId, string Key,
-    IReadOnlyList<int> AccountIds, byte[] Attributes, DateTime QueuedUtc)
+    IReadOnlyList<int> AccountIds, byte[] Attributes, DateTime QueuedUtc, bool FindGame = false)
 {
     public int Size => Math.Max(1, AccountIds.Count);
 }
@@ -274,11 +331,43 @@ public sealed class MediusMatchmaker
         return entry;
     }
 
+    /// <summary>Queues a MediusMatchFindGame party, which is answered MediusMatchFindGameResponse, not MatchFoundResponse.</summary>
+    public MediusMatchEntry Enqueue(MediusClient requester, MediusMatchFindGameRequest request)
+    {
+        MediusMatchEntry entry = new(requester, request.MessageID, request.SupersetID, requester.Title.Matchmaking.KeyOf(request.Extra),
+            request.AccountIDs, request.Extra, DateTime.UtcNow, FindGame: true);
+        lock (_gate)
+        {
+            _queue.RemoveAll(e => e.Requester == requester);
+            _queue.Add(entry);
+        }
+        return entry;
+    }
+
+    /// <summary>Takes out the MediusMatchFindGame parties that have waited as long as their title lets them.</summary>
+    public List<MediusMatchEntry> ExpireFindGames(DateTime now)
+    {
+        lock (_gate)
+        {
+            List<MediusMatchEntry> expired = _queue.Where(e => e.FindGame &&
+                now - e.QueuedUtc >= TimeSpan.FromSeconds(e.Requester.Title.Matchmaking.FindGameWaitSeconds)).ToList();
+            _queue.RemoveAll(expired.Contains);
+            return expired;
+        }
+    }
+
     /// <summary>Drops the requester's party from the queue; false when it was not queued.</summary>
     public bool Cancel(MediusClient requester)
     {
         lock (_gate)
             return _queue.RemoveAll(e => e.Requester == requester) > 0;
+    }
+
+    /// <summary>Drops the requester's MediusMatchFindGame party: the connection that would be answered is gone.</summary>
+    public bool CancelFindGame(MediusClient requester)
+    {
+        lock (_gate)
+            return _queue.RemoveAll(e => e.Requester == requester && e.FindGame) > 0;
     }
 
     /// <summary>
